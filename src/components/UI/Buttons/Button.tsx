@@ -1,21 +1,28 @@
+import { ReactElement } from "react";
+import { IconType } from "react-icons";
+import { DPButton } from "../../../types";
+import s from "./Button.module.scss";
 
-import React, { ReactElement } from 'react'
-import s from './Button.module.scss'
-import { IconType } from 'react-icons';
-import { DPButton } from '../../../types';
-import cn from 'classnames'
-
-interface ButtonProps extends Omit<DPButton, 'className'> {
+interface ButtonProps extends DPButton {
   icon?: ReactElement<IconType>;
-	color?: 'secondary'
-	size?: 'sm' | 'md' | 'lg'
+  color?: "secondary";
+  size?: "sm" | "md" | "lg";
 }
 
-const Button = ({icon, children, color, size, ...props}: ButtonProps) => {
-	return (
+const Button = ({
+  icon,
+  children,
+  color,
+  size,
+  className,
+  ...props
+}: ButtonProps) => {
+  return (
     <button
       {...props}
-      className={`${s.main} ${s[color ?? ""]} ${s[size ?? ""]}`}
+      className={`${s.main} ${s[color ?? ""]} ${s[size ?? ""]} ${
+        className ?? ""
+      }`}
     >
       {icon}
       <span>{children}</span>

@@ -1,0 +1,65 @@
+
+.main {
+	display: grid;
+
+	&.mobile {
+		gap: 1rem;
+		grid-template: 
+		'stickers stickers favorite'
+		'title title title'
+		'desc desc desc'
+		'price variants variants'
+		'coupon coupon coupon'
+		'add continue continue'
+		/ auto 1fr auto;
+	}
+
+
+	.variants {
+		grid-area: variants;
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem 0;
+	}
+	.stickers {
+		grid-area: stickers;
+	}
+	.favorite {
+		grid-area: favorite;
+	}
+	.title {
+		grid-area: title;
+		font-size: var(--font-2xl);
+		font-weight: bold;
+	}
+	.desc {
+		grid-area: desc;
+		color: var(--clr-text);
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+	}
+	.price {
+		grid-area: price;
+		font-size: var(--font-2xl);
+		font-weight: bold;
+
+		&::before {
+			content: '$'
+		}
+	}
+	.coupon {
+		grid-area: coupon;
+		display: flex;
+		flex-direction: column;
+	}
+	.continue {
+		grid-area: continue;
+	}
+	.add {
+		grid-area: add;
+		margin: 0 auto;
+	}
+}

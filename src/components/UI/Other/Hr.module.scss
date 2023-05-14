@@ -8,6 +8,12 @@
 
 	&.full {
 		width: calc(100% + (var(--g-padding-x) * 2));
+		margin-left: calc(var(--g-padding-x) * -1);
+	}
+
+	&.margin-md {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 
 	&.dashed {

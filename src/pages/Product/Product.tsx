@@ -17,7 +17,7 @@ const Product = (props: ProductProps) => {
         title="Product Details"
       />
       <ImageCarousel images={product.images} />
-			<ProductDetailsInfo  />
+			<ProductDetailsInfo />
     </PageLayout>
   );
 };

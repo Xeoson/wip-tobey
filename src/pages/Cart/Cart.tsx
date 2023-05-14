@@ -1,4 +1,4 @@
-import CartPayingInfo from "../../components/UI/Blocks/CartPayingInfo";
+import CartPaymentInfo from "../../components/UI/Blocks/CartPaymentInfo";
 import ProductCard from "../../components/UI/Cards/ProductCard";
 import PageLayout from "../../components/UI/Containers/PageLayout";
 import DeliveryAddress from "../../components/UI/DeliveryAddress";
@@ -7,7 +7,7 @@ import Hr from "../../components/UI/Other/Hr";
 import products from "../../mocks/products";
 import s from "./Cart.module.scss";
 
-const infoRows = {}
+const infoRows = {};
 
 interface CartProps {}
 
@@ -32,7 +32,7 @@ const Cart = (props: CartProps) => {
           ))}
         </div>
         <CouponInput />
-				<CartPayingInfo />
+        <CartPaymentInfo />
       </div>
     </PageLayout>
   );

@@ -1,10 +1,10 @@
-import Button from "../../../components/UI/Buttons/Button";
-import Hr from "../../../components/UI/Other/Hr";
-import s from "./CartPayingInfo.module.scss";
+import Button from "../Buttons/Button";
+import Hr from "../Other/Hr";
+import s from "./CartPaymentInfo.module.scss";
 
-interface CartPayingInfoProps {}
+interface CartPaymentInfoProps {}
 
-const CartPayingInfo = (props: CartPayingInfoProps) => {
+const CartPaymentInfo = (props: CartPaymentInfoProps) => {
   return (
     <div className={s.main}>
       <div className={s.item}>
@@ -24,9 +24,11 @@ const CartPayingInfo = (props: CartPayingInfoProps) => {
         <div className={s.title}>Total</div>
         <div className={s.valueTotal}>$406.50</div>
       </div>
-			<Button size="md" color="secondary" >Continue</Button>
+      <Button size="md" color="secondary">
+        Continue
+      </Button>
     </div>
   );
 };
 
-export default CartPayingInfo;
+export default CartPaymentInfo;

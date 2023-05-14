@@ -1,4 +1,8 @@
 
+export interface IVariant {
+	type: 'color' | 'spec',
+	variants: string[]
+}
 
 export interface IProduct {
 	id?: string,
