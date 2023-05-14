@@ -1,0 +1,21 @@
+
+.main {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	justify-items: center;
+	align-items: center;
+
+	padding: var(--g-padding-y) var(--g-padding-x);
+	border-bottom: 1px solid var(--clr-other);
+
+	svg {font-size: var(--font-2xl);}
+
+	.backBtn {
+		justify-self: start;
+		padding: 0.3rem;
+	}
+
+	& > *:last-child {
+		justify-self: end;
+	}
+}

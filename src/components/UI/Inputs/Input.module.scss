@@ -1,0 +1,17 @@
+label {
+	display: flex;
+	padding: 0.4rem 0.6rem;
+	color: var(--clr-text-user);
+	flex-grow: 1;
+	min-width: 0;
+	background-color: var(--clr-primary);
+	border-radius: var(--round-sm);
+	height: 3rem;
+
+	& > input[type=text] {
+		flex-grow: 1;
+		&::placeholder {
+			color: var(--clr-other);
+		}
+	}
+}

@@ -1,0 +1,11 @@
+@import './Input.module.scss';
+
+.main {
+	label > button {
+		display: flex;
+		min-height: 100%;
+		width: 1.4em;
+		align-items: center;
+		justify-content: center;
+	}
+}

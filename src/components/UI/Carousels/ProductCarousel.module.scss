@@ -1,0 +1,29 @@
+
+.main {
+	display: flex;
+	flex-direction: column;
+
+	.headerBlock {
+		padding: 1.5rem var(--g-padding-x) 1.2rem;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.more {
+		color: var(--clr-other);
+	}
+
+	.itemList {
+		padding-left: var(--g-padding-x);
+		display: grid;
+		gap: 0 1rem;
+		grid-auto-flow: column;
+		grid-auto-columns: 10rem;
+		overflow-x: auto;
+		flex: 1;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}

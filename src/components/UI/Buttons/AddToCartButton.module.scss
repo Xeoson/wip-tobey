@@ -1,0 +1,53 @@
+
+.main {
+	display: flex;
+	align-items: center;
+	
+	&.vertical {
+		gap: 0.5rem 0;
+		flex-direction: column;
+	}
+	&.horizontal {
+		gap: 0 1rem;
+	}
+
+	span {
+		font-weight: bold;
+	}
+
+	.lessBtn, .moreBtn {
+		width: 1.5rem;
+		height: 1.5rem;
+		border: 2px solid var(--clr-secondary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		border-radius: 5px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			background-color: var(--clr-secondary);
+			width: 50%;
+			height: 1px;
+		}
+	}
+
+	.moreBtn {
+		background-color: var(--clr-secondary);
+
+		&::after {
+			background-color: white;
+			width: 50%;
+			height: 2px;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: white;
+			height: 50%;
+			width: 2px;
+		}
+	}
+}

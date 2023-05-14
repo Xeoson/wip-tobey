@@ -1,0 +1,17 @@
+
+.main {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	flex: 1;
+	// gap: var(--g-padding-y) 0;
+
+	& > *:first-child {
+		padding-top: var(--g-padding-y);
+	}
+
+	& > * {
+		padding: 0 var(--g-padding-x);
+		margin-bottom: var(--g-padding-y);
+	}
+}

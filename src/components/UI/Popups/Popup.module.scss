@@ -1,0 +1,19 @@
+
+.main {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.content {
+			position: absolute;
+			transform: translateY(100%);
+			top: 0;
+			margin: 0 auto;
+			width: 300px;
+			background-color: white;
+			border-radius: var(--round-lg);
+			z-index: 1;
+		}
+	}
+

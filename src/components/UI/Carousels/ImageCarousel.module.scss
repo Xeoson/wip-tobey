@@ -1,0 +1,78 @@
+
+.main {
+	display: flex;
+	gap: 0 1rem;
+	justify-content: center;
+	height: 20rem;
+	position: relative;
+	padding: var(--g-padding-y) var(--g-padding-x);
+
+	.block {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.itemList {
+		display: flex;
+		height: 100%;
+		transition: transform 0.4s ease;
+	}
+
+	.item {
+		min-width: 100%;
+		height: 100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.pagination {
+		display: flex;
+		position: absolute;
+		bottom: 0;
+		gap: 0 0.3rem;
+	}
+
+	.paginationItem {
+		cursor: pointer;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		background-color: var(--clr-other);
+
+		&.current {
+			background-color: var(--clr-text);
+			width: 1.5rem;
+			border-radius: 12px;
+		}
+	}
+
+	.minifyList {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem 0;
+		overflow-y: auto;
+
+		&::-webkit-scrollbar {display: none;}
+	}
+
+	.minifyItem {
+		display: flex;
+		border: 0.05rem solid var(--clr-other);
+		border-radius: var(--round-md);
+		padding: 0.3rem;
+
+		span {
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 3rem;
+			height: 3rem;
+		}
+
+		&.current {
+			border-color: var(--clr-text);
+		}
+	}
+}

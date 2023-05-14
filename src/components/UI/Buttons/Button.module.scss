@@ -1,0 +1,21 @@
+
+.main {
+	border: 0.05rem solid var(--clr-other);
+	padding: 0.5rem 0.7rem;
+	border-radius: var(--round-sm);
+	display: flex;
+	align-items: center;
+	height: 100%;
+	justify-content: center;
+
+	&.secondary {
+		background-color: var(--clr-secondary);
+		color: var(--clr-primary);
+	}
+
+	&.sm {}
+	&.md {
+		font-size: var(--font-xl);
+		padding: 1rem 0.8rem;
+	}
+}

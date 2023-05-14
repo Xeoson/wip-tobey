@@ -1,0 +1,32 @@
+
+.main {
+	height: 2.5rem;
+	display: flex;
+	justify-content: space-between;
+
+	.info {
+		height: 100%;
+		display: flex;
+		gap: 0 0.5rem;
+		align-items: center;
+		img {
+			width: auto;
+		}
+	}
+
+	.openBtn {
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+		gap: 0 0.3rem;
+		color: var(--clr-secondary);
+
+		span {
+			text-align: end;
+		}
+
+		svg {
+			transform: rotate(-90deg);
+		}
+}
+}
