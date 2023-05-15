@@ -1,8 +1,21 @@
+@import "../../helpers/utils.scss";
+
+@include media-mobile {
+	.main {
+		display: flex;
+		justify-content: space-between;
+	}
+};
+
+@include media-tablet-min {
+	.main {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
 
 .main {
-	height: var(--nav-h);
-	display: flex;
 	gap: 0 1rem;
 	align-items: center;
-	justify-content: space-between;
+	margin-top: var(--g-padding-y);
 }

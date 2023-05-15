@@ -56,6 +56,8 @@ hr {
 	}
 }
 
+ul {list-style: none; padding: 0; margin: 0;}
+
 .hovered {
 	opacity: 0.7;
 	transition: opacity 0.4s ease;
@@ -65,12 +67,11 @@ hr {
 }
 
 :root {
-	--nav-h: 3rem;
 	--g-padding-y: 1rem;
 	--g-padding-x: 1.5rem;
 
 	--tablet-min-w: 768px;
-	--desktop-min-w: 1024px;
+	--mobile-max-w: 767px;
 
 	--round-sm: 7px;
 	--round-md: 12px;
@@ -89,6 +90,13 @@ hr {
 	--clr-other: #bec4cd;
 	--clr-bg: #ffffff;
 }
+
+// @media(min-width: 768px) {
+// 	:root {
+// 		--g-padding-y: 1rem;
+// 		--g-padding-x: 4rem;
+// 	}
+// }
 
 
 @font-face {

@@ -7,6 +7,7 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import browserRoutes from "../../common/browserRoutes";
 import s from "./TabBar.module.scss";
+import Popup from "../UI/Popups/Popup";
 
 interface IVariant {
   title: string;

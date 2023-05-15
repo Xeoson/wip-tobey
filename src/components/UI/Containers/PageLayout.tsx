@@ -1,12 +1,33 @@
+import { PropsWithChildren } from "react";
+import { useMatchTablet } from "../../../main";
+import Header from "../Blocks/Header";
+import s from "./PageLayout.module.scss";
+import Navbar from "../../Navbar/Navbar";
 
-import React, { PropsWithChildren } from 'react'
-import s from './PageLayout.module.scss'
-import { DP } from '../../../types';
+interface PageLayoutProps extends PropsWithChildren {
+  rotation?: "row" | "column";
+  mobileHeaderTitle?: string;
+	withNavbarOn?: 'all' | 'tablet'
+}
 
-interface PageLayoutProps extends PropsWithChildren {}
+const PageLayout = ({
+  children,
+  rotation = "column",
+  mobileHeaderTitle,
+	withNavbarOn
+}: PageLayoutProps) => {
+  const tabletMatch = useMatchTablet();
 
-const PageLayout = ({children}: PageLayoutProps) => {
-	return <div className={s.main}>{children}</div>;
+  return (
+    <div className={`${s.main} ${s[rotation]}`}>
+      {mobileHeaderTitle && !tabletMatch && (
+        <Header title={mobileHeaderTitle} />
+      )}
+			{withNavbarOn == 'all' && <Navbar />}
+			{withNavbarOn == 'tablet' && tabletMatch && <Navbar />}
+      {children}
+    </div>
+  );
 };
 
 export default PageLayout;

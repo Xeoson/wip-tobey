@@ -1,0 +1,32 @@
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem 0;
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	.item {
+		display: flex;
+		border: 0.05rem solid var(--clr-other);
+		border-radius: var(--round-md);
+		padding: 0.3rem;
+
+		span {
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 3rem;
+			height: 3rem;
+		}
+
+		&.current {
+			border-color: var(--clr-text);
+		}
+	}
+	}
+	
+

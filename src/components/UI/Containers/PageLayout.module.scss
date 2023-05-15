@@ -1,12 +1,12 @@
 
 .main {
 	display: flex;
-	flex-direction: column;
 	overflow: hidden;
 	flex: 1;
+	overflow-y: auto;
 
-	& > *:first-child {
-		padding-top: var(--g-padding-y);
+	&.column {
+		flex-direction: column;
 	}
 
 	& > * {

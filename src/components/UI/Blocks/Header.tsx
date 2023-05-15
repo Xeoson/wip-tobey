@@ -1,20 +1,20 @@
 import { BsArrowLeftShort } from "react-icons/bs";
 import {MdMoreHoriz} from 'react-icons/md'
 import s from "./Header.module.scss";
-import { ReactElement } from "react";
+import { PropsWithChildren, ReactElement } from "react";
 import useOutsideClick from "../../../hooks/useOutsideClick";
 import Popup from "../Popups/Popup";
+import { useNavigate } from "react-router-dom";
 
-interface HeaderProps {
+interface HeaderProps extends PropsWithChildren {
 	title: string,
-	popupContent?: ReactElement,
-	onBack: () => void;
 }
 
-const Header = ({title, popupContent, onBack}: HeaderProps) => {
+const Header = ({title, children}: HeaderProps) => {
+	const navigate = useNavigate()
 
 	const handleBackClick = () => {
-		onBack()
+		navigate(-1)
 	}
 
   return (
@@ -23,9 +23,7 @@ const Header = ({title, popupContent, onBack}: HeaderProps) => {
         <BsArrowLeftShort />
       </button>
       <h3 className={s.title}>{title}</h3>
-      {popupContent && (
-        <Popup buttonContent={<MdMoreHoriz />} buttonClassName={s.popupBtn} content={popupContent} />
-      )}
+			{children}
     </div>
   );
 };

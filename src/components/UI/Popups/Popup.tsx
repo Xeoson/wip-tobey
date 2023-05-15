@@ -1,29 +1,38 @@
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { ReactElement, useState } from "react";
+import DropdownContainer from "../Containers/DropdownContainer";
 import s from "./Popup.module.scss";
 import useOutsideClick from "../../../hooks/useOutsideClick";
-import { BsArrowLeftShort } from "react-icons/bs";
 
 interface PopupProps {
   buttonContent: ReactElement;
-	buttonClassName: string,
+  buttonClassName: string;
   content: ReactElement;
 }
 
-const Popup = ({ buttonContent, buttonClassName, content, ...props }: PopupProps) => {
+const Popup = ({
+  buttonContent,
+  buttonClassName,
+  content,
+  ...props
+}: PopupProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-	const contentRef = useOutsideClick(() => setIsOpen(false));
+  const handleOutsideClick = () => {
+		setIsOpen(false);
+  };
+
+	const containerRef = useOutsideClick(handleOutsideClick);
 
   return (
-    <div className={s.main}>
-      <button className={buttonClassName} onClick={() => setIsOpen(true)}>
+    <div ref={containerRef} className={s.main}>
+      <button
+        className={buttonClassName}
+        disabled={isOpen}
+        onClick={() => setIsOpen(true)}
+      >
         {buttonContent}
       </button>
-      {isOpen && (
-        <div ref={contentRef} className={s.content}>
-          {content}
-        </div>
-      )}
+      {isOpen && <DropdownContainer>{content}</DropdownContainer>}
     </div>
   );
 };

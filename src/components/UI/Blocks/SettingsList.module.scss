@@ -1,0 +1,40 @@
+
+.main {
+	margin: 1rem 0;
+
+	.title {
+		opacity: 0.3;
+		text-transform: uppercase;
+	}
+
+	.item {
+		display: flex;
+		gap: 0 0.3rem;
+		padding: 1rem 0;
+		font-weight: bold;
+
+		border-top: 0.05rem solid var(--clr-other);
+
+		& > * {
+			display: flex;
+			align-items: center;
+			gap: 0 0.5rem;
+			font-weight: bold;
+			width: 100%;
+		}
+
+		& svg {
+			font-size: var(--font-xl);
+		}
+
+		.arrow {
+			opacity: 0.3;
+			font-size: var(--font-md);
+			margin-left: auto;
+		}
+
+		&:first-child {
+			border: none;
+		}
+	}
+}

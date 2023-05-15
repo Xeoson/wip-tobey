@@ -1,16 +1,17 @@
 import { BsArrowLeftShort } from "react-icons/bs";
-import phoneImg from "../../../mocks/phone.webp";
+import products from "../../../mocks/products";
 import ProductCard from "../Cards/ProductCard";
 import SearchInput from "../Inputs/SearchInput";
 import s from "./SearchModal.module.scss";
-import products from "../../../mocks/products";
 
 interface SearchModalProps {
   onClose: () => void;
 }
 
 const SearchModal = ({ onClose, ...props }: SearchModalProps) => {
-  const onSearch = (v: string) => {};
+  const handleSearch = (v: string) => {};
+
+  const handleValueChange = (v: string) => {};
 
   return (
     <div className={s.main}>
@@ -23,18 +24,22 @@ const SearchModal = ({ onClose, ...props }: SearchModalProps) => {
         >
           <BsArrowLeftShort />
         </button>
-        <SearchInput onSearch={onSearch} />
+        <SearchInput
+          placeholder="Search for product"
+          onValueChange={handleValueChange}
+          onSearch={handleSearch}
+        />
       </div>
       <div className={s.searchResultBlock}>
         {products.map((el) => (
           <ProductCard
-						productId={el.id!}
+            productId={el.id!}
             img={el.images[0]}
             title={el.title}
             subtitle={el.description}
             price={`${el.price}$`}
             size="sm"
-						withCart
+            withCart
           />
         ))}
       </div>

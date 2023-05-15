@@ -7,13 +7,11 @@ import Hr from "../../components/UI/Other/Hr";
 import products from "../../mocks/products";
 import s from "./Cart.module.scss";
 
-const infoRows = {};
-
 interface CartProps {}
 
 const Cart = (props: CartProps) => {
   return (
-    <PageLayout>
+    <PageLayout withNavbarOn="tablet">
       <DeliveryAddress />
       <Hr size="full" />
       <div className={s.content}>

@@ -5,13 +5,20 @@ import s from "./SearchInput.module.scss";
 
 type SearchInputProps = Omit<InputProps, "onKeyDown" | "value" | "onChange"> & {
   onSearch: (v: string) => void;
+	onValueChange: (v: string) => void;
 };
 
-const SearchInput = ({ onSearch, ...props }: SearchInputProps) => {
+const SearchInput = ({
+  onSearch,
+  onValueChange,
+  ...props
+}: SearchInputProps) => {
   const [value, setValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
+		const value = e.target.value
+    setValue(value);
+		onValueChange(value)
   };
 
   const handleClick = () => {
@@ -25,7 +32,12 @@ const SearchInput = ({ onSearch, ...props }: SearchInputProps) => {
   };
 
   return (
-    <Input className={s.main} {...props} onKeyDown={handleKeydown} onChange={handleChange}>
+    <Input
+      className={s.main}
+      {...props}
+      onKeyDown={handleKeydown}
+      onChange={handleChange}
+    >
       <button onClick={handleClick}>
         <CiSearch />
       </button>
