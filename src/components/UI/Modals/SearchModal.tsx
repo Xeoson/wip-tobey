@@ -33,11 +33,7 @@ const SearchModal = ({ onClose, ...props }: SearchModalProps) => {
       <div className={s.searchResultBlock}>
         {products.map((el) => (
           <ProductCard
-            productId={el.id!}
-            img={el.images[0]}
-            title={el.title}
-            subtitle={el.description}
-            price={`${el.price}$`}
+            {...el}
             size="sm"
             withCart
           />

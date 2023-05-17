@@ -25,12 +25,8 @@ const ProductCarousel = ({
       <div className={s.itemList}>
         {products.map((el) => (
           <ProductCard
-            img={el.images[0]}
-            price={`${el.price}$`}
-            productId={el.id!}
-            size={size}
-            subtitle={el.description}
-            title={el.title}
+            {...el}
+						size={size}
 						withFavorite={size == 'lg'}
 						withCart={size == 'lg'}
           />

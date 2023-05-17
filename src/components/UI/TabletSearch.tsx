@@ -32,11 +32,7 @@ const Search = ({ ...props }: SearchProps) => {
           <div className={s.productsBlock}>
             {products.slice(0, 6).map((el) => (
               <ProductCard
-                productId={el.id!}
-                img={el.images[0]}
-                title={el.title}
-                subtitle={el.description}
-                price={`${el.price}$`}
+                {...el}
                 size="sm"
                 withCart
               />

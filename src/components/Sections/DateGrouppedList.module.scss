@@ -1,0 +1,20 @@
+
+.main {
+	overflow-y: auto;
+
+	.section {
+		margin: 1rem 0;
+		flex: 0 1;
+		overflow-y: auto;
+	}
+
+	.sectionHeader {
+		margin: 2rem 0 1rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 0.05rem solid var(--clr-other);
+	}
+
+	.sectionList {
+		
+	}
+}

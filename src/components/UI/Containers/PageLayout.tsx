@@ -23,8 +23,8 @@ const PageLayout = ({
       {mobileHeaderTitle && !tabletMatch && (
         <Header title={mobileHeaderTitle} />
       )}
-			{withNavbarOn == 'all' && <Navbar />}
-			{withNavbarOn == 'tablet' && tabletMatch && <Navbar />}
+      {withNavbarOn == "all" && <Navbar />}
+      {withNavbarOn == "tablet" && tabletMatch && <Navbar />}
       {children}
     </div>
   );

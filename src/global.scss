@@ -46,6 +46,7 @@ a {
 	display: flex;
 	align-items: center;
 	text-decoration: none;
+	color: inherit
 }
 
 hr {
@@ -90,13 +91,6 @@ ul {list-style: none; padding: 0; margin: 0;}
 	--clr-other: #bec4cd;
 	--clr-bg: #ffffff;
 }
-
-// @media(min-width: 768px) {
-// 	:root {
-// 		--g-padding-y: 1rem;
-// 		--g-padding-x: 4rem;
-// 	}
-// }
 
 
 @font-face {

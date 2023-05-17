@@ -9,5 +9,5 @@ export interface DPButton extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLBut
 export interface IProfileSettingItem {
   icon: ReactElement<IconType>;
   title: string;
-	id: string
+	url: string
 }

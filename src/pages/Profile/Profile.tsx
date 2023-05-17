@@ -1,22 +1,25 @@
+import { Outlet } from "react-router-dom";
 import { profileSettings } from "../../common/const";
-import SettingsList from "../../components/UI/Blocks/SettingsList";
+import LinksBlock from "../../components/UI/Blocks/LinksBlock";
 import User from "../../components/UI/Cards/User";
 import PageLayout from "../../components/UI/Containers/PageLayout";
 import { userMock } from "../../mocks/user";
-import s from './Profile.module.scss'
+import s from "./Profile.module.scss";
 
 interface ProfileProps {}
 
 const Profile = (props: ProfileProps) => {
   return (
-    <PageLayout withNavbarOn="tablet" mobileHeaderTitle="Profile">
+    <PageLayout withNavbarOn="tablet">
       <div className={s.main}>
-        <User user={userMock} />
-        <SettingsList
-          onItemClick={() => {}}
-          items={profileSettings}
-          title="Account"
-        />
+        <div className={s.sideSection}>
+          <User user={userMock} />
+          <LinksBlock items={profileSettings} title="Account" />
+        </div>
+        <div className={s.section}>
+          <Outlet />
+        </div>
+        {/* <Outlet /> */}
       </div>
     </PageLayout>
   );

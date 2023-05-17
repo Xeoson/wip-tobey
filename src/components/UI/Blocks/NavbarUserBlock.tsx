@@ -12,14 +12,14 @@ const NavbarUserBlock = (props: NavbarUserBlockProps) => {
 
   return (
     <div className={s.main}>
-      <button>
+      <Link to={browserRoutes.favorites}>
         <MdOutlineFavoriteBorder />
         <span>Favorites</span>
-      </button>
-      <button>
+      </Link>
+      <Link to={browserRoutes.cart}>
         <MdOutlineShoppingCart />
         <span>Cart</span>
-      </button>
+      </Link>
       <Link to={browserRoutes.userProfile}>
         <User size="sm" user={{ avatar: userMock.avatar }} />
       </Link>

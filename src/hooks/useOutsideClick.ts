@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default <T extends HTMLElement>(callback: () => void) => {
+export default (callback: () => void) => {
   const contentRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const handleClick = (e: any) => {

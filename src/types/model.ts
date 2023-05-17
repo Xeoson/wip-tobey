@@ -5,7 +5,7 @@ export interface IVariant {
 }
 
 export interface IProduct {
-	id?: string,
+	id: string,
 	title: string,
 	description: string,
 	price: number,
@@ -26,4 +26,19 @@ export interface IUser {
 	avatar?: string,
 	email: string,
 	phone: string,
+}
+
+export interface IUserOrderPopulated {
+	id: string,
+	createdAt: number,
+	productId: string,
+	product: IProduct,
+	isCompleted: boolean
+}
+export interface IUserOrder {
+	id: string,
+	createdAt: number,
+	productIds: string[],
+	status: 'created' | 'delivery' | 'canceled' | 'finished',
+	totalPrice: number
 }

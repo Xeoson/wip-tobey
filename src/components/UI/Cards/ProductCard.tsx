@@ -3,25 +3,21 @@ import AddToCartButton from "../Buttons/AddToCartButton";
 import AddToFavoriteButton from "../Buttons/AddToFavoriteButton";
 import s from "./ProductCard.module.scss";
 import browserRoutes from "../../../common/browserRoutes";
+import { IProduct } from "../../../types/model";
 
-interface ProductCardProps {
-  size: "sm" | "md" | "lg" | 'cart';
-  img: string;
-  title: string;
-  subtitle: string;
-  price: string;
-  productId: string;
+interface ProductCardProps extends IProduct {
+  size?: "sm" | "md" | "lg" | 'cart';
 	withCart?: boolean
 	withFavorite?: boolean
 }
 
 const ProductCard = ({
-  size,
-  img,
-  subtitle,
+  size = 'md',
+  images,
+	description,
   title,
   price,
-  productId,
+  id,
 	withCart = false,
 	withFavorite = false
 }: ProductCardProps) => {
@@ -29,25 +25,25 @@ const ProductCard = ({
 	const navigate = useNavigate()
 
 	const handleClick = (e: React.PointerEvent<HTMLDivElement>) => {
-		navigate(browserRoutes.product(productId))
+		navigate(browserRoutes.product(id))
 	}
 
   return (
     <div onClick={handleClick} className={`${s.main} ${s[size]}`}>
       <div className={s.imgBlock}>
-        <img src={img} alt="product_img" className={s.image} />
+        <img src={images[0]} alt="product_img" className={s.image} />
       </div>
       <div className={s.title}>{title}</div>
-      <div className={s.subtitle}>{subtitle}</div>
+      <div className={s.subtitle}>{description}</div>
       <div className={s.price}>{price}</div>
       {withCart && (
         <AddToCartButton
           className={s.cartBtn}
           rotation={size == "sm" ? "vertical" : "horizontal"}
-          productId={productId}
+          productId={id}
         />
       )}
-      {withFavorite && <AddToFavoriteButton className={s.favorite} productId={productId} />}
+      {withFavorite && <AddToFavoriteButton className={s.favorite} productId={id} />}
     </div>
   );
 };

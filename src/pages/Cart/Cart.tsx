@@ -18,12 +18,8 @@ const Cart = (props: CartProps) => {
         <div className={s.products}>
           {products.map((el) => (
             <ProductCard
-              img={el.images[0]}
-              price={`${el.price}$`}
-              productId={el.id!}
-              size="cart"
-              subtitle={el.description}
-              title={el.title}
+              {...el}
+							size="cart"
               withCart
               withFavorite
             />
