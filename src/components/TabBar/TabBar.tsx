@@ -1,40 +1,45 @@
-import { IconType } from "react-icons";
+import { type IconType } from 'react-icons'
 import {
   HiOutlineHome,
-  HiOutlineUser,
   HiOutlineShoppingCart,
-} from "react-icons/hi";
-import { Link, useLocation } from "react-router-dom";
-import browserRoutes from "../../common/browserRoutes";
-import s from "./TabBar.module.scss";
-import Popup from "../UI/Popups/Popup";
+  HiOutlineUser,
+} from 'react-icons/hi'
+import { Link, useLocation } from 'react-router-dom'
+import browserRoutes from '../../common/browserRoutes'
+import cn from '../../helpers/classNames'
+import s from './TabBar.module.scss'
 
 interface IVariant {
-  title: string;
-  icon: IconType;
-  path: string;
+  title: string
+  icon: IconType
+  path: string
 }
 
 const variants: IVariant[] = [
-  { title: "Home", icon: HiOutlineHome, path: browserRoutes.home },
-  { title: "Profile", icon: HiOutlineUser, path: browserRoutes.profile("") },
+  { title: 'Home', icon: HiOutlineHome, path: browserRoutes.home },
+  { title: 'Profile', icon: HiOutlineUser, path: browserRoutes.profile('') },
   {
-    title: "Cart",
+    title: 'Cart',
     icon: HiOutlineShoppingCart,
     path: browserRoutes.cart,
   },
-];
+]
+
+const cln = cn(s.main, { [s.item]: false })
+
+console.log('cln', cln)
 
 interface TabBarProps {}
 
 const TabBar = (props: TabBarProps) => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
   return (
     <nav className={s.main}>
       {variants.map((el) => (
         <Link
-          className={`${s.item} ${pathname == el.path ? s.active : ""}`}
+          key={el.path}
+          className={`${s.item} ${pathname === el.path ? s.active : ''}`}
           to={el.path}
         >
           <el.icon />
@@ -42,7 +47,7 @@ const TabBar = (props: TabBarProps) => {
         </Link>
       ))}
     </nav>
-  );
-};
+  )
+}
 
-export default TabBar;
+export default TabBar

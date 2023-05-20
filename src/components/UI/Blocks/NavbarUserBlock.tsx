@@ -1,30 +1,31 @@
-import { MdOutlineFavoriteBorder, MdOutlineShoppingCart, MdSettings } from "react-icons/md";
-import { userMock } from "../../../mocks/user";
-import User from "../Cards/User";
-import s from "./NavbarUserBlock.module.scss";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import browserRoutes from "../../../common/browserRoutes";
+import { MdOutlineFavoriteBorder, MdOutlineShoppingCart } from 'react-icons/md'
+import browserRoutes from '../../../common/browserRoutes'
+import { userMock } from '../../../mocks/user'
+import LinkButton from '../Buttons/LinkButton'
+import User from '../Cards/User'
+import s from './NavbarUserBlock.module.scss'
 
 interface NavbarUserBlockProps {}
 
 const NavbarUserBlock = (props: NavbarUserBlockProps) => {
-
   return (
     <div className={s.main}>
-      <Link to={browserRoutes.favorites}>
-        <MdOutlineFavoriteBorder />
-        <span>Favorites</span>
-      </Link>
-      <Link to={browserRoutes.cart}>
-        <MdOutlineShoppingCart />
-        <span>Cart</span>
-      </Link>
-      <Link to={browserRoutes.userProfile}>
-        <User size="sm" user={{ avatar: userMock.avatar }} />
-      </Link>
+      <LinkButton
+        to={browserRoutes.favorites}
+        text={'Favorites'}
+        icon={<MdOutlineFavoriteBorder />}
+      />
+      <LinkButton
+        to={browserRoutes.cart}
+        text={'Cart'}
+        icon={<MdOutlineShoppingCart />}
+      />
+      <LinkButton
+        to={browserRoutes.userProfile}
+        icon={<User size="sm" user={{ avatar: userMock.avatar }} />}
+      />
     </div>
-  );
-};
+  )
+}
 
-export default NavbarUserBlock;
+export default NavbarUserBlock

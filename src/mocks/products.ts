@@ -1,4 +1,4 @@
-import { IProduct } from "../types/model";
+import { type IProduct } from "../types/model"
 import phoneImg from './phone.webp'
 
 const product: IProduct = {
@@ -8,7 +8,7 @@ const product: IProduct = {
   price: 200,
   rating: 4.8,
   title: "Apple iPhone 14 Pro Max",
-  images: [phoneImg, phoneImg, phoneImg, phoneImg, phoneImg],
-};
+  images: [phoneImg, phoneImg, phoneImg, phoneImg, phoneImg]
+}
 
 export default new Array(10).fill(product) as IProduct[]

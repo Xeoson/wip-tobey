@@ -1,8 +1,8 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { type PayloadAction, createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  searchTerm: "",
-};
+  searchTerm: ""
+}
 
 export const { actions: homeActions, reducer: homeReducer } = createSlice({
   name: "navbar",
@@ -10,7 +10,7 @@ export const { actions: homeActions, reducer: homeReducer } = createSlice({
   reducers: {
     set: (state, { payload }: PayloadAction<Partial<typeof initialState>>) => ({
       ...state,
-      ...payload,
-    }),
-  },
-});
+      ...payload
+    })
+  }
+})

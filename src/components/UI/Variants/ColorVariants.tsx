@@ -1,11 +1,10 @@
-import { useState } from "react";
-import { DP } from "../../../types";
-import { IVariant } from "../../../types/model";
-import s from "./ColorVariants.module.scss";
+import { useState } from 'react'
+import { type DP } from '../../../types'
+import s from './ColorVariants.module.scss'
 
-interface ColorVariantsProps extends Pick<DP, "className"> {
-  variants: string[];
-  onSetVariant: (varIdx: number) => void;
+interface ColorVariantsProps extends Pick<DP, 'className'> {
+  variants: string[]
+  onSetVariant: (varIdx: number) => void
 }
 
 const ColorVariants = ({
@@ -13,25 +12,26 @@ const ColorVariants = ({
   onSetVariant,
   className,
 }: ColorVariantsProps) => {
-  const [selectedIdx, setSelectedIdx] = useState(0);
+  const [selectedIdx, setSelectedIdx] = useState(0)
 
   const handleClick = (variantIdx: number) => () => {
-    setSelectedIdx(variantIdx);
-    onSetVariant(variantIdx);
-  };
+    setSelectedIdx(variantIdx)
+    onSetVariant(variantIdx)
+  }
 
   return (
-    <div className={`${s.main} ${className ?? ""}`}>
+    <div className={`${s.main} ${className ?? ''}`}>
       {variants.map((el, i) => (
         <button
-          className={`${s.item} ${i == selectedIdx ? s.selected : ""}`}
+          key={el}
+          className={`${s.item} ${i === selectedIdx ? s.selected : ''}`}
           onClick={handleClick(i)}
         >
-          <span style={{backgroundColor: el}} ></span>
+          <span style={{ backgroundColor: el }}></span>
         </button>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default ColorVariants;
+export default ColorVariants

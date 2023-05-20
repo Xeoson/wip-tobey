@@ -1,19 +1,19 @@
-import { IProduct } from "../../../types/model";
-import ProductCard from "../Cards/ProductCard";
-import s from "./ProductCarousel.module.scss";
+import { type IProduct } from '../../../types/model'
+import ProductCard from '../Cards/ProductCard'
+import s from './ProductCarousel.module.scss'
 
 interface ProductCarouselProps {
-  title: string;
-  subtitle?: string;
-  products: IProduct[];
-  size: "md" | "lg";
+  title: string
+  subtitle?: string
+  products: IProduct[]
+  size: 'md' | 'lg'
 }
 
 const ProductCarousel = ({
   title,
-  subtitle = "See all",
-	products,
-	size,
+  subtitle = 'See all',
+  products,
+  size,
   ...props
 }: ProductCarouselProps) => {
   return (
@@ -25,15 +25,16 @@ const ProductCarousel = ({
       <div className={s.itemList}>
         {products.map((el) => (
           <ProductCard
+            key={el.id}
             {...el}
-						size={size}
-						withFavorite={size == 'lg'}
-						withCart={size == 'lg'}
+            size={size}
+            withFavorite={size === 'lg'}
+            withCart={size === 'lg'}
           />
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductCarousel;
+export default ProductCarousel

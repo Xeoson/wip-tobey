@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
-import Carousel from "./Carousel";
-import s from "./ScrollableImageCarousel.module.scss";
+import React, { useRef } from 'react'
+
+import Carousel from './Carousel'
 
 interface ScrollableImageCarouselProps {
-  images: string[];
-  currentIdx: number;
-  onPrev: () => void;
-  onNext: () => void;
+  images: string[]
+  currentIdx: number
+  onPrev: () => void
+  onNext: () => void
 }
 
 const ScrollableImageCarousel = ({
@@ -15,28 +15,28 @@ const ScrollableImageCarousel = ({
   onNext,
   onPrev,
 }: ScrollableImageCarouselProps) => {
-  const pointerDownPositionRef = useRef<number | null>(null);
+  const pointerDownPositionRef = useRef<number | null>(null)
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    pointerDownPositionRef.current = e.clientX;
-  };
+    pointerDownPositionRef.current = e.clientX
+  }
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!pointerDownPositionRef.current) return;
+    if (!pointerDownPositionRef.current) return
 
-    const diff = pointerDownPositionRef.current - e.clientX;
+    const diff = pointerDownPositionRef.current - e.clientX
 
     if (diff < -10) {
-      onPrev();
-      pointerDownReset();
+      onPrev()
+      pointerDownReset()
     } else if (diff > 10) {
-      onNext();
-      pointerDownReset();
+      onNext()
+      pointerDownReset()
     }
-  };
+  }
 
   const pointerDownReset = () => {
-    pointerDownPositionRef.current = null;
-  };
+    pointerDownPositionRef.current = null
+  }
 
   return (
     <Carousel
@@ -47,7 +47,7 @@ const ScrollableImageCarousel = ({
       onPointerUp={pointerDownReset}
       onPointerOut={pointerDownReset}
     />
-  );
-};
+  )
+}
 
-export default ScrollableImageCarousel;
+export default ScrollableImageCarousel

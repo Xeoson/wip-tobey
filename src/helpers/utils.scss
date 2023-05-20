@@ -1,13 +1,13 @@
 
 
 @mixin media-tablet-min {
-	@media(min-width: 768px) {
+	@media(width >= 768px) {
 		@content
 	}
 };
 
 @mixin media-mobile {
-	@media(max-width: 767px) {
+	@media(width <= 767px) {
 		@content
 	}
 }

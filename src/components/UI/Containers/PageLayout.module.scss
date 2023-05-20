@@ -1,16 +1,6 @@
 
 .main {
-	display: flex;
-	overflow: hidden;
-	flex: 1;
-	overflow-y: auto;
-
-	&.column {
-		flex-direction: column;
-	}
-
 	& > * {
-		padding: 0 var(--g-padding-x);
-		margin-bottom: var(--g-padding-y);
+		padding: var(--g-padding-y) var(--g-padding-x);
 	}
 }

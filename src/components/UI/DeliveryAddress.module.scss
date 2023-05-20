@@ -3,13 +3,17 @@
 	height: 2.5rem;
 	display: flex;
 	justify-content: space-between;
-	margin-top: var(--g-padding-y);
+	border-bottom: 0.05rem solid var(--clr-other);
+	position: sticky;
+	top: 0;
+	background-color: white;
 
 	.info {
 		height: 100%;
 		display: flex;
 		gap: 0 0.5rem;
 		align-items: center;
+
 		img {
 			width: auto;
 		}

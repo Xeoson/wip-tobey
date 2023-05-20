@@ -1,10 +1,10 @@
-import React from "react";
-import { MdFavorite } from "react-icons/md";
-import { DP } from "../../../types";
-import s from "./AddToFavoriteButton.module.scss";
+import React from "react"
+import { MdFavorite } from "react-icons/md"
+import { type DP } from "../../../types"
+import s from "./AddToFavoriteButton.module.scss"
 
 interface AddToFavoriteButtonProps extends Pick<DP, "className"> {
-  productId: string;
+  productId: string
 }
 
 const AddToFavoriteButton = ({
@@ -12,16 +12,15 @@ const AddToFavoriteButton = ({
   className,
   ...props
 }: AddToFavoriteButtonProps) => {
-	
   const onAddFavorite = (e: React.PointerEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-  };
+    e.stopPropagation()
+  }
 
   return (
     <button onClick={onAddFavorite} className={`${s.main} ${className ?? ""}`}>
       <MdFavorite />
     </button>
-  );
-};
+  )
+}
 
-export default AddToFavoriteButton;
+export default AddToFavoriteButton

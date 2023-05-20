@@ -1,6 +1,6 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { type PayloadAction, createSlice } from "@reduxjs/toolkit"
 
-const initialState = {};
+const initialState = {}
 
 export const { actions: productActions, reducer: productReducer } = createSlice(
   {
@@ -12,8 +12,8 @@ export const { actions: productActions, reducer: productReducer } = createSlice(
         { payload }: PayloadAction<Partial<typeof initialState>>
       ) => ({
         ...state,
-        ...payload,
-      }),
-    },
+        ...payload
+      })
+    }
   }
-);
+)

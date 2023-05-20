@@ -1,32 +1,31 @@
-import { useState } from "react";
-import CarouselPagination from "../Blocks/CarouselPagination";
-import s from "./BannerCarousel.module.scss";
-import Carousel from "./Carousel";
-import { BsArrowLeftShort } from "react-icons/bs";
-import { AiOutlineRight } from "react-icons/ai";
+import { useState } from 'react'
+import { AiOutlineRight } from 'react-icons/ai'
+import CarouselPagination from '../Blocks/CarouselPagination'
+import s from './BannerCarousel.module.scss'
+import Carousel from './Carousel'
 
 interface BannerCarouselProps {
-  images: string[];
+  images: string[]
 }
 
 const BannerCarousel = ({ images }: BannerCarouselProps) => {
-  const [idx, setIdx] = useState(0);
+  const [idx, setIdx] = useState(0)
 
   const onPrev = () => {
     if (idx > 0) {
-      setIdx((prev) => prev - 1);
+      setIdx((prev) => prev - 1)
     } else {
-			setIdx(images.length - 1)
-		}
-  };
+      setIdx(images.length - 1)
+    }
+  }
 
   const onNext = () => {
     if (idx >= images.length - 1) {
-			setIdx(0)
-		} else {
-			setIdx((prev) => prev + 1);
-		}
-  };
+      setIdx(0)
+    } else {
+      setIdx((prev) => prev + 1)
+    }
+  }
 
   return (
     <div className={s.main}>
@@ -41,10 +40,12 @@ const BannerCarousel = ({ images }: BannerCarouselProps) => {
       <CarouselPagination
         currentIdx={idx}
         itemsCount={images.length}
-        onSetCurrentIdx={(i) => setIdx(i)}
+        onSetCurrentIdx={(i) => {
+          setIdx(i)
+        }}
       />
     </div>
-  );
-};
+  )
+}
 
-export default BannerCarousel;
+export default BannerCarousel

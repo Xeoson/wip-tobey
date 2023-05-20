@@ -1,17 +1,5 @@
 .main {
-	display: flex;
+	display: inline-block;
 	gap: 0 1rem;
-	align-items: center;
 	margin-left: auto;
-
-	a {
-		display: flex;
-		font-size: var(--font-lg);
-		gap: 0 0.5rem;
-		padding: 0.5rem;
-
-		svg {
-			font-size: 1.3em;
-		}
-	}
 }

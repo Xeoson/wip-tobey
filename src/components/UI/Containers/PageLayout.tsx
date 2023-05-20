@@ -1,33 +1,38 @@
-import { PropsWithChildren } from "react";
-import { useMatchTablet } from "../../../main";
-import Header from "../Blocks/Header";
-import s from "./PageLayout.module.scss";
-import Navbar from "../../Navbar/Navbar";
+import { type PropsWithChildren, Suspense, lazy } from "react"
+import { useMatchTablet } from "../../../main"
+import Header from "../Blocks/Header"
+import s from "./PageLayout.module.scss"
+import Navbar from "../../Navbar/Navbar"
 
 interface PageLayoutProps extends PropsWithChildren {
-  rotation?: "row" | "column";
-  mobileHeaderTitle?: string;
-	withNavbarOn?: 'all' | 'tablet'
+  mobileHeaderTitle?: string
+  withNavbarOn?: 'all' | 'tablet'
 }
+
+const TabBar = lazy(async () => await import('../../TabBar/TabBar'))
 
 const PageLayout = ({
   children,
-  rotation = "column",
   mobileHeaderTitle,
-	withNavbarOn
+  withNavbarOn
 }: PageLayoutProps) => {
-  const tabletMatch = useMatchTablet();
+  const tabletMatch = useMatchTablet()
 
   return (
-    <div className={`${s.main} ${s[rotation]}`}>
+    <div className={s.main}>
       {mobileHeaderTitle && !tabletMatch && (
         <Header title={mobileHeaderTitle} />
       )}
-      {withNavbarOn == "all" && <Navbar />}
-      {withNavbarOn == "tablet" && tabletMatch && <Navbar />}
+      {withNavbarOn === "all" && <Navbar />}
+      {withNavbarOn === "tablet" && tabletMatch && <Navbar />}
       {children}
+      {!tabletMatch && (
+        <Suspense fallback={null}>
+          <TabBar />
+        </Suspense>
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default PageLayout;
+export default PageLayout

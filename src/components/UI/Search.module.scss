@@ -1,0 +1,18 @@
+
+.main {
+	justify-content: center;
+	display: inline-flex;
+	position: relative;
+	flex: 1;
+
+	label {
+		width: 100%;
+	}
+
+	.dropdown {
+		padding: 2rem;
+		border-radius: var(--round-md);
+		height: 70vh;
+		width: 150%;
+	}
+}

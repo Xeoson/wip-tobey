@@ -1,32 +1,31 @@
-import { useNavigate } from "react-router-dom";
-import AddToCartButton from "../Buttons/AddToCartButton";
-import AddToFavoriteButton from "../Buttons/AddToFavoriteButton";
-import s from "./ProductCard.module.scss";
-import browserRoutes from "../../../common/browserRoutes";
-import { IProduct } from "../../../types/model";
+import { useNavigate } from 'react-router-dom'
+import browserRoutes from '../../../common/browserRoutes'
+import { type IProduct } from '../../../types/model'
+import AddToCartButton from '../Buttons/AddToCartButton'
+import AddToFavoriteButton from '../Buttons/AddToFavoriteButton'
+import s from './ProductCard.module.scss'
 
-interface ProductCardProps extends IProduct {
-  size?: "sm" | "md" | "lg" | 'cart';
-	withCart?: boolean
-	withFavorite?: boolean
+export interface ProductCardProps {
+  size?: 'sm' | 'md' | 'lg' | 'cart'
+  withCart?: boolean
+  withFavorite?: boolean
 }
 
 const ProductCard = ({
   size = 'md',
   images,
-	description,
+  description,
   title,
   price,
   id,
-	withCart = false,
-	withFavorite = false
-}: ProductCardProps) => {
+  withCart = false,
+  withFavorite = false,
+}: ProductCardProps & IProduct) => {
+  const navigate = useNavigate()
 
-	const navigate = useNavigate()
-
-	const handleClick = (e: React.PointerEvent<HTMLDivElement>) => {
-		navigate(browserRoutes.product(id))
-	}
+  const handleClick = (e: React.PointerEvent<HTMLDivElement>) => {
+    navigate(browserRoutes.product(id))
+  }
 
   return (
     <div onClick={handleClick} className={`${s.main} ${s[size]}`}>
@@ -35,17 +34,19 @@ const ProductCard = ({
       </div>
       <div className={s.title}>{title}</div>
       <div className={s.subtitle}>{description}</div>
-      <div className={s.price}>{price}</div>
+      <div className={s.price}>{price}$</div>
       {withCart && (
         <AddToCartButton
           className={s.cartBtn}
-          rotation={size == "sm" ? "vertical" : "horizontal"}
+          rotation={size === 'sm' ? 'vertical' : 'horizontal'}
           productId={id}
         />
       )}
-      {withFavorite && <AddToFavoriteButton className={s.favorite} productId={id} />}
+      {withFavorite && (
+        <AddToFavoriteButton className={s.favorite} productId={id} />
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard

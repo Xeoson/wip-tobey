@@ -1,8 +1,8 @@
-import { BsArrowLeftShort } from "react-icons/bs";
-import avatar from "../../assets/avatar.png";
-import s from "./DeliveryAddress.module.scss";
-import Input from "./Inputs/Input";
-import Popup from "./Popups/Popup";
+import { BsArrowLeftShort } from "react-icons/bs"
+import avatar from "../../assets/avatar.png"
+import s from "./DeliveryAddress.module.scss"
+import Input from "./Inputs/Input"
+import Popup from "./Popups/Popup"
 
 interface DeliveryAddressProps {}
 
@@ -24,7 +24,7 @@ const DeliveryAddress = (props: DeliveryAddressProps) => {
         content={<Input />}
       />
     </div>
-  );
-};
+  )
+}
 
-export default DeliveryAddress;
+export default DeliveryAddress

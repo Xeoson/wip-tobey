@@ -1,12 +1,11 @@
-import { PropsWithChildren } from "react";
-import { defaultAvatarUrl } from "../../../common/const";
-import { IUser } from "../../../types/model";
-import s from "./User.module.scss";
-import { DP } from "../../../types";
+import { defaultAvatarUrl } from '../../../common/const'
+import { type DP } from '../../../types'
+import { type IUser } from '../../../types/model'
+import s from './User.module.scss'
 
-interface UserProps extends Pick<DP,  'children'> {
-  user: Partial<IUser>;
-	size?: 'sm' | 'md';
+interface UserProps extends Pick<DP, 'children'> {
+  user: Partial<IUser>
+  size?: 'sm' | 'md'
 }
 
 const User = ({ user, size = 'md', children, ...props }: UserProps) => {
@@ -26,7 +25,7 @@ const User = ({ user, size = 'md', children, ...props }: UserProps) => {
       )}
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default User;
+export default User

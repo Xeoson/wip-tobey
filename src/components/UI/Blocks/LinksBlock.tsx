@@ -1,11 +1,11 @@
-import { AiOutlineRight } from "react-icons/ai";
-import { Link } from "react-router-dom";
-import { IProfileSettingItem } from "../../../types";
-import s from "./LinksBlock.module.scss";
+import { AiOutlineRight } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
+import { type IProfileSettingItem } from '../../../types'
+import s from './LinksBlock.module.scss'
 
 interface LinksBlockProps {
-  title: string;
-  items: IProfileSettingItem[];
+  title: string
+  items: IProfileSettingItem[]
 }
 
 const LinksBlock = ({ items, title }: LinksBlockProps) => {
@@ -14,7 +14,7 @@ const LinksBlock = ({ items, title }: LinksBlockProps) => {
       <h4 className={s.title}>{title}</h4>
       <ul className={s.list}>
         {items.map((el) => (
-          <li className={s.item}>
+          <li key={el.url} className={s.item}>
             <Link to={el.url}>
               {el.icon}
               <span>{el.title}</span>
@@ -24,7 +24,7 @@ const LinksBlock = ({ items, title }: LinksBlockProps) => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default LinksBlock;
+export default LinksBlock

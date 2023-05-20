@@ -1,7 +1,6 @@
 
-class DB {
+// class DB {
 
+// }
 
-}
-
-export default new DB()
+// export default new DB()

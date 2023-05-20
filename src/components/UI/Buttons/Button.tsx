@@ -1,12 +1,12 @@
-import { ReactElement } from "react";
-import { IconType } from "react-icons";
-import { DPButton } from "../../../types";
-import s from "./Button.module.scss";
+import { type ReactElement } from "react"
+import { type IconType } from "react-icons"
+import { type DPButton } from "../../../types"
+import s from "./Button.module.scss"
 
 interface ButtonProps extends DPButton {
-  icon?: ReactElement<IconType>;
-  color?: "secondary";
-  size?: "sm" | "md" | "lg";
+  icon?: ReactElement<IconType>
+  color?: "secondary"
+  size?: "sm" | "md" | "lg"
 }
 
 const Button = ({
@@ -27,7 +27,7 @@ const Button = ({
       {icon}
       <span>{children}</span>
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

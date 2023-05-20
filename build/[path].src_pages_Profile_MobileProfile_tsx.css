@@ -1,0 +1,37 @@
+/*!************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/UI/Blocks/LinksBlock.module.scss ***!
+  \************************************************************************************************************************************************************************************/
+.D2l6rGdpe1SWaINGMhuX {
+  margin: 1rem 0;
+}
+.D2l6rGdpe1SWaINGMhuX .DPkcMfTKbleAzO8zC6aU {
+  opacity: 0.3;
+  text-transform: uppercase;
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx {
+  display: flex;
+  gap: 0 0.3rem;
+  padding: 1rem 0;
+  font-weight: bold;
+  border-top: 0.05rem solid var(--clr-other);
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx > * {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5rem;
+  font-weight: bold;
+  width: 100%;
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx svg {
+  font-size: var(--font-xl);
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx .W2e77h0_gkpMr4MPBvJQ {
+  opacity: 0.3;
+  font-size: var(--font-md);
+  margin-left: auto;
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx:first-child {
+  border: none;
+}
+
+/*# sourceMappingURL=[path].src_pages_Profile_MobileProfile_tsx.css.map*/

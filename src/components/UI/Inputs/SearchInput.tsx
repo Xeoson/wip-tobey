@@ -1,48 +1,44 @@
-import React, { useState } from "react";
-import { CiSearch } from "react-icons/ci";
-import Input, { InputProps } from "./Input";
-import s from "./SearchInput.module.scss";
+import React, { useState } from 'react'
 
-type SearchInputProps = Omit<InputProps, "onKeyDown" | "value" | "onChange"> & {
-  onSearch: (v: string) => void;
-	onValueChange: (v: string) => void;
-};
+import { CiSearch } from 'react-icons/ci'
+import IconButton from '../Buttons/IconButton'
+import Input, { type InputProps } from './Input'
+
+type SearchInputProps = Omit<InputProps, 'onKeyDown' | 'value' | 'onChange'> & {
+  onSearch: (v: string) => void
+  onValueChange: (v: string) => void
+}
 
 const SearchInput = ({
   onSearch,
   onValueChange,
   ...props
 }: SearchInputProps) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const value = e.target.value
-    setValue(value);
-		onValueChange(value)
-  };
+    const value = e.target.value
+    setValue(value)
+    onValueChange(value)
+  }
 
   const handleClick = () => {
-    onSearch(value);
-  };
+    onSearch(value)
+  }
 
   const handleKeydown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.code == "Enter" && value.length) {
-      onSearch(value);
+    if (e.code === 'Enter' && value.length) {
+      onSearch(value)
     }
-  };
+  }
 
   return (
-    <Input
-      className={s.main}
-      {...props}
-      onKeyDown={handleKeydown}
-      onChange={handleChange}
-    >
-      <button onClick={handleClick}>
+    <Input {...props} onKeyDown={handleKeydown} onChange={handleChange}>
+      <IconButton onClick={handleClick}>
         <CiSearch />
-      </button>
+      </IconButton>
     </Input>
-  );
-};
+  )
+}
 
-export default SearchInput;
+export default SearchInput

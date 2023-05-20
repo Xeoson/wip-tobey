@@ -1,11 +1,9 @@
-import CartPaymentInfo from "../../components/UI/Blocks/CartPaymentInfo";
-import ProductCard from "../../components/UI/Cards/ProductCard";
-import PageLayout from "../../components/UI/Containers/PageLayout";
-import DeliveryAddress from "../../components/UI/DeliveryAddress";
-import CouponInput from "../../components/UI/Inputs/CouponInput";
-import Hr from "../../components/UI/Other/Hr";
-import products from "../../mocks/products";
-import s from "./Cart.module.scss";
+import CartPaymentInfo from '../../components/UI/Blocks/CartPaymentInfo'
+import ProductList from '../../components/UI/Blocks/ProductList'
+import PageLayout from '../../components/UI/Containers/PageLayout'
+import DeliveryAddress from '../../components/UI/DeliveryAddress'
+import CouponInput from '../../components/UI/Inputs/CouponInput'
+import products from '../../mocks/products'
 
 interface CartProps {}
 
@@ -13,23 +11,11 @@ const Cart = (props: CartProps) => {
   return (
     <PageLayout withNavbarOn="tablet">
       <DeliveryAddress />
-      <Hr size="full" />
-      <div className={s.content}>
-        <div className={s.products}>
-          {products.map((el) => (
-            <ProductCard
-              {...el}
-							size="cart"
-              withCart
-              withFavorite
-            />
-          ))}
-        </div>
-        <CouponInput />
-        <CartPaymentInfo />
-      </div>
+      <ProductList products={products} size="cart" withCart withFavorite />
+      <CouponInput />
+      <CartPaymentInfo />
     </PageLayout>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

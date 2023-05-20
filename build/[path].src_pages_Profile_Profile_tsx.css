@@ -1,0 +1,61 @@
+/*!************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/UI/Blocks/LinksBlock.module.scss ***!
+  \************************************************************************************************************************************************************************************/
+.D2l6rGdpe1SWaINGMhuX {
+  margin: 1rem 0;
+}
+.D2l6rGdpe1SWaINGMhuX .DPkcMfTKbleAzO8zC6aU {
+  opacity: 0.3;
+  text-transform: uppercase;
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx {
+  display: flex;
+  gap: 0 0.3rem;
+  padding: 1rem 0;
+  font-weight: bold;
+  border-top: 0.05rem solid var(--clr-other);
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx > * {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5rem;
+  font-weight: bold;
+  width: 100%;
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx svg {
+  font-size: var(--font-xl);
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx .W2e77h0_gkpMr4MPBvJQ {
+  opacity: 0.3;
+  font-size: var(--font-md);
+  margin-left: auto;
+}
+.D2l6rGdpe1SWaINGMhuX .EpK3H5ECHi_vLhHz2eVx:first-child {
+  border: none;
+}
+/*!**************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/Profile/Profile.module.scss ***!
+  \**************************************************************************************************************************************************************************/
+.ujT8dBLxAymVktJVVMvc {
+  margin: 3rem 0;
+  display: flex;
+  gap: 0 2rem;
+  overflow: hidden;
+}
+.ujT8dBLxAymVktJVVMvc .I8PkyAx6HidFHhmlUO6g {
+  flex: 0 0 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: 2rem;
+  border-right: 1px solid var(--clr-other);
+}
+.ujT8dBLxAymVktJVVMvc .ME6VUS5C0AegL4hxdiBm {
+  overflow-y: auto;
+  flex: 1;
+}
+.ujT8dBLxAymVktJVVMvc .ME6VUS5C0AegL4hxdiBm > * {
+  width: 75%;
+}
+
+/*# sourceMappingURL=[path].src_pages_Profile_Profile_tsx.css.map*/

@@ -1,0 +1,156 @@
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/UI/Carousels/CategoriesCarousel.module.scss ***!
+  \***********************************************************************************************************************************************************************************************/
+.kgz7O9wef7aiUFIrYD6y {
+  display: flex;
+  gap: 0 0.3rem;
+  overflow-x: auto;
+  height: 100%;
+}
+.kgz7O9wef7aiUFIrYD6y::-webkit-scrollbar {
+  display: none;
+}
+.kgz7O9wef7aiUFIrYD6y .vNpZ0FfJPJupZ2Ce0ONm {
+  font-size: var(--font-lg);
+  padding: 0.5rem 0.7rem;
+  border: 0.05rem solid var(--clr-other);
+  border-radius: var(--round-sm);
+  display: flex;
+  align-items: center;
+  gap: 0 0.2rem;
+}
+.kgz7O9wef7aiUFIrYD6y img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sections/Categories.module.scss ***!
+  \***********************************************************************************************************************************************************************************/
+.x42OaTI92SkYxYGAFO4O {
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+  height: 2.5rem;
+  position: sticky;
+  top: 0;
+  padding-left: var(--g-padding-x);
+}
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/UI/Blocks/CarouselPagination.module.scss ***!
+  \********************************************************************************************************************************************************************************************/
+._JmQFLa81AMfyvs4XfRW {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  gap: 0 0.3rem;
+}
+._JmQFLa81AMfyvs4XfRW .SHBlwsG1XsYuqXs4Ut6d {
+  cursor: pointer;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--clr-other);
+}
+._JmQFLa81AMfyvs4XfRW .SHBlwsG1XsYuqXs4Ut6d.wF5HfOuBQzTuNldyJwQp {
+  background-color: var(--clr-text);
+  width: 1.5rem;
+  border-radius: 12px;
+}
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/UI/Carousels/BannerCarousel.module.scss ***!
+  \*******************************************************************************************************************************************************************************************/
+@media (min-width: 768px) {
+  .N9cpoCS3afe2VUrdZOaQ {
+    aspect-ratio: 3/1;
+  }
+}
+@media (max-width: 767px) {
+  .N9cpoCS3afe2VUrdZOaQ {
+    aspect-ratio: 2/1;
+  }
+}
+.N9cpoCS3afe2VUrdZOaQ {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+.N9cpoCS3afe2VUrdZOaQ span {
+  background-size: cover !important;
+}
+.N9cpoCS3afe2VUrdZOaQ .TCYAYUeHcuxImoKoIhsA, .N9cpoCS3afe2VUrdZOaQ .p2950pSDQQa2GHRpwuJ1 {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 6rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+.N9cpoCS3afe2VUrdZOaQ .TCYAYUeHcuxImoKoIhsA:hover, .N9cpoCS3afe2VUrdZOaQ .p2950pSDQQa2GHRpwuJ1:hover {
+  opacity: 1;
+}
+.N9cpoCS3afe2VUrdZOaQ .TCYAYUeHcuxImoKoIhsA svg, .N9cpoCS3afe2VUrdZOaQ .p2950pSDQQa2GHRpwuJ1 svg {
+  margin: auto;
+  font-size: var(--font-xl);
+}
+.N9cpoCS3afe2VUrdZOaQ .TCYAYUeHcuxImoKoIhsA {
+  left: 0;
+}
+.N9cpoCS3afe2VUrdZOaQ .TCYAYUeHcuxImoKoIhsA svg {
+  transform: rotate(180deg);
+}
+.N9cpoCS3afe2VUrdZOaQ .p2950pSDQQa2GHRpwuJ1 {
+  right: 0;
+}
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/UI/Carousels/Carousel.module.scss ***!
+  \*************************************************************************************************************************************************************************************/
+.pycevWSWg4clFcZewLEw {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.pycevWSWg4clFcZewLEw .sXD7aIRvX9llNr3_s5jE {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+.pycevWSWg4clFcZewLEw .n8Fbg6lSjQdiBOjgNGnH {
+  min-width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/UI/Carousels/ProductCarousel.module.scss ***!
+  \********************************************************************************************************************************************************************************************/
+.CL5G_nxfROlxCDNE6ROk {
+  display: flex;
+  flex-direction: column;
+}
+.CL5G_nxfROlxCDNE6ROk .lkKMowyQoQTDhOe3UngG {
+  padding: 1.5rem 0 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.CL5G_nxfROlxCDNE6ROk .rerHtOjjeWe3mSQPqPQy {
+  color: var(--clr-other);
+}
+.CL5G_nxfROlxCDNE6ROk .BjjYGKpmhE_q0L_m9LKz {
+  display: grid;
+  grid-gap: 0 1rem;
+  gap: 0 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 10rem;
+  overflow-x: auto;
+  flex: 1;
+}
+.CL5G_nxfROlxCDNE6ROk .BjjYGKpmhE_q0L_m9LKz::-webkit-scrollbar {
+  display: none;
+}
+
+/*# sourceMappingURL=[path].src_pages_Home_Home_tsx.css.map*/

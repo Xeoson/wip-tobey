@@ -1,31 +1,30 @@
-import { MdOutlineFavoriteBorder } from "react-icons/md";
-import { useMatchTablet } from "../../main";
-import { userMock } from "../../mocks/user";
-import MainLogo from "../UI/Buttons/MainLogo";
-import User from "../UI/Cards/User";
-import MobileSearch from "../UI/MobileSearch";
-import Search from "../UI/TabletSearch";
-import s from "./Navbar.module.scss";
-import NavbarUserBlock from "../UI/Blocks/NavbarUserBlock";
+import Logo from '../../assets/logo.svg'
+import browserRoutes from '../../common/browserRoutes'
+import { useMatchTablet } from '../../main'
+import NavbarUserBlock from '../UI/Blocks/NavbarUserBlock'
+import LinkButton from '../UI/Buttons/LinkButton'
+import MobileSearch from '../UI/MobileSearch'
+import Search from '../UI/Search'
+import s from './Navbar.module.scss'
 
 interface NavbarProps {}
 
 const Navbar = (props: NavbarProps) => {
-  const matchTablet = useMatchTablet();
+  const matchTablet = useMatchTablet()
 
   return (
     <nav className={s.main}>
-      <MainLogo />
+      <LinkButton to={browserRoutes.home} icon={<Logo />} />
       {matchTablet ? (
         <>
           <Search />
-					<NavbarUserBlock />
+          <NavbarUserBlock />
         </>
       ) : (
         <MobileSearch />
       )}
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

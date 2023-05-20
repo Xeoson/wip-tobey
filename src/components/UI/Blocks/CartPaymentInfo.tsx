@@ -1,6 +1,5 @@
-import Button from "../Buttons/Button";
-import Hr from "../Other/Hr";
-import s from "./CartPaymentInfo.module.scss";
+import Button from "../Buttons/Button"
+import s from "./CartPaymentInfo.module.scss"
 
 interface CartPaymentInfoProps {}
 
@@ -19,7 +18,6 @@ const CartPaymentInfo = (props: CartPaymentInfoProps) => {
         <div className={s.title}>Discount</div>
         <div className={s.value}>50%</div>
       </div>
-      <Hr type="dashed" />
       <div className={s.item}>
         <div className={s.title}>Total</div>
         <div className={s.valueTotal}>$406.50</div>
@@ -28,7 +26,7 @@ const CartPaymentInfo = (props: CartPaymentInfoProps) => {
         Continue
       </Button>
     </div>
-  );
-};
+  )
+}
 
-export default CartPaymentInfo;
+export default CartPaymentInfo

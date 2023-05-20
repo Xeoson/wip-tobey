@@ -5,7 +5,7 @@ import s from './ToggleButton.module.scss'
 interface ToggleButtonProps {}
 
 const ToggleButton = (props: ToggleButtonProps) => {
-	return <div className={s.main}></div>;
-};
+  return <div className={s.main}></div>
+}
 
-export default ToggleButton;
+export default ToggleButton

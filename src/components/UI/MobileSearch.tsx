@@ -1,22 +1,22 @@
-import { CiSearch } from "react-icons/ci";
-import s from "./MobileSearch.module.scss";
-import React from 'react'
-import { useState } from "react";
-import SearchModal from "./Modals/SearchModal";
+import { useState } from "react"
+import { CiSearch } from "react-icons/ci"
+import IconButton from "./Buttons/IconButton"
+import SearchModal from "./Modals/SearchModal"
 
 interface MobileSearchProps {}
 
 const MobileSearch = (props: MobileSearchProps) => {
-	const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className={s.main}>
-      <button className={s.openSearchBtn} onClick={() => setIsOpen(true)}>
+    <>
+      <IconButton onClick={() => { setIsOpen(true) }}>
         <CiSearch />
-      </button>
-      {isOpen && <SearchModal onClose={() => setIsOpen(false)} />}
-    </div>
-  );
-};
+      </IconButton>
+      <SearchModal isOpen={isOpen} onClose={() => { setIsOpen(false) }} />
+      {/* {isOpen && <SearchModal onClose={() => setIsOpen(false)} />} */}
+    </>
+  )
+}
 
-export default MobileSearch;
+export default MobileSearch

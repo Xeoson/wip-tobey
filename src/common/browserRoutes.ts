@@ -1,11 +1,11 @@
 
 export default {
   home: "/",
-	userProfile: '/profile',
+  userProfile: '/profile',
   profile: (userId: string = ":userId") => `/profile/${userId}`,
   cart: "/cart",
   product: (productId: string = ":productId") => `/product/${productId}`,
-	addresses: '/profile/address',
-	favorites: '/profile/favorite',
-	orderHistory: '/profile/order-history'
-};
+  addresses: '/profile/address',
+  favorites: '/profile/favorite',
+  orderHistory: '/profile/order-history'
+}
