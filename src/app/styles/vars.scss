@@ -1,0 +1,33 @@
+@import './utils.scss';
+
+:root {
+	--g-padding-y: 1rem;
+	--g-padding-x: 1.5rem;
+	--padding-sm: 0.125rem;
+	--padding-md: 0.25rem;
+	--padding-lg: 0.5rem;
+	--tablet-min-w: 768px;
+	--mobile-max-w: 767px;
+	--tabbar-h: 5rem;
+	--round-sm: 7px;
+	--round-md: 12px;
+	--round-lg: 18px;
+	--font-sm: 0.5rem;
+	--font-md: 0.8rem;
+	--font-lg: 1rem;
+	--font-xl: 1.3rem;
+	--font-2xl: 1.6rem;
+	--clr-text: #33383c;
+	--clr-text-user: #6565655c;
+	--clr-primary: hsl(180deg 3% 93%);
+	--clr-secondary: #39c7a5;
+	--clr-other: #bec4cd;
+	--clr-bg: #fff;
+}
+
+
+@include media-tablet-min {
+	:root {
+		--g-padding-x: 4rem;
+	}
+}

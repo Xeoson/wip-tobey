@@ -1,0 +1,38 @@
+.main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &.secondary,
+  &.primary {
+    color: var(--clr-primary);
+    border: 0.05rem solid var(--clr-other);
+    padding: 0.5rem 0.7rem;
+    border-radius: var(--round-sm);
+  }
+	&.primary {
+		color: var(--clr-text);
+	}
+	&.secondary {
+		background-color: var(--clr-secondary);
+	}
+
+  &.sm {
+    font-size: var(--font-md);
+    padding: 0.7rem 0.5rem;
+  }
+
+  &.md {
+    font-size: var(--font-xl);
+    padding: 1rem 0.8rem;
+  }
+
+  &.lg {
+    font-size: var(--font-xl);
+    padding: 2rem 1.5rem;
+  }
+
+  &.square {
+    aspect-ratio: 1/1;
+  }
+}

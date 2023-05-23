@@ -1,5 +1,5 @@
-import UserAddressList from "../../components/Sections/UserAddressList"
-import PageLayout from "../../components/UI/Containers/PageLayout"
+import UserAddressList from 'widgets/UserAddressList/UserAddressList'
+import PageLayout from '../../app/ui/PageLayout'
 
 interface MobileAddressProps {}
 

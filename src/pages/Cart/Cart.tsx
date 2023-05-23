@@ -1,9 +1,10 @@
-import CartPaymentInfo from '../../components/UI/Blocks/CartPaymentInfo'
-import ProductList from '../../components/UI/Blocks/ProductList'
-import PageLayout from '../../components/UI/Containers/PageLayout'
-import DeliveryAddress from '../../components/UI/DeliveryAddress'
-import CouponInput from '../../components/UI/Inputs/CouponInput'
-import products from '../../mocks/products'
+import ProductCard from 'entities/product-card/ui/ProductCard'
+import List from 'shared/ui/Blocks/List'
+import CouponInput from 'widgets/CouponInput/CouponInput'
+import DeliveryAddress from 'widgets/DeliveryAddress/DeliveryAddress'
+import PageLayout from '../../app/ui/PageLayout'
+import products from '../../shared/lib/mocks/products'
+import PaymentInfo from 'widgets/PaymentInfo/PaymentInfo'
 
 interface CartProps {}
 
@@ -11,9 +12,13 @@ const Cart = (props: CartProps) => {
   return (
     <PageLayout withNavbarOn="tablet">
       <DeliveryAddress />
-      <ProductList products={products} size="cart" withCart withFavorite />
+      <List
+        Item={ProductCard}
+        data={products}
+        otherItemProps={{ size: 'cart', withFavorite: true }}
+      />
       <CouponInput />
-      <CartPaymentInfo />
+      <PaymentInfo />
     </PageLayout>
   )
 }

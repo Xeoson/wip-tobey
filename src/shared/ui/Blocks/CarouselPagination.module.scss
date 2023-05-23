@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  gap: 0 0.3rem;
+
+  &.default {
+    .item {
+      &.current {
+        background-color: var(--clr-text);
+        width: 1.5rem;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  &.minify {
+    .item {
+      width: 0.3rem;
+      height: 0.3rem;
+
+      &.current {
+        background-color: var(--clr-text);
+      }
+    }
+  }
+}
+
+.item {
+  cursor: pointer;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--clr-other);
+}

@@ -1,10 +1,9 @@
-
-import Categories from "../../components/Sections/Categories"
-import BannerCarousel from "../../components/UI/Carousels/BannerCarousel"
-import ProductCarousel from "../../components/UI/Carousels/ProductCarousel"
-import PageLayout from "../../components/UI/Containers/PageLayout"
-import banners from "../../mocks/banners"
-import products from "../../mocks/products"
+import BannerCarousel from 'shared/ui/Carousels/BannerCarousel'
+import ProductCarousel from 'widgets/ProductCarousel/ProductCarousel'
+import PageLayout from '../../app/ui/PageLayout'
+import banners from '../../shared/lib/mocks/banners'
+import products from '../../shared/lib/mocks/products'
+import Categories from '../../widgets/Categories/Categories'
 
 interface HomeProps {}
 

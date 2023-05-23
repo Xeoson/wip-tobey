@@ -1,8 +1,9 @@
-import { profileSettings } from '../../common/const'
-import LinksBlock from '../../components/UI/Blocks/LinksBlock'
-import User from '../../components/UI/Cards/User'
-import PageLayout from '../../components/UI/Containers/PageLayout'
-import { userMock } from '../../mocks/user'
+import User from 'entities/user-card/ui/User'
+import LinksBlock from 'shared/ui/Blocks/LinksBlock'
+import { profileSettings } from '../../app/lib/const'
+import PageLayout from '../../app/ui/PageLayout'
+
+import { userMock } from '../../shared/lib/mocks/user'
 
 interface MobileProfileProps {}
 

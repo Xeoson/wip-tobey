@@ -18,6 +18,7 @@ const config: Configuration = {
   devtool: 'source-map',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+		modules: ['node_modules', path.resolve(__dirname, 'src')]
   },
   plugins: buildPlugins(),
   module: {

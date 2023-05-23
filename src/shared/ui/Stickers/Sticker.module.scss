@@ -1,0 +1,13 @@
+.main {
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--round-sm);
+
+  &.primary {
+    background-color: var(--clr-text);
+    color: var(--clr-primary);
+  }
+  &.secondary {
+    background-color: var(--clr-secondary);
+    color: var(--clr-primary);
+  }
+}

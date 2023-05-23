@@ -1,4 +1,4 @@
-import PageLayout from '../../components/UI/Containers/PageLayout'
+import PageLayout from '../../app/ui/PageLayout'
 
 interface NotFoundProps {}
 

@@ -1,5 +1,5 @@
-import DateGrouppedOrders from '../../components/Sections/DateGrouppedList'
-import PageLayout from '../../components/UI/Containers/PageLayout'
+import DateGrouppedOrders from 'widgets/DateGrouppedOrders/DateGrouppedList'
+import PageLayout from '../../app/ui/PageLayout'
 
 interface MobileOrderHistoryProps {}
 

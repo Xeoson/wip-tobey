@@ -1,0 +1,20 @@
+.main {
+  display: grid;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.row {
+	gap: 0 1rem;
+	grid-auto-columns: min-content;
+	overflow-x: auto;
+	grid-auto-flow: column;
+}
+
+.column {
+	gap: 1rem 0;
+	grid-auto-rows: min-content;
+	overflow-y: auto;
+}

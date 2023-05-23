@@ -1,0 +1,26 @@
+$padding-x: 4rem;
+
+.main {}
+
+.inputBlock {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: var(--g-padding-y) $padding-x;
+}
+
+.backBtn {
+	display: flex;
+	position: absolute;
+	left: calc(($padding-x / 2)  * -1);
+	transform: translateX(-50%);
+	font-size: var(--font-2xl);
+
+	svg {
+		margin: auto;
+	}
+}
+
+.productList {
+	padding: var(--g-padding-y) $padding-x;;
+}

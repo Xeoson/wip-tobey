@@ -1,0 +1,9 @@
+
+.main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	& > * {
+		padding: var(--g-padding-y) var(--g-padding-x);
+	}
+}

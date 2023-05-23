@@ -1,0 +1,32 @@
+.main {
+	height: 100%;
+	aspect-ratio: 1/1;
+	overflow-x: auto;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 100%;
+	scroll-snap-type: x mandatory;
+
+	&.down {
+		scroll-snap-type: none;
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	& * {
+		user-select: none;
+	}
+}
+
+.item {
+	height: 100%;
+	width: 100%;
+	flex-shrink: 0;
+	scroll-snap-align: start;
+
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}

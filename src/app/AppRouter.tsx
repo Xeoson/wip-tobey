@@ -1,18 +1,18 @@
 import { Suspense, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import browserRoutes from '../common/browserRoutes'
 import { useMatchTablet } from '../main'
-import PageLoader from '../shared/components/Loaders/PageLoader'
+import PageLoader from '../shared/ui/Loaders/PageLoader'
+import browserRoutes from './lib/browserRoutes'
 
 const Cart = lazy(async () => await import('../pages/Cart/Cart'))
 const DateGrouppedOrders = lazy(
-  async () => await import('../components/Sections/DateGrouppedList')
+  async () => await import('../widgets/DateGrouppedOrders/DateGrouppedList')
 )
 const FavoriteProducts = lazy(
-  async () => await import('../components/Sections/FavoriteProducts')
+  async () => await import('../widgets/DateGrouppedOrders/DateGrouppedList')
 )
 const UserAddressList = lazy(
-  async () => await import('../components/Sections/UserAddressList')
+  async () => await import('../widgets/UserAddressList/UserAddressList')
 )
 const Home = lazy(async () => await import('../pages/Home/Home'))
 const MobileAddress = lazy(

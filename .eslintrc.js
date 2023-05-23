@@ -7,6 +7,7 @@ module.exports = {
     'plugin:react/recommended',
     'standard-with-typescript',
     'plugin:sonarjs/recommended',
+    'plugin:storybook/recommended',
   ],
   overrides: [],
   parserOptions: {
@@ -23,7 +24,13 @@ module.exports = {
     'multiline-ternary': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-empty-interface': 0,
-    '@typescript-eslint/strict-boolean-expressions': [1, { allowString: true }],
-		"@typescript-eslint/space-before-function-paren": 0
+    '@typescript-eslint/strict-boolean-expressions': [
+      1,
+      {
+        allowString: true,
+      },
+    ],
+    '@typescript-eslint/space-before-function-paren': 0,
+    '@typescript-eslint/member-delimiter-style': 0,
   },
 }
