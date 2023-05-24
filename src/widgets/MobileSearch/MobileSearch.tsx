@@ -5,7 +5,7 @@ import { BsArrowLeftShort } from 'react-icons/bs'
 import { CiSearch } from 'react-icons/ci'
 import products from 'shared/lib/mocks/products'
 import List from 'shared/ui/Blocks/List'
-import IconButton from 'shared/ui/Buttons/IconButton'
+import Button from 'shared/ui/Buttons/Button'
 import Modal from 'shared/ui/Modals/Modal'
 import s from './MobileSearch.module.scss'
 
@@ -31,13 +31,14 @@ const MobileSearch = (props: MobileSearchProps) => {
 
   return (
     <>
-      <IconButton
+      <Button
+        size="square"
         onClick={() => {
           setIsOpen(true)
         }}
       >
         <CiSearch />
-      </IconButton>
+      </Button>
       <Modal className={s.modal} isOpen={isOpen}>
         <div className={s.inputBlock}>
           <button

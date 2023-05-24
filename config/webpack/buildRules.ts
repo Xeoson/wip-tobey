@@ -1,12 +1,11 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { RuleSetRule } from 'webpack'
-import { isDev } from '../../webpack.config'
 
-export default (): RuleSetRule[] => [
+export default (isDev: boolean): RuleSetRule[] => [
   {
     test: /\.(s?css)$/,
     use: [
-      MiniCssExtractPlugin.loader,
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       'css-loader',
       'postcss-loader',
       'sass-loader',

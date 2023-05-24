@@ -1,7 +1,5 @@
 $padding-x: 4rem;
 
-.main {}
-
 .inputBlock {
 	position: relative;
 	display: flex;
@@ -12,7 +10,7 @@ $padding-x: 4rem;
 .backBtn {
 	display: flex;
 	position: absolute;
-	left: calc(($padding-x / 2)  * -1);
+	left: calc(($padding-x / 2) * -1);
 	transform: translateX(-50%);
 	font-size: var(--font-2xl);
 

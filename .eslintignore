@@ -6,3 +6,5 @@ build
 .eslintrc.js
 webpack.config.ts
 .babel.config.js
+src/stories/**/*
+**/*.test.ts

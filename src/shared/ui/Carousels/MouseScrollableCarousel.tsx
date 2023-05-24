@@ -10,7 +10,6 @@ const MouseScrollableCarousel = ({
   images,
   onSetIdx,
 }: MouseScrollableCarouselProps) => {
-  // const events = useTapMouseScroll<HTMLUListElement>()
   const ref = useRef<HTMLUListElement | null>(null)
 
   const handleScroll = (e: React.UIEvent<HTMLUListElement>) => {

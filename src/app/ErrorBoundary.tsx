@@ -1,8 +1,8 @@
+import Error from 'pages/Error/Error'
 import React, { type ErrorInfo, type ReactNode } from 'react'
 
 interface IProps {
   children: ReactNode
-  fallback: ReactNode
 }
 
 interface IState {
@@ -25,7 +25,7 @@ export class ErrorBoundary extends React.Component<IProps, IState> {
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback
+      return <Error />
     }
 
     return this.props.children

@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import CarouselPagination from 'shared/ui/Blocks/CarouselPagination'
 import MinifyImageList from 'shared/ui/Blocks/MinifyImageList'
-import MobileScrollableCarousel from 'shared/ui/Carousels/MobileScrollableCarousel'
-import s from './ProductImageCarousel.module.scss'
 import MouseScrollableCarousel from 'shared/ui/Carousels/MouseScrollableCarousel'
+import s from './ProductImageCarousel.module.scss'
 
 interface ImageCarouselProps {
   images: string[]
@@ -14,13 +13,6 @@ const ImageCarousel = ({ images, ...props }: ImageCarouselProps) => {
 
   return (
     <div className={s.main}>
-      {/* <MobileScrollableCarousel
-        currentIdx={currentIndex}
-        images={images}
-        onSetIdx={(idx) => {
-          setCurrentIndex(idx)
-        }}
-      /> */}
       <MouseScrollableCarousel
         currentIdx={currentIndex}
         images={images}

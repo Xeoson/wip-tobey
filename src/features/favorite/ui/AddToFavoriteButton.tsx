@@ -2,6 +2,7 @@ import React from 'react'
 import { MdFavorite } from 'react-icons/md'
 import { type DP } from '../../../shared/lib/types'
 import s from './AddToFavoriteButton.module.scss'
+import cn from 'shared/lib/helpers/classNames'
 
 interface AddToFavoriteButtonProps extends Pick<DP, 'className'> {
   productId: string
@@ -17,7 +18,7 @@ const AddToFavoriteButton = ({
   }
 
   return (
-    <button onClick={onAddFavorite} className={`${s.main} ${className ?? ''}`}>
+    <button onClick={onAddFavorite} className={cn(s.main, className)}>
       <MdFavorite />
     </button>
   )

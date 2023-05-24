@@ -1,1 +1,0 @@
-{"version":3,"file":"[path].src_pages_MobileFavorites_MobileFavorites_tsx.css","mappings":";;;AACA;EACC;EACA;EACA;EACA;EAAA;AAAD,C","sources":["webpack://calc/./src/components/Sections/FavoriteProducts.module.scss"],"sourcesContent":["\r\n.main {\r\n\tdisplay: grid;\r\n\toverflow-y: auto;\r\n\tgrid-auto-rows: 6rem;\r\n\tgap: 1rem 0;\r\n}"],"names":[],"sourceRoot":""}

@@ -1,5 +1,4 @@
 import { screen } from '@testing-library/dom'
-// import { render } from '../../shared/jest/utils'
 import Search from './Search'
 import { render } from '@testing-library/react'
 

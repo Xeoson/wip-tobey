@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+import cn from 'shared/lib/helpers/classNames'
 import { type DP } from '../../../shared/lib/types'
 import s from './AddToCartButton.module.scss'
 
@@ -26,7 +27,7 @@ const AddToCartButton = ({
     }
 
   return (
-    <div className={`${s.main} ${s[rotation]} ${className ?? ''}`}>
+    <div className={cn(s.main, s[rotation], className)}>
       <button className={s.moreBtn} onClick={handleChange(1)}></button>
       {value > 0 && (
         <>

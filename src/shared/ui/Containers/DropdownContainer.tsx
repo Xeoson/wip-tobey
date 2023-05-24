@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from 'react'
+import cn from 'shared/lib/helpers/classNames'
 import { type DP } from '../../../shared/lib/types'
 import s from './DropdownContainer.module.scss'
-import cn from 'shared/lib/helpers/classNames'
 
 interface DropdownContainerProps extends Pick<DP, 'children' | 'className'> {}
 

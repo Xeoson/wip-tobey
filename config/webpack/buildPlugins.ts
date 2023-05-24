@@ -3,9 +3,8 @@ import DotenvWebpackPlugin from 'dotenv-webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { WebpackPluginInstance } from 'webpack'
-import { isDev } from '../../webpack.config'
 
-export default (): WebpackPluginInstance[] =>
+export default (isDev: boolean): WebpackPluginInstance[] =>
   [
     new HtmlWebpackPlugin({ template: 'index.html' }),
     new MiniCssExtractPlugin({
