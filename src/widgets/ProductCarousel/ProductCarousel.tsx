@@ -1,4 +1,4 @@
-import { type IProduct } from 'app/model/db/types'
+import { type IProduct } from 'app/model/firestore/types'
 import ProductCard from 'entities/product-card/ui/ProductCard'
 import useTapMouseScroll from 'shared/lib/hooks/useTapMouseScroll'
 import s from './ProductCarousel.module.scss'
@@ -26,9 +26,9 @@ const ProductCarousel = ({
         <button className={s.more}>{subtitle}</button>
       </div>
       <div className={s.itemList} {...events}>
-        {products.map((el) => (
+        {products.map((el, i) => (
           <ProductCard
-            key={el.id}
+            key={i}
             {...el}
             size={size}
             withFavorite={size === 'lg'}

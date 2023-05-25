@@ -1,8 +1,8 @@
 import { Suspense, lazy, type PropsWithChildren } from 'react'
-import { useMatchTablet } from '../../main'
+import Header from 'shared/ui/Blocks/Header'
 import Navbar from '../../widgets/Navbar/ui/Navbar'
 import s from './PageLayout.module.scss'
-import Header from 'shared/ui/Blocks/Header'
+import { useMatchTablet } from 'app/lib/const'
 
 interface PageLayoutProps extends PropsWithChildren {
   mobileHeaderTitle?: string

@@ -15,7 +15,7 @@ const Cart = (props: CartProps) => {
       <List
         Item={ProductCard}
         data={products}
-        otherItemProps={{ size: 'lg', withFavorite: true }}
+        otherItemProps={{ size: 'sm', withFavorite: true, withCart: true }}
       />
       <CouponInput />
       <PaymentInfo />

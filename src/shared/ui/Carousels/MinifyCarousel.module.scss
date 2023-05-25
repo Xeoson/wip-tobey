@@ -2,6 +2,8 @@
 	display: flex;
 	gap: 0 0.3rem;
 	overflow-x: auto;
+	height: 100%;
+	max-height: 5rem;
 
 	&::-webkit-scrollbar {
 		display: none;
@@ -23,30 +25,3 @@
 		width: auto;
 	}
 }
-
-// .main {
-// 	display: flex;
-// 	gap: 0 0.3rem;
-// 	overflow-x: auto;
-// 	height: 100%;
-
-// 	&::-webkit-scrollbar {
-// 		display: none;
-// 	}
-
-// 	.item {
-// 		font-size: var(--font-lg);
-// 		padding: 0.5rem 0.7rem;
-// 		border: 0.05rem solid var(--clr-other);
-// 		border-radius: var(--round-sm);
-// 		display: flex;
-// 		align-items: center;
-// 		gap: 0 0.2rem;
-// 	}
-
-// 	img {
-// 		display: block;
-// 		height: 100%;
-// 		width: auto;
-// 	}
-// }

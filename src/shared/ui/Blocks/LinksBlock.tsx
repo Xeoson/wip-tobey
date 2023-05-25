@@ -20,8 +20,8 @@ const LinksBlock = ({ items, title }: LinksBlockProps) => {
     <div className={s.main}>
       <h4 className={s.title}>{title}</h4>
       <ul className={s.list}>
-        {items.map((el) => (
-          <li key={el.url} className={s.item}>
+        {items.map((el, i) => (
+          <li key={i} className={s.item}>
             <Link to={el.url}>
               {el.icon}
               <span>{el.title}</span>

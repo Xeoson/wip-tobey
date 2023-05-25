@@ -1,12 +1,12 @@
 import browserRoutes from 'app/lib/browserRoutes'
 import AddToCartButton from 'features/cart/ui/AddToCartButton'
 import AddToFavoriteButton from 'features/favorite/ui/AddToFavoriteButton'
-import { Suspense, lazy, useRef } from 'react'
+import { Suspense, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 import cn from 'shared/lib/helpers/classNames'
-import { type IProduct } from '../../../app/model/db/types'
+import usePointerClick from 'shared/lib/hooks/usePointerClick'
+import { type IProduct } from '../../../app/model/firestore/types'
 import s from './ProductCard.module.scss'
-import { useMatchHover } from 'app/lib/const'
 
 const HoveredImageCarouselAsync = lazy(
   async () => await import('./HoveredImageCarousel')
@@ -14,6 +14,7 @@ const HoveredImageCarouselAsync = lazy(
 
 export interface ProductCardProps {
   size?: 'sm' | 'md' | 'lg'
+  imgType?: 'static' | 'dynaimc'
   withCart?: boolean
   withFavorite?: boolean
 }
@@ -22,36 +23,18 @@ const ProductCard = ({
   size = 'md',
   withCart = false,
   withFavorite = false,
+  imgType = 'dynaimc',
   ...props
 }: ProductCardProps & IProduct) => {
   const navigate = useNavigate()
-  const matchHover = useMatchHover()
 
-  const isScrollingRef = useRef(false)
-
-  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    isScrollingRef.current = false
-    setTimeout(() => {
-      isScrollingRef.current = true
-    }, 120)
-  }
-  const handlePointerUp = () => {
-    if (!isScrollingRef.current) {
-      navigate(browserRoutes.product(props.id))
-    }
-  }
-  const handleLeave = (e: React.PointerEvent<HTMLDivElement>) => {
-    isScrollingRef.current = false
-  }
+  const events = usePointerClick(() => {
+    navigate(browserRoutes.product(props.id))
+  })
 
   return (
-    <div
-      onPointerUp={handlePointerUp}
-      onPointerLeave={handleLeave}
-      onPointerDown={handlePointerDown}
-      className={cn(s.main, s[size])}
-    >
-      {matchHover ? (
+    <div {...events} className={cn(s.main, s[size])}>
+      {imgType === 'dynaimc' ? (
         <Suspense>
           <HoveredImageCarouselAsync
             className={s.imgBlock}
@@ -63,9 +46,9 @@ const ProductCard = ({
           <img src={props.images[0]} />
         </div>
       )}
-      <div className={s.title}>{props.title}</div>
-      <div className={s.subtitle}>{props.description}</div>
-      <div className={s.price}>{props.price}$</div>
+      <p className={s.title}>{props.title}</p>
+      <p className={s.subtitle}>{props.description}</p>
+      <span className={s.price}>{props.price}$</span>
       {withCart && (
         <AddToCartButton
           className={s.cartBtn}

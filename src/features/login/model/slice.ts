@@ -1,9 +1,15 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
-const initialState = {}
+export interface ILoginState {
+  isOpen: boolean
+}
 
-export const { actions: CartActions, reducer: CartReducer } = createSlice({
-  name: 'Cart',
+const initialState: ILoginState = {
+  isOpen: false,
+}
+
+export const { actions: LoginActions, reducer: LoginReducer } = createSlice({
+  name: 'Login',
   initialState,
   reducers: {
     set: (state, { payload }: PayloadAction<Partial<typeof initialState>>) => ({

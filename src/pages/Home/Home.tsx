@@ -12,7 +12,7 @@ const Home = (props: HomeProps) => {
     <PageLayout withNavbarOn="all">
       <Categories />
       <BannerCarousel images={banners} />
-      <ProductCarousel size="md" title="Hot Sales" products={products} />
+      <ProductCarousel size="lg" title="Hot Sales" products={products} />
       <ProductCarousel size="lg" title="Recently Viewed" products={products} />
       <ProductCarousel size="lg" title="Recently Viewed" products={products} />
     </PageLayout>

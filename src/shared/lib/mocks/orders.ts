@@ -1,4 +1,4 @@
-import { type IUserOrderPopulated } from '../../../app/model/db/types'
+import { type IUserOrderPopulated } from '../../../app/model/firestore/types'
 import phoneImg from '../mocks/phone.webp'
 
 export const orders: IUserOrderPopulated[] = [

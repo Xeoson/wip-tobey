@@ -1,4 +1,5 @@
 .main {
+	--size: 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +8,7 @@
   &.primary {
     color: var(--clr-primary);
     border: 0.05rem solid var(--clr-other);
-    padding: 0.5rem 0.7rem;
+		padding: var(--size) calc(var(--size) * 0.7);
     border-radius: var(--round-sm);
   }
 
@@ -19,22 +20,23 @@
 		background-color: var(--clr-secondary);
 	}
 
+	&.max-y {
+		--size: 0;
+		height: 100%;
+	}
+
   &.sm {
     font-size: var(--font-md);
-    padding: 0.7rem 0.5rem;
+		--size: 1.2rem
   }
 
   &.md {
     font-size: var(--font-xl);
-    padding: 1rem 0.8rem;
+		--size: 1.5rem
   }
 
   &.lg {
     font-size: var(--font-xl);
-    padding: 2rem 1.5rem;
-  }
-
-  &.square {
-    aspect-ratio: 1/1;
+		--size: 1.8rem
   }
 }

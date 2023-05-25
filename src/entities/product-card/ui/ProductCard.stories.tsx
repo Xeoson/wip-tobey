@@ -9,7 +9,7 @@ export const meta: Meta<typeof ProductCard> = {
 export default meta
 
 export const Small: StoryObj<typeof ProductCard> = {
-  render: () => (
-    <ProductCard {...products[0]} size="sm" withCart withFavorite />
+  render: (props) => (
+    <ProductCard {...products[0]} {...props} />
   ),
 }

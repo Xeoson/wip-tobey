@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
 import cn from 'shared/lib/helpers/classNames'
+import usePointerClick from 'shared/lib/hooks/usePointerClick'
+import Button from 'shared/ui/Buttons/Button'
 import { type DP } from '../../../shared/lib/types'
 import s from './AddToCartButton.module.scss'
 
@@ -22,18 +24,24 @@ const AddToCartButton = ({
   const handleChange =
     (inc: number) => (e: React.PointerEvent<HTMLButtonElement>) => {
       e.stopPropagation()
-      const val = value + inc
-      setValue(val)
+      setValue((prev) => prev + inc)
     }
+
+  const addEvents = usePointerClick(handleChange(1))
+  const remEvents = usePointerClick(handleChange(-1))
 
   return (
     <div className={cn(s.main, s[rotation], className)}>
-      <button className={s.moreBtn} onClick={handleChange(1)}></button>
-      {value > 0 && (
+      {value > 0 ? (
         <>
+          <button {...addEvents} className={s.moreBtn}></button>
           <span>{value}</span>
-          <button className={s.lessBtn} onClick={handleChange(-1)}></button>
+          <button {...remEvents} className={s.lessBtn}></button>
         </>
+      ) : (
+        <Button {...addEvents} theme="secondary" size="max-y" className={s.addBtn}>
+          Add To Cart
+        </Button>
       )}
     </div>
   )

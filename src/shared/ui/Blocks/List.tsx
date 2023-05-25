@@ -20,8 +20,8 @@ const List = <T extends { id: string }, C extends T>({
 }: ListProps<T, C>) => {
   return (
     <div className={cn(s.main, className, s[rotation])} {...props}>
-      {data.map((el) => (
-        <Item key={el.id} {...el} {...(otherItemProps as C)} />
+      {data.map((el, i) => (
+        <Item key={i} {...el} {...(otherItemProps as C)} />
       ))}
     </div>
   )

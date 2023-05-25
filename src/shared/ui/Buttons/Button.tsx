@@ -4,7 +4,7 @@ import s from './Button.module.scss'
 
 interface ButtonProps extends DPButton {
   theme?: 'secondary' | 'primary' | 'none'
-  size?: 'sm' | 'md' | 'lg' | 'square'
+  size?: 'sm' | 'md' | 'lg' | 'max-y'
 }
 
 const Button = ({

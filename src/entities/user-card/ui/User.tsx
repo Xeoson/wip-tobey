@@ -1,5 +1,5 @@
 import { defaultAvatarUrl } from '../../../app/lib/const'
-import { type IUser } from '../../../app/model/db/types'
+import { type IUser } from '../../../app/model/firestore/types'
 import { type DP } from '../../../shared/lib/types'
 import s from './User.module.scss'
 

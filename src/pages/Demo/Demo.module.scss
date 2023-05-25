@@ -1,0 +1,51 @@
+.main {
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  width: 65rem;
+  margin: 2rem;
+}
+
+.list {
+  display: grid;
+  grid-auto-columns: 33%;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.item {
+  padding: 0 2rem;
+}
+
+.prevBtn,
+.nextBtn {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 6rem;
+  background-color: rgb(0 0 0 / 0.05);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  svg {
+    margin: auto;
+    font-size: var(--font-xl);
+  }
+}
+
+.prevBtn {
+  left: 0;
+
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.nextBtn {
+  right: 0;
+}

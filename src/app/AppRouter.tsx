@@ -1,8 +1,9 @@
+import Demo from 'pages/Demo/Demo'
 import { Suspense, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { useMatchTablet } from '../main'
 import PageLoader from '../shared/ui/Loaders/PageLoader'
 import browserRoutes from './lib/browserRoutes'
+import { useMatchTablet } from './lib/const'
 
 const Cart = lazy(async () => await import('../pages/Cart/Cart'))
 const DateGrouppedOrders = lazy(
@@ -37,6 +38,7 @@ export const AppRouter = () => {
   return (
     <Suspense fallback={<PageLoader />}>
       <Routes>
+        <Route path="/demo" element={<Demo />} />
         <Route path={browserRoutes.home} element={<Home />} />
         <Route path={browserRoutes.cart} element={<Cart />} />
         <Route path={browserRoutes.product()} element={<Product />} />

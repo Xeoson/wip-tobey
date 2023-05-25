@@ -1,4 +1,4 @@
-import { type IUser } from '../../../app/model/db/types'
+import { type IUser } from '../../../app/model/firestore/types'
 
 export const userMock: IUser = {
   email: 'Email@mail.com',

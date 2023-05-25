@@ -34,7 +34,7 @@ const SearchInput = ({
 
   return (
     <Input {...props} onKeyDown={handleKeydown} onChange={handleChange}>
-      <Button size="square" onClick={handleClick}>
+      <Button theme='none' size="square" onClick={handleClick}>
         <CiSearch />
       </Button>
     </Input>

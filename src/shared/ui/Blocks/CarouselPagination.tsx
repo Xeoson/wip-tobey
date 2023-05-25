@@ -20,7 +20,7 @@ const CarouselPagination = ({
         .fill('')
         .map((el, i) => (
           <span
-            key={el}
+            key={i}
             className={`${s.item} ${i === currentIdx ? s.current : ''}`}
             onClick={() => {
               onSetCurrentIdx(i)

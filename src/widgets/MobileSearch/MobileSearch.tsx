@@ -33,6 +33,7 @@ const MobileSearch = (props: MobileSearchProps) => {
     <>
       <Button
         size="square"
+        theme="none"
         onClick={() => {
           setIsOpen(true)
         }}

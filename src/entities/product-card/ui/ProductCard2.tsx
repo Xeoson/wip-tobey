@@ -3,7 +3,7 @@ import { Suspense, lazy, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import cn from 'shared/lib/helpers/classNames'
 import browserRoutes from '../../../app/lib/browserRoutes'
-import { type IProduct } from '../../../app/model/db/types'
+import { type IProduct } from '../../../app/model/firestore/types'
 import s from './ProductCard2.module.scss'
 
 const HoveredImageCarouselAsync = lazy(
@@ -26,7 +26,6 @@ const ProductCard2 = <S extends SizeTypes>({
   const navigate = useNavigate()
 
   const handleClick = (e: React.PointerEvent<HTMLDivElement>) => {
-    console.log('click', e)
     navigate(browserRoutes.product(props.id))
   }
 
@@ -44,9 +43,9 @@ const ProductCard2 = <S extends SizeTypes>({
           <img src={props.images[0]} />
         </div>
       )}
-      <div className={s.title}>{props.title}</div>
-      <div className={s.subtitle}>{props.description}</div>
-      <div className={s.price}>{props.price}$</div>
+      <p className={s.title}>{props.title}</p>
+      <p className={s.subtitle}>{props.description}</p>
+      <span className={s.price}>{props.price}$</span>
     </div>
   )
 }

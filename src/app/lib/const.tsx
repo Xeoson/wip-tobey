@@ -28,10 +28,10 @@ export const profileSettings: IProfileSettingItem[] = [
 export const defaultAvatarUrl =
   'https://res.cloudinary.com/ds3ctqoro/image/upload/v1681982298/blank_avatar_egolkc.png'
 
-const styles = getComputedStyle(document.documentElement)
-const tabletMinWidth = styles.getPropertyValue('--tablet-min-w')
+// const styles = getComputedStyle(document.documentElement)
+// const tabletMinWidth = styles.getPropertyValue('--tablet-min-w')
 export const [MatchTabletProvider, useMatchTablet] = createMatchMedia(
-  `(min-width: ${tabletMinWidth})`
+  `(min-width: 768px)`
 )
 export const [MatchHoverProvider, useMatchHover] =
   createMatchMedia(`(hover: hover)`)

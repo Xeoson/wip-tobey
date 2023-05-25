@@ -6,7 +6,14 @@ export default (isDev: boolean): RuleSetRule[] => [
     test: /\.(s?css)$/,
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      'css-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            localIdentName: '[path]-[hash]',
+          },
+        },
+      },
       'postcss-loader',
       'sass-loader',
     ],
