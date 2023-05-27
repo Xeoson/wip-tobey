@@ -1,19 +1,22 @@
+import { Link, type LinkProps } from 'react-router-dom'
+import cn from 'shared/lib/helpers/classNames'
+import { type ButtonProps } from './Button'
+import s from './Button.module.scss'
 
-import React, { type ComponentProps, type ReactElement } from 'react'
-import s from './LinkButton.module.scss'
-import { Link } from 'react-router-dom'
+interface LinkButtonProps extends ButtonProps, LinkProps {}
 
-interface LinkButtonProps extends ComponentProps<typeof Link> {
-  icon: ReactElement
-  text?: string
-}
-
-const LinkButton = ({ children, icon, text, ...props }: LinkButtonProps) => {
+const LinkButton = ({
+  children,
+  theme = 'primary',
+  size = 'md',
+  className,
+  ...props
+}: LinkButtonProps) => {
   return (
-    <Link {...props} className={s.main}>
-      {icon}
-      {text && <span>{text}</span>}
-    </Link>
+    <Link
+      {...props}
+      className={cn(s.main, s[theme], s[size], className)}
+    >{children}</Link>
   )
 }
 

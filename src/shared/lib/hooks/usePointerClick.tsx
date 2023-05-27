@@ -1,7 +1,7 @@
 import { useMemo, useRef } from 'react'
 
 export default <T extends HTMLElement>(
-  onPointerUpCallback: (...args: any[]) => any
+  onPointerUpCallback: (e: React.PointerEvent<T>) => any
 ) => {
   const isDown = useRef(false)
 

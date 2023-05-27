@@ -1,16 +1,32 @@
-import { configureStore } from '@reduxjs/toolkit'
+import {
+  configureStore,
+  type DeepPartial,
+  type ReducersMapObject,
+} from '@reduxjs/toolkit'
+import { UserReducer } from 'entities/user/model/slice'
 import { LoginReducer } from 'features/login/model/slice'
 import { useSelector, type TypedUseSelectorHook } from 'react-redux'
-import { homeReducer } from '../../../pages/Home/slice'
-import { profileReducer } from '../../../pages/Profile/slice'
+import { createReducerManager } from './reducerManager'
+import { type AppState } from './types'
 
-export const createStore = <T extends Record<string, any>>(initState?: T) =>
-  configureStore({
-    reducer: { nav: homeReducer, profile: profileReducer, login: LoginReducer },
+export const createStore = (initState?: DeepPartial<AppState>) => {
+  const reducers: ReducersMapObject<AppState> = {
+    user: UserReducer,
+    login: LoginReducer,
+  }
+
+  const reducerManager = createReducerManager(reducers)
+
+  const store = configureStore<AppState>({
+    // @ts-expect-error
+    reducer: reducerManager.reduce,
     preloadedState: initState,
+		devTools: !!process.env.IS_DEV
   })
+  // @ts-expect-error
+  store.reducerManager = reducerManager
 
-export const store = createStore()
+  return store
+}
 
-export type RootStore = ReturnType<typeof store.getState>
-export const useAppSelector: TypedUseSelectorHook<RootStore> = useSelector
+export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector

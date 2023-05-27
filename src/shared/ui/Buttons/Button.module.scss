@@ -1,42 +1,38 @@
 .main {
-	--size: 1rem;
   display: inline-flex;
   align-items: center;
+	gap: 0 0.5rem;
   justify-content: center;
 
   &.secondary,
   &.primary {
     color: var(--clr-primary);
     border: 0.05rem solid var(--clr-other);
-		padding: var(--size) calc(var(--size) * 0.7);
     border-radius: var(--round-sm);
   }
+  &.primary {
+    color: var(--clr-text);
+  }
+  &.secondary {
+    background-color: var(--clr-secondary);
+  }
 
-	&.primary {
-		color: var(--clr-text);
-	}
-
-	&.secondary {
-		background-color: var(--clr-secondary);
-	}
-
-	&.max-y {
-		--size: 0;
-		height: 100%;
-	}
+  &.max-y {
+    height: 100%;
+  }
 
   &.sm {
-    font-size: var(--font-md);
-		--size: 1.2rem
+    font-size: var(--font-sm);
+    padding: 0.5rem 0.6rem;
   }
 
   &.md {
-    font-size: var(--font-xl);
-		--size: 1.5rem
+    font-size: var(--font-md);
+    padding: 0.6rem 0.75rem;
   }
 
   &.lg {
-    font-size: var(--font-xl);
-		--size: 1.8rem
+    font-size: var(--font-lg);
+    padding: 0.6rem 0.8rem;
   }
 }

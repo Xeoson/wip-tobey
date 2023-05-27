@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "webpack serve --open",
+    "dev": "webpack serve --open --env isDev=true",
     "start": "webpack serve --open",
-    "build": "webpack --env isDev=false",
+    "build": "webpack",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "slint": "npx stylelint \"**/*.scss\"",
@@ -84,6 +84,7 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.1.0",
     "@reduxjs/toolkit": "^1.9.5",
     "dayjs": "^1.11.7",
     "normalize.css": "^8.0.1",
@@ -93,7 +94,8 @@
     "react-icons": "^4.8.0",
     "react-query": "^3.39.3",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.11.1"
+    "react-router-dom": "^6.11.1",
+    "yup": "^1.2.0"
   },
   "readme": "ERROR: No README data found!",
   "_id": "calc@1.0.0"

@@ -11,6 +11,24 @@ body {
 	background: var(--clr-bg);
 	color: var(--clr-text);
 	height: 100dvh;
+
+	&::-webkit-scrollbar {
+		width: 15px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 14px;
+		background-color: rgb(195, 195, 195);
+	}
+
+}
+
+button:not([disabled]) {
+	cursor: pointer;
+}
+
+*:disabled {
+	opacity: 0.4;
 }
 
 dialog[open] {

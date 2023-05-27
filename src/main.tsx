@@ -1,11 +1,14 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './app'
+import { AppProviders } from 'app/ui/AppProviders'
 
 const root = ReactDOM.createRoot(document.querySelector('#root') as HTMLDivElement)
 
 root.render(
   <StrictMode>
-    <App />
+    <AppProviders>
+      <App />
+    </AppProviders>
   </StrictMode>
 )

@@ -8,16 +8,14 @@ interface IEnv {
   isDev: boolean
 }
 
-// export let isDev = true
-
-export default ({isDev = true}: IEnv): Configuration => {
+export default ({isDev}: IEnv): Configuration => {
 
 	const config: Configuration = {
     mode: isDev ? 'development' : 'production',
     entry: [path.resolve(__dirname, 'src', 'main.tsx')],
     output: {
       path: path.resolve(__dirname, 'build'),
-      filename: '[name].js',
+      filename: '[name].[contenthash].js',
       clean: true,
       assetModuleFilename: 'images/[name].[hash][ext]',
     },
@@ -29,11 +27,11 @@ export default ({isDev = true}: IEnv): Configuration => {
     module: {
       rules: buildRules(isDev),
     },
-    devServer: buildDevServer(),
+    devServer: isDev ? buildDevServer() : undefined,
   }
 
 	if (isDev) {
-		config.devtool = 'source-map'
+		config.devtool = 'inline-source-map'
 	}
 
 	return config

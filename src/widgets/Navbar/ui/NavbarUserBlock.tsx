@@ -1,29 +1,41 @@
-import { MdOutlineFavoriteBorder, MdOutlineShoppingCart } from 'react-icons/md'
-import s from './NavbarUserBlock.module.scss'
 import browserRoutes from 'app/lib/browserRoutes'
-import User from 'entities/user-card/ui/User'
-import { userMock } from 'shared/lib/mocks/user'
+import { LoginActions } from 'features/login/model/slice'
+import UserArea from 'features/login/ui/UserArea/UserArea'
+import { MdOutlineFavoriteBorder, MdOutlineShoppingCart } from 'react-icons/md'
+import { useDispatch } from 'react-redux'
 import LinkButton from 'shared/ui/Buttons/LinkButton'
+import s from './NavbarUserBlock.module.scss'
 
 interface NavbarUserBlockProps {}
 
 const NavbarUserBlock = (props: NavbarUserBlockProps) => {
+  const dispatch = useDispatch()
+
+  const handleLogin = () => {
+    dispatch(LoginActions.set({ isOpen: true }))
+  }
+
   return (
     <div className={s.main}>
       <LinkButton
+        className={s.linkBtn}
+        theme={'none'}
+        size="md"
         to={browserRoutes.favorites}
-        text={'Favorites'}
-        icon={<MdOutlineFavoriteBorder />}
-      />
+      >
+        <MdOutlineFavoriteBorder />
+        <span>Favorites</span>
+      </LinkButton>
       <LinkButton
+        className={s.linkBtn}
+        theme={'none'}
+        size="md"
         to={browserRoutes.cart}
-        text={'Cart'}
-        icon={<MdOutlineShoppingCart />}
-      />
-      <LinkButton
-        to={browserRoutes.userProfile}
-        icon={<User size="sm" user={{ avatar: userMock.avatar }} />}
-      />
+      >
+        <MdOutlineShoppingCart />
+        <span>Cart</span>
+      </LinkButton>
+      <UserArea />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { type IProduct } from '../../../app/model/firestore/types'
+import { type IProduct } from '../../../app/api/firestore/types'
 import phoneImg from './phone.webp'
 
 const product: IProduct = {

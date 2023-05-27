@@ -12,10 +12,11 @@ interface NavbarProps {}
 const Navbar = (props: NavbarProps) => {
   const matchTablet = useMatchTablet()
 
-  console.log('matchTablet', matchTablet)
   return (
     <nav className={s.main}>
-      <LinkButton to={browserRoutes.home} icon={<Logo />} />
+      <LinkButton className={s.logo} theme='none' to={browserRoutes.home}>
+        <Logo />
+      </LinkButton>
       {matchTablet ? (
         <>
           <Search />

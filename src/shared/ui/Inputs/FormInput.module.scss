@@ -1,0 +1,54 @@
+.main {
+  position: relative;
+  height: 4rem;
+  width: 100%;
+
+	&:focus-within {
+		box-shadow: 0 0 0 2px var(--clr-secondary);
+	}
+}
+
+.input {
+  height: 70%;
+  margin-top: auto;
+	color: var(--clr-text);
+	font-size: var(--font-lg);
+}
+
+.input:focus > .placeholder {
+	transform: scaleX(0.75) translateY(0px);
+	transform-origin: left;
+}
+
+.placeholder {
+  position: absolute;
+	padding: 0.4rem 0.6rem;
+  left: 0;
+  top: 10%;
+  transition: transform 1s ease;
+	user-select: none;
+  // transform: scaleX(1) translateY(20px);
+}
+
+.error {
+	display: flex;
+	align-items: center;
+	gap: 0 0.3rem;
+	font-weight: 300;
+	color: var(--clr-error);
+	animation: onShow 0.3s ease;
+	user-select: none;
+
+	svg {
+		font-size: 1.2em;
+	}
+}
+
+@keyframes onShow {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

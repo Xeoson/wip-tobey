@@ -1,4 +1,4 @@
-import { type IUserOrderPopulated } from 'app/model/firestore/types'
+import { type IUserOrderPopulated } from 'app/api/firestore/types'
 import dayjs from 'dayjs'
 import ProductCard from 'entities/product-card/ui/ProductCard'
 import { useRef } from 'react'

@@ -5,7 +5,9 @@ import { Suspense, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 import cn from 'shared/lib/helpers/classNames'
 import usePointerClick from 'shared/lib/hooks/usePointerClick'
-import { type IProduct } from '../../../app/model/firestore/types'
+import { phonePublicPathMock } from 'shared/lib/mocks/images'
+import { type ISource } from 'shared/ui/Blocks/Image'
+import { type IProduct } from '../../../app/api/firestore/types'
 import s from './ProductCard.module.scss'
 
 const HoveredImageCarouselAsync = lazy(
@@ -18,6 +20,8 @@ export interface ProductCardProps {
   withCart?: boolean
   withFavorite?: boolean
 }
+
+const productImageSources: ISource[] = [{ transf: 'w_300' }]
 
 const ProductCard = ({
   size = 'md',
@@ -37,6 +41,13 @@ const ProductCard = ({
       {imgType === 'dynaimc' ? (
         <Suspense>
           <HoveredImageCarouselAsync
+            sources={productImageSources}
+            publicPaths={[
+              phonePublicPathMock,
+              phonePublicPathMock,
+              phonePublicPathMock,
+              phonePublicPathMock,
+            ]}
             className={s.imgBlock}
             images={props.images}
           />

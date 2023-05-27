@@ -1,16 +1,19 @@
 import cn from 'shared/lib/helpers/classNames'
 import { type DP } from '../../../shared/lib/types'
+import Image, { type ISource } from '../Blocks/Image'
 import s from './Carousel.module.scss'
 
 interface CarouselProps extends DP {
-  images: string[]
+  publicPaths: string[]
+  sources: ISource[]
   currentIdx: number
   animDuration?: number
 }
 
 const Carousel = ({
   currentIdx,
-  images,
+  publicPaths,
+  sources,
   children,
   className,
   animDuration = 0.4,
@@ -25,11 +28,13 @@ const Carousel = ({
         }}
         className={s.list}
       >
-        {images.map((el) => (
-          <span
-            key={el}
-            style={{ backgroundImage: `url(${el})` }}
+        {publicPaths.map((el, i) => (
+          <Image
+            isVisible={currentIdx === i}
             className={s.item}
+            publicPath={el}
+            sources={sources}
+            key={i}
           />
         ))}
       </div>

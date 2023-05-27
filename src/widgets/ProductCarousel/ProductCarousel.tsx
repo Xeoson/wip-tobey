@@ -1,4 +1,4 @@
-import { type IProduct } from 'app/model/firestore/types'
+import { type IProduct } from 'app/api/firestore/types'
 import ProductCard from 'entities/product-card/ui/ProductCard'
 import useTapMouseScroll from 'shared/lib/hooks/useTapMouseScroll'
 import s from './ProductCarousel.module.scss'

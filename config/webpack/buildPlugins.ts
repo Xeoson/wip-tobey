@@ -11,6 +11,9 @@ export default (isDev: boolean): WebpackPluginInstance[] =>
       filename: isDev ? '[path].[name].css' : '[name].[contenthash].css',
       chunkFilename: isDev ? '[path].[id].css' : '[id].[contenthash].css',
     }),
-    new DotenvWebpackPlugin(),
+    new DotenvWebpackPlugin({
+      path: './.env',
+      defaults: isDev,
+    }),
     isDev && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean) as WebpackPluginInstance[]
