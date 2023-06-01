@@ -7,4 +7,5 @@ build
 webpack.config.ts
 .babel.config.js
 src/stories/**/*
+**/*.stories.tsx
 **/*.test.ts

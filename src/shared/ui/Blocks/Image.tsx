@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { type DP } from 'shared/lib/types'
 import s from './Image.module.scss'
+import cn from 'shared/lib/helpers/classNames'
 
 const CLOUD_NAME = 'ds3ctqoro'
 
@@ -37,7 +38,7 @@ const Image = ({
   const thumbnailTransform = visible ? '' : ',q_1:420,c_thumb,w_50'
 
   return (
-    <picture className={s.main}>
+    <picture className={cn(s.main, className)}>
       {sources.map((el, i) => (
         <source
           key={i}

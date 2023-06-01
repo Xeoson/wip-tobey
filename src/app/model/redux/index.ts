@@ -1,32 +1,55 @@
 import {
   configureStore,
-  type DeepPartial,
+  type CombinedState,
+  type Reducer,
   type ReducersMapObject,
 } from '@reduxjs/toolkit'
+import { AppFirestore } from 'app/api/firestore/firestore'
 import { UserReducer } from 'entities/user/model/slice'
-import { LoginReducer } from 'features/login/model/slice'
-import { useSelector, type TypedUseSelectorHook } from 'react-redux'
+import { AppAuth } from 'features/login/api/auth'
+import {
+  useDispatch,
+  useSelector,
+  type TypedUseSelectorHook,
+} from 'react-redux'
+import { MainReducer } from './main/slice'
 import { createReducerManager } from './reducerManager'
-import { type AppState } from './types'
+import {
+  type AppState,
+  type CreateStoreOptions,
+  type ThunkExtraType,
+} from './types'
 
-export const createStore = (initState?: DeepPartial<AppState>) => {
+export const createStore = ({ initState, navigate }: CreateStoreOptions) => {
   const reducers: ReducersMapObject<AppState> = {
     user: UserReducer,
-    login: LoginReducer,
+    main: MainReducer,
   }
 
   const reducerManager = createReducerManager(reducers)
 
-  const store = configureStore<AppState>({
-    // @ts-expect-error
-    reducer: reducerManager.reduce,
+  const thunkExtra: ThunkExtraType = {
+    auth: AppAuth,
+    firestore: AppFirestore,
+    navigate,
+  }
+
+  const store = configureStore({
+    reducer: reducerManager.reduce as Reducer<CombinedState<AppState>>,
     preloadedState: initState,
-		devTools: !!process.env.IS_DEV
+    devTools: true,
+    middleware: (midd) =>
+      midd({
+        thunk: { extraArgument: thunkExtra },
+      }),
   })
+
   // @ts-expect-error
   store.reducerManager = reducerManager
 
   return store
 }
 
+export type DispatchType = ReturnType<typeof createStore>['dispatch']
+export const useAppDispatch: () => DispatchType = () => useDispatch()
 export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector

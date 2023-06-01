@@ -9,8 +9,7 @@ import {
   type Firestore,
 } from 'firebase/firestore'
 
-
-export class FirestoreCollection<T extends { id: string }> {
+export default class FirestoreCollection<T extends { id: string }> {
   constructor(
     private readonly db: Firestore,
     private readonly collection: string

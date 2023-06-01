@@ -1,7 +1,7 @@
 import browserRoutes from 'app/lib/browserRoutes'
 import { useMatchTablet } from 'app/lib/const'
+import { MainActions } from 'app/model/redux/main/slice'
 import { getIsDataLoading, getUser } from 'entities/user/model/selectors'
-import { LoginActions } from 'features/login/model/slice'
 import { Suspense, lazy } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Route, Routes, useNavigate } from 'react-router-dom'
@@ -41,9 +41,11 @@ export const AppRouter = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+  console.log('isUserLoading', isUserLoading)
+
   const handleUnauth = () => {
     navigate(browserRoutes.home)
-    dispatch(LoginActions.set({ isOpen: true }))
+    dispatch(MainActions.set({ openedModal: 'login' }))
   }
 
   return (

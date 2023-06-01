@@ -1,7 +1,7 @@
 import { type Firestore } from 'firebase/firestore'
-import { FirestoreCollection } from './firestore'
+import FirestoreCollection from './firestore'
 
-export class FirestoreCollectionFactory {
+export default class FirestoreCollectionFactory {
   constructor(private readonly db: Firestore) {}
 
   createCollection<T extends Record<string, any>>(collection: string) {

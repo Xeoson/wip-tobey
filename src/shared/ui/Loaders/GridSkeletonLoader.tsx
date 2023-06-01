@@ -3,8 +3,8 @@ import s from './GridSkeletonLoader.module.scss'
 
 interface GridSkeletonLoaderProps {
   gridTemplate: string
-  width: string
-  height: string
+  width?: string
+  height?: string
 }
 const GridSkeletonLoader = ({
   gridTemplate,
@@ -12,9 +12,7 @@ const GridSkeletonLoader = ({
   height,
 }: GridSkeletonLoaderProps) => {
   const els = [
-    ...new Set(
-      [...gridTemplate.matchAll(/\b(?:(img|block)\d*)\b/g)].map((e) => e[0])
-    ),
+    ...new Set([...gridTemplate.matchAll(/\b(?:[ib]\d*)\b/g)].map((e) => e[0])),
   ]
 
   return (
@@ -23,7 +21,7 @@ const GridSkeletonLoader = ({
         <div
           style={{ gridArea: type }}
           key={i}
-          className={cn(s.item, s[type])}
+          className={cn(s.item, type.startsWith('i') ? s.img : s.block)}
         />
       ))}
     </div>

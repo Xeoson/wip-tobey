@@ -7,15 +7,15 @@ import { ErrorBoundary } from './ErrorBoundary'
 import StoreProvider from './StoreProvider'
 
 export const AppProviders = ({ children }: PropsWithChildren) => (
-  <StoreProvider>
+  <BrowserRouter>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <StoreProvider>
         <MatchTabletProvider>
           <MatchHoverProvider>
             <ErrorBoundary>{children}</ErrorBoundary>
           </MatchHoverProvider>
         </MatchTabletProvider>
-      </BrowserRouter>
+      </StoreProvider>
     </QueryClientProvider>
-  </StoreProvider>
+  </BrowserRouter>
 )

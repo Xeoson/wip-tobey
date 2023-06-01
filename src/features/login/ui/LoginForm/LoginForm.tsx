@@ -4,11 +4,12 @@ import {
   getFormType,
   getIsLoading,
 } from 'features/login/model/selectors'
-import { LoginActions } from 'features/login/model/slice'
+import { LoginActions, LoginReducer } from 'features/login/model/slice'
 import { signIn, signUp } from 'features/login/model/thunks'
 import { useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
+import withReducerLoader from 'shared/lib/components/withReducerLoader'
 import Button from 'shared/ui/Buttons/Button'
 import FormInput from 'shared/ui/Inputs/FormInput'
 import { object, string } from 'yup'
@@ -38,6 +39,7 @@ const LoginForm = (props: LoginFormProps) => {
   } = useForm<ILoginFields>({
     resolver: yupResolver(yupSchema),
   })
+
   const formRef = useRef<HTMLFormElement | null>(null)
   const isLoading = useSelector(getIsLoading)
   const formType = useSelector(getFormType)
@@ -106,4 +108,8 @@ const LoginForm = (props: LoginFormProps) => {
   )
 }
 
-export default LoginForm
+export default withReducerLoader({
+  Component: LoginForm,
+  reducers: { login: LoginReducer },
+  // removeOnUnmount: true
+})

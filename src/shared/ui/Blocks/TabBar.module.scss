@@ -9,6 +9,8 @@
 	background-color: white;
 	z-index: 2;
 	margin-top: auto;
+	height: var(--tabbar-h);
+	box-sizing: border-box;
 
 	.item {
 		display: flex;

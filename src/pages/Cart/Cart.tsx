@@ -5,6 +5,7 @@ import DeliveryAddress from 'widgets/DeliveryAddress/DeliveryAddress'
 import PaymentInfo from 'widgets/PaymentInfo/PaymentInfo'
 import PageLayout from '../../app/ui/PageLayout'
 import products from '../../shared/lib/mocks/products'
+import { memo } from 'react'
 
 interface CartProps {}
 
@@ -23,4 +24,4 @@ const Cart = (props: CartProps) => {
   )
 }
 
-export default Cart
+export default memo(Cart)

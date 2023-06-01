@@ -4,14 +4,14 @@ import { type DP } from 'shared/lib/types'
 import s from './Modal.module.scss'
 
 interface ModalProps extends DP {
-  onBackdropClick?: () => void
+  onClose: () => void
   isOpen: boolean
 }
 
 const Modal = ({
   children,
   className,
-  onBackdropClick,
+  onClose,
   isOpen,
   ...props
 }: ModalProps) => {
@@ -19,11 +19,11 @@ const Modal = ({
 
   useEffect(() => {
     if (isOpen) {
+      setClosed(false)
       document.body.setAttribute(
         'style',
         'overflow: hidden; margin-right: 15px'
       )
-      setClosed(false)
     } else {
       setTimeout(() => {
         setClosed(true)
@@ -39,10 +39,7 @@ const Modal = ({
   }
 
   return (
-    <div
-      onClick={onBackdropClick}
-      className={cn(s.main, !isOpen && s.clousing)}
-    >
+    <div onClick={onClose} className={cn(s.main, !isOpen && s.clousing)}>
       <div onClick={handleContentClick} className={cn(s.content, className)}>
         {children}
       </div>

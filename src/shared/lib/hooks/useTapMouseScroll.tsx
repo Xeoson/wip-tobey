@@ -23,7 +23,7 @@ export default <T extends HTMLElement>() => {
         }
         e.currentTarget.scrollTo({
           left: scrollLeftRef.current - diff,
-          behavior: 'smooth',
+          behavior: 'auto',
         })
       }
     }

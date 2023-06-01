@@ -1,4 +1,5 @@
 import { type IProduct } from 'app/api/firestore/types'
+import { useMatchHover } from 'app/lib/const'
 import ProductCard from 'entities/product-card/ui/ProductCard'
 import useTapMouseScroll from 'shared/lib/hooks/useTapMouseScroll'
 import s from './ProductCarousel.module.scss'
@@ -17,6 +18,7 @@ const ProductCarousel = ({
   size,
   ...props
 }: ProductCarouselProps) => {
+  const matchHover = useMatchHover()
   const events = useTapMouseScroll()
 
   return (
@@ -33,6 +35,7 @@ const ProductCarousel = ({
             size={size}
             withFavorite={size === 'lg'}
             withCart={size === 'lg'}
+            withImageCarousel={matchHover}
           />
         ))}
       </div>

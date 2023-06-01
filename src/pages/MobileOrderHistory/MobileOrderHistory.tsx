@@ -1,5 +1,6 @@
 import DateGrouppedOrders from 'widgets/DateGrouppedOrders/DateGrouppedList'
 import PageLayout from '../../app/ui/PageLayout'
+import { memo } from 'react'
 
 interface MobileOrderHistoryProps {}
 
@@ -11,4 +12,4 @@ const MobileOrderHistory = (props: MobileOrderHistoryProps) => {
   )
 }
 
-export default MobileOrderHistory
+export default memo(MobileOrderHistory)

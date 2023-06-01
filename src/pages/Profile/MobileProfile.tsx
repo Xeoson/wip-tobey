@@ -3,6 +3,7 @@ import { profileSettings } from '../../app/lib/const'
 import PageLayout from '../../app/ui/PageLayout'
 
 import UserArea from 'features/login/ui/UserArea/UserArea'
+import { memo } from 'react'
 
 interface MobileProfileProps {}
 
@@ -15,4 +16,4 @@ const MobileProfile = (props: MobileProfileProps) => {
   )
 }
 
-export default MobileProfile
+export default memo(MobileProfile)

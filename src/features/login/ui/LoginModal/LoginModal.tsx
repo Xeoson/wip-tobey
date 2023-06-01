@@ -1,31 +1,33 @@
-import { useAppSelector } from 'app/model/redux'
-import { getIsOpen } from 'features/login/model/selectors'
-import { LoginActions } from 'features/login/model/slice'
-import { Suspense, lazy } from 'react'
-import { useDispatch } from 'react-redux'
-import PageLoader from 'shared/ui/Loaders/PageLoader'
+import { Suspense, lazy, memo } from 'react'
+import GridSkeletonLoader from 'shared/ui/Loaders/GridSkeletonLoader'
 import Modal from 'shared/ui/Modals/Modal'
 import s from './LoginModal.module.scss'
 
 const LoginForm = lazy(async () => await import('../LoginForm/LoginForm'))
 
-interface LoginModalProps {}
+interface LoginModalProps {
+  isOpen: boolean
+  onClose: () => void
+}
 
-const LoginModal = (props: LoginModalProps) => {
-  const isOpen = useAppSelector(getIsOpen)
-  const dispatch = useDispatch()
+const skeletonTemplate = `". b1 ." 2rem \n "b2 b2 b2" 4rem \n "b3 b3 b3" 4rem \n ". b4 ." 3rem`
 
-  const handleClose = () => {
-    dispatch(LoginActions.set({ isOpen: false, formError: '', isLoading: false }))
-  }
-
+const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
   return (
-    <Modal isOpen={isOpen} onBackdropClick={handleClose} className={s.main}>
-      <Suspense fallback={<PageLoader />}>
+    <Modal isOpen={isOpen} onClose={onClose} className={s.main}>
+      <Suspense
+        fallback={
+          <GridSkeletonLoader
+            gridTemplate={skeletonTemplate}
+            height="100%"
+            width="21rem"
+          />
+        }
+      >
         <LoginForm />
       </Suspense>
     </Modal>
   )
 }
 
-export default LoginModal
+export default memo(LoginModal)

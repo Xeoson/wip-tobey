@@ -17,7 +17,7 @@ const AddToFavoriteButton = ({
   const onAddFavorite = (e: React.PointerEvent<HTMLButtonElement>) => {
     e.stopPropagation()
   }
-	const events = usePointerClick(onAddFavorite)
+  const events = usePointerClick(onAddFavorite)
 
   return (
     <button {...events} className={cn(s.main, className)}>

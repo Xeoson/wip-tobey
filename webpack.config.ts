@@ -27,11 +27,11 @@ export default ({isDev}: IEnv): Configuration => {
     module: {
       rules: buildRules(isDev),
     },
-    devServer: isDev ? buildDevServer() : undefined,
   }
 
 	if (isDev) {
 		config.devtool = 'inline-source-map'
+		config.devServer = buildDevServer()
 	}
 
 	return config

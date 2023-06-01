@@ -25,8 +25,8 @@ export interface IUser {
   avatar?: string
   email: string
   phone?: string,
-	createdAt: number,
-	updatedAt: number
+  createdAt: number,
+  updatedAt: number
 }
 
 export interface IUserOrder {

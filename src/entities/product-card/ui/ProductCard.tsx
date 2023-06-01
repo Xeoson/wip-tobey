@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import cn from 'shared/lib/helpers/classNames'
 import usePointerClick from 'shared/lib/hooks/usePointerClick'
 import { phonePublicPathMock } from 'shared/lib/mocks/images'
-import { type ISource } from 'shared/ui/Blocks/Image'
+import Image, { type ISource } from 'shared/ui/Blocks/Image'
 import { type IProduct } from '../../../app/api/firestore/types'
 import s from './ProductCard.module.scss'
 
@@ -16,7 +16,7 @@ const HoveredImageCarouselAsync = lazy(
 
 export interface ProductCardProps {
   size?: 'sm' | 'md' | 'lg'
-  imgType?: 'static' | 'dynaimc'
+  imgType?: 'static' | 'carousel'
   withCart?: boolean
   withFavorite?: boolean
 }
@@ -25,9 +25,9 @@ const productImageSources: ISource[] = [{ transf: 'w_300' }]
 
 const ProductCard = ({
   size = 'md',
-  withCart = false,
-  withFavorite = false,
-  imgType = 'dynaimc',
+  withCart = true,
+  withFavorite = true,
+  imgType = 'static',
   ...props
 }: ProductCardProps & IProduct) => {
   const navigate = useNavigate()
@@ -38,7 +38,7 @@ const ProductCard = ({
 
   return (
     <div {...events} className={cn(s.main, s[size])}>
-      {imgType === 'dynaimc' ? (
+      {imgType === 'carousel' ? (
         <Suspense>
           <HoveredImageCarouselAsync
             sources={productImageSources}
@@ -53,9 +53,12 @@ const ProductCard = ({
           />
         </Suspense>
       ) : (
-        <div className={s.imgBlock}>
-          <img src={props.images[0]} />
-        </div>
+        <Image
+          className={s.imgBlock}
+          isVisible
+          publicPath={phonePublicPathMock}
+          sources={productImageSources}
+        />
       )}
       <p className={s.title}>{props.title}</p>
       <p className={s.subtitle}>{props.description}</p>

@@ -1,5 +1,6 @@
 import UserAddressList from 'widgets/UserAddressList/UserAddressList'
 import PageLayout from '../../app/ui/PageLayout'
+import { memo } from 'react'
 
 interface MobileAddressProps {}
 
@@ -11,4 +12,4 @@ const MobileAddress = (props: MobileAddressProps) => {
   )
 }
 
-export default MobileAddress
+export default memo(MobileAddress)

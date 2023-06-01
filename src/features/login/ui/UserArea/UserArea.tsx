@@ -1,9 +1,10 @@
 import browserRoutes from 'app/lib/browserRoutes'
+import { useAppDispatch } from 'app/model/redux'
+import { MainActions } from 'app/model/redux/main/slice'
 import { getIsDataLoading, getUser } from 'entities/user/model/selectors'
-import { LoginActions } from 'features/login/model/slice'
 import { signOut } from 'features/login/model/thunks'
 import { FiLogIn, FiLogOut } from 'react-icons/fi'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import User from 'shared/ui/Blocks/User'
 import Button from 'shared/ui/Buttons/Button'
@@ -14,12 +15,12 @@ interface UserAreaProps {
   withLogOutBtn?: boolean
 }
 
-const skeletonTemplate = `"img block1" \n "img block2" / auto 1fr`
+const skeletonTemplate = `"i1 b1" \n "i1 b2" / auto 1fr`
 
 const UserArea = ({ withLogOutBtn = false }: UserAreaProps) => {
   const isLoading = useSelector(getIsDataLoading)
   const user = useSelector(getUser)
-  const dispatch = useDispatch<any>()
+  const dispatch = useAppDispatch()
 
   if (isLoading) {
     return (
@@ -32,7 +33,7 @@ const UserArea = ({ withLogOutBtn = false }: UserAreaProps) => {
   }
 
   const handleLogin = () => {
-    dispatch(LoginActions.set({ isOpen: true }))
+    dispatch(MainActions.set({ openedModal: 'login' }))
   }
   const handleLogout = () => {
     dispatch(signOut())

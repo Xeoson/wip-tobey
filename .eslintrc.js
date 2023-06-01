@@ -37,5 +37,7 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': 0,
     '@typescript-eslint/ban-ts-comment': 0,
     '@typescript-eslint/no-misused-promises': 0,
+		'@typescript-eslint/no-floating-promises': 0,
+		'@typescript-eslint/prefer-nullish-coalescing': 0
   },
 }

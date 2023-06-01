@@ -5,6 +5,7 @@
 		"no-descending-specificity": null,
 		"no-empty-source": null,
 		"alpha-value-notation": null,
-		"block-no-empty": null
+		"block-no-empty": null,
+		"keyframes-name-pattern": null
 	}
 }

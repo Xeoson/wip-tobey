@@ -3,6 +3,7 @@ import ProductCarousel from 'widgets/ProductCarousel/ProductCarousel'
 import PageLayout from '../../app/ui/PageLayout'
 import products from '../../shared/lib/mocks/products'
 import Categories from '../../widgets/Categories/Categories'
+import { memo } from 'react'
 
 interface HomeProps {}
 
@@ -18,4 +19,4 @@ const Home = (props: HomeProps) => {
   )
 }
 
-export default Home
+export default memo(Home)

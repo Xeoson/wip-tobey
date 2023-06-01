@@ -3,6 +3,7 @@ import ImageCarousel from 'widgets/ProductImageCarousel/ProductImageCarousel'
 import PageLayout from '../../app/ui/PageLayout'
 
 import products from '../../shared/lib/mocks/products'
+import { memo } from 'react'
 
 interface ProductProps {}
 
@@ -17,4 +18,4 @@ const Product = (props: ProductProps) => {
   )
 }
 
-export default Product
+export default memo(Product)

@@ -2,12 +2,12 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { type IUser } from 'app/api/firestore/types'
 
 export interface IUserState {
-  user?: IUser,
-	isDataLoading: boolean
+  user?: IUser
+  isDataLoading: boolean
 }
 
 const initialState: IUserState = {
-	isDataLoading: true
+  isDataLoading: true,
 }
 
 export const { actions: UserActions, reducer: UserReducer } = createSlice({

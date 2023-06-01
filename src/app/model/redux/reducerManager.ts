@@ -2,7 +2,7 @@
 import {
   combineReducers,
   type AnyAction,
-  type CombinedState,
+  type EnhancedStore,
   type Reducer,
   type ReducersMapObject,
 } from '@reduxjs/toolkit'
@@ -18,11 +18,11 @@ export function createReducerManager(
 
   return {
     getReducerMap: () => reducers,
-    reduce: (state: AppState, action: AnyAction): CombinedState<AppState> => {
+    reduce: (state: AppState, action: AnyAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state }
         for (const key of keysToRemove) {
-          delete (state as any)[key]
+          delete state[key]
         }
         keysToRemove = []
       }
@@ -47,4 +47,9 @@ export function createReducerManager(
       combinedReducer = combineReducers(reducers)
     },
   }
+}
+
+export type ReducerManagerType = ReturnType<typeof createReducerManager>
+export type StoreWithReducerManager = EnhancedStore<AppState> & {
+  reducerManager: ReducerManagerType
 }

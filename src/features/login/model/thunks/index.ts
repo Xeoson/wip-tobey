@@ -1,21 +1,22 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { AppFirestore } from 'app/api/firestore/firestore'
 import { type IUser } from 'app/api/firestore/types'
+import browserRoutes from 'app/lib/browserRoutes'
+import { MainActions } from 'app/model/redux/main/slice'
+import { type ThunkConfig } from 'app/model/redux/types'
 import { UserActions } from 'entities/user/model/slice'
-import { AppAuth } from 'features/login/api/auth'
 
-interface SignInFields {
+export interface SignInFields {
   email: string
   password: string
 }
-interface SignUpFields extends SignInFields {
+export interface SignUpFields extends SignInFields {
   name?: string
 }
 
-export const signUp = createAsyncThunk<any, SignUpFields>(
+export const signUp = createAsyncThunk<any, SignUpFields, ThunkConfig>(
   'login/signUp',
-  async ({ email, password, name }, thunkApi) => {
-    const userRes = await AppAuth.signUpWithEmail(email, password)
+  async ({ email, password, name }, { dispatch, extra }) => {
+    const userRes = await extra.auth.signUpWithEmail(email, password)
     if (!userRes.email) throw new Error('Email not pass')
     const userDoc: IUser = {
       email: userRes.email,
@@ -24,20 +25,26 @@ export const signUp = createAsyncThunk<any, SignUpFields>(
       createdAt: Date.now(),
       updatedAt: Date.now(),
     }
-    const user = await AppFirestore.user.set(userDoc, { returnDoc: true })
-    thunkApi.dispatch(UserActions.set({ user }))
-  } 
-)
-
-export const signIn = createAsyncThunk<any, SignInFields>(
-  'login/signIn',
-  async ({ email, password }, thunkApi) => {
-    const userRes = await AppAuth.signInWithEmail(email, password)
-    console.log('signIn userRes', userRes)
+    const user = await extra.firestore.user.set(userDoc, { returnDoc: true })
+    dispatch(UserActions.set({ user }))
+    dispatch(MainActions.set({ openedModal: undefined }))
   }
 )
 
-export const signOut = createAsyncThunk('login/signOut', async () => {
-  await AppAuth.signOut()
-  location.reload()
-})
+export const signIn = createAsyncThunk<any, SignInFields, ThunkConfig>(
+  'login/signIn',
+  async ({ email, password }, { dispatch, extra }) => {
+    const userRes = await extra.auth.signInWithEmail(email, password)
+    const user = await extra.firestore.user.get(userRes.uid)
+    dispatch(UserActions.set({ user }))
+    dispatch(MainActions.set({ openedModal: undefined }))
+  }
+)
+
+export const signOut = createAsyncThunk<unknown, never, ThunkConfig>(
+  'login/signOut',
+  async (_, { extra }) => {
+    await extra.auth.signOut()
+    location.replace(browserRoutes.home)
+  }
+)

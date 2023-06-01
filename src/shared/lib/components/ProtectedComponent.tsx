@@ -10,7 +10,7 @@ type ProtectedRouteProps = RouteProps & {
 
 const ProtectedComponent = ({
   isAuth,
-	isUserLoading,
+  isUserLoading,
   onUnauth,
   Component,
   ...props

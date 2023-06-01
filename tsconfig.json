@@ -115,5 +115,5 @@
     }
   },
   "include": ["./src/**/*", "./config/jest/setup.ts"],
-  "exclude": ["./node_modules"]
+  "exclude": ["./node_modules", "./src/stories"]
 }

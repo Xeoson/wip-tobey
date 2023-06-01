@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai'
-import banners from 'shared/lib/mocks/banners'
 import CarouselPagination from '../Blocks/CarouselPagination'
 import { type ISource } from '../Blocks/Image'
 import s from './BannerCarousel.module.scss'

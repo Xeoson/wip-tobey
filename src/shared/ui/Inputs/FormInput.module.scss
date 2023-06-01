@@ -16,7 +16,7 @@
 }
 
 .input:focus > .placeholder {
-	transform: scaleX(0.75) translateY(0px);
+	transform: scaleX(0.75) translateY(0);
 	transform-origin: left;
 }
 
@@ -27,6 +27,7 @@
   top: 10%;
   transition: transform 1s ease;
 	user-select: none;
+
   // transform: scaleX(1) translateY(20px);
 }
 
@@ -48,6 +49,7 @@
 	0% {
 		opacity: 0;
 	}
+
 	100% {
 		opacity: 1;
 	}

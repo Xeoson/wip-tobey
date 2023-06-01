@@ -2,14 +2,12 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { signIn, signUp } from './thunks'
 
 export interface ILoginState {
-  isOpen: boolean
   isLoading: boolean
   formType: 'signIn' | 'signUp'
   formError: string
 }
 
 const initialState: ILoginState = {
-  isOpen: false,
   isLoading: false,
   formType: 'signIn',
   formError: '',
@@ -32,7 +30,6 @@ export const { actions: LoginActions, reducer: LoginReducer } = createSlice({
       })
       .addCase(signUp.fulfilled, (state) => {
         state.isLoading = false
-        state.isOpen = false
       })
       .addCase(signUp.rejected, (state, { error }) => {
         state.formError = error.message ?? 'Something went wrong'
@@ -44,7 +41,6 @@ export const { actions: LoginActions, reducer: LoginReducer } = createSlice({
       })
       .addCase(signIn.fulfilled, (state) => {
         state.isLoading = false
-        state.isOpen = false
       })
       .addCase(signIn.rejected, (state, { error }) => {
         state.formError = error.message ?? 'Something went wrong'
