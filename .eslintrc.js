@@ -38,6 +38,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 0,
     '@typescript-eslint/no-misused-promises': 0,
 		'@typescript-eslint/no-floating-promises': 0,
-		'@typescript-eslint/prefer-nullish-coalescing': 0
+		'@typescript-eslint/prefer-nullish-coalescing': 0,
+		"@typescript-eslint/consistent-type-assertions": 0
   },
 }

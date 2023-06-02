@@ -4,9 +4,12 @@ type IModal = 'login'
 
 export interface IMainState {
   openedModal?: IModal
+  isDarkTheme: boolean
 }
 
-const initialState: IMainState = {}
+const initialState: IMainState = {
+  isDarkTheme: false,
+}
 
 export const { actions: MainActions, reducer: MainReducer } = createSlice({
   name: 'Main',

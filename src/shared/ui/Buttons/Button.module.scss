@@ -7,12 +7,13 @@
   &.secondary,
   &.primary {
     color: var(--clr-primary);
-    border: 0.05rem solid var(--clr-other);
+    border: 0.05rem solid var(--clr-secondary);
     border-radius: var(--round-sm);
   }
 
   &.primary {
     color: var(--clr-text);
+		border-color: var(--clr-other);
   }
 
   &.secondary {

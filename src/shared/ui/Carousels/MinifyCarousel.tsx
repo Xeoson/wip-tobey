@@ -9,7 +9,9 @@ const MinifyCarousel = ({ categories }: MinifyCarouselProps) => {
     <div className={s.main}>
       {categories.map((el) => (
         <button key={el.title} className={s.item}>
-          <img src={el.preview} alt="category_preview" />
+          <div className={s.imgWrapper}>
+            <img src={el.preview} alt="category_preview" />
+          </div>
           <div>{el.title}</div>
         </button>
       ))}

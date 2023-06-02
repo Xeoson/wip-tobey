@@ -18,7 +18,7 @@ import s from './LoginForm.module.scss'
 const yupSchema = object<ILoginFields>({
   name: string().max(12, 'Max 12 chars'),
   email: string()
-    .matches(/^\S+@\S+\.\S+$/g, 'Invalid format')
+    .matches(/^\w+@\w+\.\w+$/g, 'Invalid format')
     .max(20, 'Max 20 chars'),
   password: string().min(6, 'Al least 6 chars').max(20, 'Max 20 chars'),
 })

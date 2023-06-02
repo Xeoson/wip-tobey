@@ -1,7 +1,7 @@
 import cn from 'shared/lib/helpers/classNames'
 import s from './GridSkeletonLoader.module.scss'
 
-interface GridSkeletonLoaderProps {
+export interface GridSkeletonLoaderProps {
   gridTemplate: string
   width?: string
   height?: string

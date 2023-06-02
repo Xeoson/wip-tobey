@@ -7,7 +7,7 @@
   &.default {
     .item {
       &.current {
-        background-color: var(--clr-text);
+        background-color: var(--clr-secondary);
         width: 1.5rem;
         border-radius: 12px;
       }
@@ -20,7 +20,7 @@
       height: 0.3rem;
 
       &.current {
-        background-color: var(--clr-text);
+        background-color: var(--clr-secondary);
       }
     }
   }

@@ -33,9 +33,9 @@ const ProductCarousel = ({
             key={i}
             {...el}
             size={size}
+            imgType={matchHover ? 'carousel' : 'static'}
             withFavorite={size === 'lg'}
             withCart={size === 'lg'}
-            withImageCarousel={matchHover}
           />
         ))}
       </div>

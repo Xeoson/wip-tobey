@@ -38,28 +38,30 @@ const ProductCard = ({
 
   return (
     <div {...events} className={cn(s.main, s[size])}>
-      {imgType === 'carousel' ? (
-        <Suspense>
-          <HoveredImageCarouselAsync
+      <div className={s.imgBlock}>
+        {imgType === 'carousel' ? (
+          <Suspense>
+            <HoveredImageCarouselAsync
+              sources={productImageSources}
+              publicPaths={[
+                phonePublicPathMock,
+                phonePublicPathMock,
+                phonePublicPathMock,
+                phonePublicPathMock,
+              ]}
+              className={s.img}
+              images={props.images}
+            />
+          </Suspense>
+        ) : (
+          <Image
+            className={s.img}
+            isVisible
+            publicPath={phonePublicPathMock}
             sources={productImageSources}
-            publicPaths={[
-              phonePublicPathMock,
-              phonePublicPathMock,
-              phonePublicPathMock,
-              phonePublicPathMock,
-            ]}
-            className={s.imgBlock}
-            images={props.images}
           />
-        </Suspense>
-      ) : (
-        <Image
-          className={s.imgBlock}
-          isVisible
-          publicPath={phonePublicPathMock}
-          sources={productImageSources}
-        />
-      )}
+        )}
+      </div>
       <p className={s.title}>{props.title}</p>
       <p className={s.subtitle}>{props.description}</p>
       <span className={s.price}>{props.price}$</span>
