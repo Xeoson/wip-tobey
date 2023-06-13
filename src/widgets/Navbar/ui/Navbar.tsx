@@ -1,14 +1,17 @@
 import { useMatchTablet } from 'app/lib/const'
-import useTheme from 'app/lib/theme/useTheme'
+import ThemeSwitcher from 'app/ui/ThemeSwitcher'
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import Logo from 'shared/lib/assets/logo.svg'
-import LinkButton from 'shared/ui/Buttons/LinkButton'
 import MobileSearch from 'widgets/MobileSearch/MobileSearch'
 import NavbarUserBlock from 'widgets/Navbar/ui/NavbarUserBlock'
 import browserRoutes from '../../../app/lib/browserRoutes'
 import Search from '../../Search/Search'
 import s from './Navbar.module.scss'
-import SwitcherButton from '../../../shared/ui/Buttons/SwitcherButton'
-import ThemeSwitcher from 'app/ui/ThemeSwitcher'
+import Flex from 'shared/kit/ui/Flex/Flex'
+
+const logoBtnStyles: ButtonStyles = {
+  theme: 'none',
+}
 
 interface NavbarProps {}
 
@@ -17,12 +20,12 @@ const Navbar = (props: NavbarProps) => {
 
   return (
     <nav className={s.main}>
-      <div>
-        <LinkButton className={s.logo} theme="none" to={browserRoutes.home}>
+      <Flex gapX='md'>
+        <Button type="link" styles={logoBtnStyles} to={browserRoutes.home}>
           <Logo />
-        </LinkButton>
+        </Button>
         <ThemeSwitcher />
-      </div>
+      </Flex>
       {matchTablet ? (
         <>
           <Search />

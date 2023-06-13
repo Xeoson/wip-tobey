@@ -1,47 +1,32 @@
 import browserRoutes from 'app/lib/browserRoutes'
 import { useMatchTablet } from 'app/lib/const'
+import { useAppDispatch } from 'app/model/redux'
 import { MainActions } from 'app/model/redux/main/slice'
 import { getIsDataLoading, getUser } from 'entities/user/model/selectors'
+import Home from 'pages/Home/Home'
+import MobileAddress from 'pages/MobileAddress/MobileAddress'
+import MobileFavorites from 'pages/MobileFavorites/MobileFavorites'
+import MobileOrderHistory from 'pages/MobileOrderHistory/MobileOrderHistory'
+import NotFound from 'pages/NotFound/NotFound'
+import Product from 'pages/Product/Product'
+import MobileProfile from 'pages/Profile/MobileProfile'
+import Profile from 'pages/Profile/Profile'
+import Cart from 'pages/cart/ui/cart/Cart'
 import { Suspense, lazy } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import ProtectedComponent from 'shared/lib/components/ProtectedComponent'
-
-const Cart = lazy(async () => await import('pages/Cart/Cart'))
-const DateGrouppedOrders = lazy(
-  async () => await import('widgets/DateGrouppedOrders/DateGrouppedList')
-)
-const FavoriteProducts = lazy(
-  async () => await import('widgets/DateGrouppedOrders/DateGrouppedList')
-)
-const UserAddressList = lazy(
-  async () => await import('widgets/UserAddressList/UserAddressList')
-)
-const Home = lazy(async () => await import('pages/Home/Home'))
-const MobileAddress = lazy(
-  async () => await import('pages/MobileAddress/MobileAddress')
-)
-const MobileFavorites = lazy(
-  async () => await import('pages/MobileFavorites/MobileFavorites')
-)
-const NotFound = lazy(async () => await import('pages/NotFound/NotFound'))
-const Product = lazy(async () => await import('pages/Product/Product'))
-const MobileProfile = lazy(
-  async () => await import('pages/Profile/MobileProfile')
-)
-const Profile = lazy(async () => await import('pages/Profile/Profile'))
-const MobileOrderHistory = lazy(
-  async () => await import('pages/MobileOrderHistory/MobileOrderHistory')
-)
+import DateGrouppedOrders from 'widgets/DateGrouppedOrders/DateGrouppedList'
+import UserAddressList from 'widgets/UserAddressList/UserAddressList'
+const AdminLazy = lazy(async () => await import('../../pages/Admin/ui/Admin'))
 
 export const AppRouter = () => {
   const matchTablet = useMatchTablet()
+  const navigate = useNavigate()
+
+  const dispatch = useAppDispatch()
   const user = useSelector(getUser)
   const isUserLoading = useSelector(getIsDataLoading)
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-
-  console.log('isUserLoading', isUserLoading)
 
   const handleUnauth = () => {
     navigate(browserRoutes.home)
@@ -71,10 +56,10 @@ export const AppRouter = () => {
               path={browserRoutes.addresses}
               element={<UserAddressList />}
             />
-            <Route
+            {/* <Route
               path={browserRoutes.favorites}
               element={<FavoriteProducts />}
-            />
+            /> */}
             <Route
               path={browserRoutes.orderHistory}
               element={<DateGrouppedOrders />}
@@ -105,6 +90,7 @@ export const AppRouter = () => {
             <Route path={browserRoutes.profile()} element={<MobileProfile />} />
           </>
         )}
+        <Route path={browserRoutes.admin} element={<AdminLazy />} />
       </Routes>
     </Suspense>
   )

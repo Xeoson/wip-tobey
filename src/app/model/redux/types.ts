@@ -1,16 +1,21 @@
 import { type AsyncThunkOptions } from '@reduxjs/toolkit'
-import type Firestore from 'app/api/firestore/firestore'
+import type FirestoreDB from 'app/api/firestore/firestore'
 import { type IUserState } from 'entities/user/model/slice'
-import { type ILoginState } from 'features/login/model/slice'
+import { type IAdminState } from 'pages/Admin/model/slice'
 import { type NavigateFunction } from 'react-router-dom'
 import type FirebaseAuth from 'shared/api/firebase-auth'
 import { type DispatchType } from '.'
+import { type ILoginState } from './../../../features/login/model/slice'
 import { type IMainState } from './main/slice'
 
-export interface AppState {
+export interface LazyAppState {
+  login?: ILoginState
+  admin?: IAdminState
+}
+
+export interface AppState extends LazyAppState {
   user: IUserState
   main: IMainState
-  login?: ILoginState
 }
 
 export interface CreateStoreOptions {
@@ -20,7 +25,7 @@ export interface CreateStoreOptions {
 
 export interface ThunkExtraType {
   auth: FirebaseAuth
-  firestore: Firestore
+  firestore: FirestoreDB
   navigate?: NavigateFunction
 }
 

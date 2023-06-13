@@ -7,5 +7,6 @@ export default {
   product: (productId: string = ":productId") => `/product/${productId}`,
   addresses: '/profile/address',
   favorites: '/profile/favorite',
-  orderHistory: '/profile/order-history'
+  orderHistory: '/profile/order-history',
+	admin: '/admin'
 }

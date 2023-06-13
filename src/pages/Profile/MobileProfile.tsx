@@ -1,9 +1,10 @@
-import LinksBlock from 'shared/ui/Blocks/LinksBlock'
-import { profileSettings } from '../../app/lib/const'
-import PageLayout from '../../app/ui/PageLayout'
-
 import UserArea from 'features/login/ui/UserArea/UserArea'
 import { memo } from 'react'
+import { Link } from 'react-router-dom'
+import ColumnButtonList from 'shared/ui/Blocks/ColumnButtonList'
+import PageLayout from '../../app/ui/PageLayout'
+import { type IProfileLink } from './lib/types'
+import { profileSettings } from './lib/const'
 
 interface MobileProfileProps {}
 
@@ -11,7 +12,14 @@ const MobileProfile = (props: MobileProfileProps) => {
   return (
     <PageLayout withNavbarOn="tablet" mobileHeaderTitle="Profile">
       <UserArea />
-      <LinksBlock items={profileSettings} title="Account" />
+      <ColumnButtonList items={profileSettings} title="Account">
+        {(props: IProfileLink) => (
+          <Link to={props.url}>
+            {props.icon}
+            <span>{props.title}</span>
+          </Link>
+        )}
+      </ColumnButtonList>
     </PageLayout>
   )
 }

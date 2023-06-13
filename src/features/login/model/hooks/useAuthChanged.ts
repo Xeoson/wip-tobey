@@ -11,7 +11,7 @@ export default () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        AppFirestore.user.get(user.uid).then((user) => {
+        AppFirestore.collection.get("user", user.uid).then((user) => {
           dispatch(UserActions.set({ user, isDataLoading: false }))
         })
       } else {

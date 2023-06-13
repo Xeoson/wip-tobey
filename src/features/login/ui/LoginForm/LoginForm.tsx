@@ -9,11 +9,16 @@ import { signIn, signUp } from 'features/login/model/thunks'
 import { useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import withReducerLoader from 'shared/lib/components/withReducerLoader'
-import Button from 'shared/ui/Buttons/Button'
 import FormInput from 'shared/ui/Inputs/FormInput'
 import { object, string } from 'yup'
 import s from './LoginForm.module.scss'
+
+const signinButtonStyles: ButtonStyles = {
+  theme: 'secondary',
+  size: 'lg',
+}
 
 const yupSchema = object<ILoginFields>({
   name: string().max(12, 'Max 12 chars'),
@@ -91,9 +96,12 @@ const LoginForm = (props: LoginFormProps) => {
         {...register('password')}
       />
       {formError && <h3 className={s.error}>{formError}</h3>}
-      <Button disabled={isLoading} type="submit" theme="secondary" size="lg">
+      <Button styles={signinButtonStyles}>
         {formType === 'signIn' ? 'SignIn' : 'SignUp'}
       </Button>
+      {/* <Button disabled={isLoading} type="submit" theme="secondary" size="lg">
+        {formType === 'signIn' ? 'SignIn' : 'SignUp'}
+      </Button> */}
       <div className={s.loginToggler}>
         {formType === 'signIn' ? (
           <button onClick={handleToggleFormType}>Create account</button>

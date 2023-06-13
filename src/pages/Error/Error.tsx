@@ -1,5 +1,9 @@
-import Button from 'shared/ui/Buttons/Button'
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import s from './Error.module.scss'
+
+const buttonStyles: ButtonStyles = {
+  size: 'lg',
+}
 
 interface ErrorProps {}
 
@@ -11,7 +15,9 @@ const Error = (props: ErrorProps) => {
   return (
     <div className={s.main}>
       <h1>ERROR</h1>
-      <Button size='lg' onClick={handleReload}>RELOAD</Button>
+      <Button styles={buttonStyles} onClick={handleReload}>
+        RELOAD
+      </Button>
     </div>
   )
 }

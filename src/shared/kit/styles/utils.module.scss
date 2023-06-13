@@ -1,0 +1,48 @@
+@import './vars.module.scss';
+
+@mixin create-class($mainClass, $property, $subclasses) {
+  .#{$mainClass} {
+    @if type-of($subclasses) == map {
+      @each $class, $propertyValue in $subclasses {
+        &.#{$class} {
+          #{$property}: $propertyValue;
+        }
+      }
+    } @else {
+      @each $propertyValue in $subclasses {
+        &.#{$propertyValue} {
+          #{$property}: $propertyValue;
+        }
+      }
+    }
+  }
+}
+
+@mixin create-class-sizes($class, $property, $format: null) {
+  .#{$class} {
+    @each $size, $sizeValue in $defaultSizes {
+      &.#{$size} {
+        @if not $format {
+          #{$property}: $sizeValue;
+        } @else if $format == "lr" {
+					#{$property}-left: $sizeValue;
+					#{$property}-right: $sizeValue;
+        } @else if $format =="tb" {
+					#{$property}-top: $sizeValue;
+					#{$property}-bottom: $sizeValue;
+				} @else if $format == "y" {
+					#{$property}: $sizeValue 0;
+        } @else if $format =="x" {
+					#{$property}: 0 $sizeValue;
+				}
+      }
+    }
+  }
+}
+
+
+@mixin media-hover {
+	@media(hover: hover) {
+		@content
+	}
+}

@@ -1,0 +1,14 @@
+@import '../../styles/index.module.scss';
+
+.main {
+	display: grid;
+}
+
+.direction {
+	&.row {
+		grid-auto-flow: column;
+	}
+	&.column {
+		grid-auto-flow: row;
+	}
+}

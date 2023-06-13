@@ -1,11 +1,8 @@
-import { type IUser } from 'app/api/firestore/types'
-import FirestoreCollectionFactory from 'shared/api/collection-factory'
+import FirestoreCollection from 'shared/api/firestore'
 import { db } from '../firebase'
 
-const factory = new FirestoreCollectionFactory(db)
-
-export default class Firestore {
-  user = factory.createCollection<IUser>('user')
+export default class FirestoreDB {
+  collection = new FirestoreCollection(db)
 }
 
-export const AppFirestore = new Firestore()
+export const AppFirestore = new FirestoreDB()

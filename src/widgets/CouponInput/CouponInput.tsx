@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import cn from 'shared/lib/helpers/classNames'
 import { type DP } from 'shared/lib/types'
-import Button from 'shared/ui/Buttons/Button'
 import Input from 'shared/ui/Inputs/Input'
 import s from './CouponInput.module.scss'
+
+const buttonStyles: ButtonStyles = {}
 
 interface CouponInputProps extends Pick<DP, 'className'> {}
 
@@ -21,7 +23,9 @@ const CouponInput = ({ className, ...props }: CouponInputProps) => {
           setValue(e.target.value)
         }}
       >
-        <Button onClick={handleClick}>Apply</Button>
+        <Button styles={buttonStyles} onClick={handleClick}>
+          Apply
+        </Button>
       </Input>
     </div>
   )

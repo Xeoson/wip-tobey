@@ -10,8 +10,6 @@ interface SwitcherButtonProps {
 const SwitcherButton = ({ onToggle, isOn }: SwitcherButtonProps) => {
   const [on, setOn] = useState(isOn)
 
-	console.log('isOn', isOn)
-
   const handleToggle = () => {
     setOn((prev) => !prev)
     onToggle()

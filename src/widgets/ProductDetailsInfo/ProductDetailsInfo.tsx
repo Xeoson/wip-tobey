@@ -1,12 +1,17 @@
 import AddToCartButton from 'features/cart/ui/AddToCartButton'
 import AddToFavoriteButton from 'features/favorite/ui/AddToFavoriteButton'
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import products from 'shared/lib/mocks/products'
 import { colorVariants } from 'shared/lib/mocks/variants'
-import Button from 'shared/ui/Buttons/Button'
 import Sticker from 'shared/ui/Stickers/Sticker'
 import ColorVariants from 'shared/ui/Variants/ColorVariants'
 import CouponInput from 'widgets/CouponInput/CouponInput'
 import s from './ProductDetailsInfo.module.scss'
+
+const continueButtonStyles: ButtonStyles = {
+  size: 'md',
+  theme: 'secondary',
+}
 
 interface ProductDetailsInfoProps {}
 
@@ -36,7 +41,7 @@ const ProductDetailsInfo = (props: ProductDetailsInfoProps) => {
         rotation="horizontal"
         className={s.add}
       />
-      <Button size="md" color="secondary" className={s.continue}>
+      <Button styles={continueButtonStyles}>
         Continue
       </Button>
     </div>

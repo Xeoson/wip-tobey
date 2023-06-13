@@ -1,0 +1,18 @@
+@import '../../styles/index.module.scss';
+
+$iconSizes: (xs: 0.3rem, sm: 0.5rem, md: 0.8rem, lg: 1rem);
+
+.main {
+	aspect-ratio: 1/1;
+}
+
+.theme {
+	&.primary {
+		color: var(--clr-primary);
+	}
+	&.secondary {
+		color: var(--clr-secondary);
+	}
+}
+
+@include create-class('size', 'width', $iconSizes);

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import cn from 'shared/lib/helpers/classNames'
 import usePointerClick from 'shared/lib/hooks/usePointerClick'
-import Button from 'shared/ui/Buttons/Button'
 import { type DP } from '../../../shared/lib/types'
 import s from './AddToCartButton.module.scss'
 
@@ -10,6 +10,13 @@ interface AddToCartButtonProps extends Pick<DP, 'className'> {
   rotation: 'vertical' | 'horizontal'
   productId: string
   initValue?: number
+}
+
+const buttonStyles: ButtonStyles = {
+  theme: 'secondary',
+  size: 'max-y',
+  px: 'md',
+	align: 'center'
 }
 
 const AddToCartButton = ({
@@ -39,7 +46,7 @@ const AddToCartButton = ({
           <button {...remEvents} className={s.lessBtn}></button>
         </>
       ) : (
-        <Button {...addEvents} theme="secondary" size="max-y" className={s.addBtn}>
+        <Button {...addEvents} styles={buttonStyles}>
           Add To Cart
         </Button>
       )}

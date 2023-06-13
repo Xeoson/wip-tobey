@@ -6,10 +6,20 @@ import { signOut } from 'features/login/model/thunks'
 import { FiLogIn, FiLogOut } from 'react-icons/fi'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import User from 'shared/ui/Blocks/User'
-import Button from 'shared/ui/Buttons/Button'
 import GridSkeletonLoader from 'shared/ui/Loaders/GridSkeletonLoader'
-import s from './UserArea.module.scss'
+
+const logoutBtnStyles: ButtonStyles = {
+  theme: 'primary',
+  size: 'sm',
+  ml: 'auto',
+}
+
+const loginBtnStyles: ButtonStyles = {
+  theme: 'secondary',
+  size: 'md',
+}
 
 interface UserAreaProps {
   withLogOutBtn?: boolean
@@ -43,12 +53,7 @@ const UserArea = ({ withLogOutBtn = false }: UserAreaProps) => {
     <Link to={browserRoutes.userProfile}>
       <User user={user}>
         {withLogOutBtn && (
-          <Button
-            className={s.logoutBtn}
-            onClick={handleLogout}
-            theme="primary"
-            size="sm"
-          >
+          <Button styles={logoutBtnStyles} onClick={handleLogout}>
             <FiLogOut />
           </Button>
         )}
@@ -57,9 +62,7 @@ const UserArea = ({ withLogOutBtn = false }: UserAreaProps) => {
   ) : (
     <Button
       onClick={handleLogin}
-      className={s.loginBtn}
-      size="md"
-      theme="secondary"
+      styles={loginBtnStyles}
     >
       <FiLogIn />
       <span>Log In</span>

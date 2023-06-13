@@ -1,5 +1,10 @@
-import Button from 'shared/ui/Buttons/Button'
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import s from './PaymentInfo.module.scss'
+
+const continueButtonStyles: ButtonStyles = {
+  size: 'md',
+  theme: 'secondary',
+}
 
 interface PaymentInfoProps {}
 
@@ -22,9 +27,7 @@ const PaymentInfo = (props: PaymentInfoProps) => {
         <div className={s.title}>Total</div>
         <div className={s.valueTotal}>$406.50</div>
       </div>
-      <Button size="md" color="secondary">
-        Continue
-      </Button>
+      <Button styles={continueButtonStyles}>Continue</Button>
     </div>
   )
 }

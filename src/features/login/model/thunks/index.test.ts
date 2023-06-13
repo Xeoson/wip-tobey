@@ -24,7 +24,7 @@ describe('main', () => {
       email: '999123@123.123',
     } as IUser
     const mockSetUser =
-      thunk.extra.firestore.user.set.mockResolvedValue(return_mockSetUser)
+      thunk.extra.firestore.collection.set.mockResolvedValue(return_mockSetUser)
 
     await thunk.call(enterFormData)
 
@@ -55,7 +55,7 @@ describe('main', () => {
 
     const res = await thunk.call(enterFormData)
 
-    expect(thunk.extra.firestore.user.set).not.toBeCalled()
+    expect(thunk.extra.firestore.collection.set).not.toBeCalled()
     expect(mockSignUpWithEmail).toBeCalled()
     expect(res.meta.requestStatus).toBe('rejected')
     expect(res.error).toEqual(return_mockSignUpWithEmail)
@@ -81,7 +81,7 @@ describe('main', () => {
       email: '999123@123.123',
     } as IUser
     const mockGetUser =
-      thunk.extra.firestore.user.get.mockResolvedValue(return_mockSetUser)
+      thunk.extra.firestore.collection.get.mockResolvedValue(return_mockSetUser)
 
     await thunk.call(enterFormData)
 

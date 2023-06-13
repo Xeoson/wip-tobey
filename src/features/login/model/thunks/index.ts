@@ -25,7 +25,10 @@ export const signUp = createAsyncThunk<any, SignUpFields, ThunkConfig>(
       createdAt: Date.now(),
       updatedAt: Date.now(),
     }
-    const user = await extra.firestore.user.set(userDoc, { returnDoc: true })
+    const user = await extra.firestore.collection.set('user', userDoc, {
+      returnDoc: true,
+    })
+    // const user = await extra.firestore.user.set(userDoc, { returnDoc: true })
     dispatch(UserActions.set({ user }))
     dispatch(MainActions.set({ openedModal: undefined }))
   }
@@ -35,7 +38,7 @@ export const signIn = createAsyncThunk<any, SignInFields, ThunkConfig>(
   'login/signIn',
   async ({ email, password }, { dispatch, extra }) => {
     const userRes = await extra.auth.signInWithEmail(email, password)
-    const user = await extra.firestore.user.get(userRes.uid)
+    const user = await extra.firestore.collection.get('user', userRes.uid)
     dispatch(UserActions.set({ user }))
     dispatch(MainActions.set({ openedModal: undefined }))
   }

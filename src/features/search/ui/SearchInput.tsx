@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
-
 import { CiSearch } from 'react-icons/ci'
-import Button from '../../../shared/ui/Buttons/Button'
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import Input, { type InputProps } from '../../../shared/ui/Inputs/Input'
+
+const buttonStyles: ButtonStyles = {
+	theme: 'none',
+	size: 'sm'
+}
 
 type SearchInputProps = Omit<InputProps, 'onKeyDown' | 'value' | 'onChange'> & {
   onSearch: (v: string) => void
@@ -34,7 +38,7 @@ const SearchInput = ({
 
   return (
     <Input {...props} onKeyDown={handleKeydown} onChange={handleChange}>
-      <Button theme='none' size="square" onClick={handleClick}>
+      <Button styles={buttonStyles} onClick={handleClick}>
         <CiSearch />
       </Button>
     </Input>

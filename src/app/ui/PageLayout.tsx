@@ -1,4 +1,4 @@
-import { Suspense, lazy, type PropsWithChildren } from 'react'
+import { Suspense, lazy, type PropsWithChildren, memo } from 'react'
 import Header from 'shared/ui/Blocks/Header'
 import Navbar from '../../widgets/Navbar/ui/Navbar'
 import s from './PageLayout.module.scss'

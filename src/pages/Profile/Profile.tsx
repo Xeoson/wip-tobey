@@ -1,12 +1,18 @@
 import UserArea from 'features/login/ui/UserArea/UserArea'
 import { memo } from 'react'
 import { Outlet } from 'react-router-dom'
-import LinksBlock from 'shared/ui/Blocks/LinksBlock'
-import { profileSettings } from '../../app/lib/const'
+import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
+import ColumnButtonList from 'shared/ui/Blocks/ColumnButtonList'
 import PageLayout from '../../app/ui/PageLayout'
 import s from './Profile.module.scss'
+import { profileSettings } from './lib/const'
+import { type IProfileLink } from './lib/types'
 
 interface ProfileProps {}
+
+const ColumnButtonListItemStyles: ButtonStyles = {
+  gapX: 'sm',
+}
 
 const Profile = (props: ProfileProps) => {
   return (
@@ -14,7 +20,14 @@ const Profile = (props: ProfileProps) => {
       <div className={s.main}>
         <div className={s.sideSection}>
           <UserArea withLogOutBtn />
-          <LinksBlock items={profileSettings} title="Account" />
+          <ColumnButtonList items={profileSettings} title="Account">
+            {(props: IProfileLink) => (
+              <Button type="button" styles={ColumnButtonListItemStyles}>
+                {props.icon}
+                <span>{props.title}</span>
+              </Button>
+            )}
+          </ColumnButtonList>
         </div>
         <div className={s.section}>
           <Outlet />

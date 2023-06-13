@@ -1,0 +1,34 @@
+
+.main {
+	margin: 1rem 0;
+
+	.title {
+		opacity: 0.3;
+		text-transform: uppercase;
+	}
+
+	.item {
+		position: relative;
+		border-top: 0.05rem solid var(--clr-other);
+		cursor: pointer;
+
+		& > *:not(.arrow) {
+			padding-right: 2rem;
+		}
+
+		.arrow {
+			opacity: 0.3;
+			font-size: var(--font-md);
+			margin-left: auto;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: -1;
+		}
+
+		&:first-child {
+			border: none;
+		}
+	}
+}
