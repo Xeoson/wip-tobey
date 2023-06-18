@@ -4,7 +4,8 @@ import {
   type Reducer,
   type ReducersMapObject,
 } from '@reduxjs/toolkit'
-import { AppFirestore } from 'app/api/firestore/firestore'
+import { api } from 'app/api'
+import { AppFirestore } from 'app/api/firestore'
 import { UserReducer } from 'entities/user/model/slice'
 import { AppAuth } from 'features/login/api/auth'
 import {
@@ -24,6 +25,7 @@ export const createStore = ({ initState, navigate }: CreateStoreOptions) => {
   const reducers: ReducersMapObject<AppState> = {
     user: UserReducer,
     main: MainReducer,
+    api: api.reducer,
   }
 
   const reducerManager = createReducerManager(reducers)
@@ -41,7 +43,7 @@ export const createStore = ({ initState, navigate }: CreateStoreOptions) => {
     middleware: (midd) =>
       midd({
         thunk: { extraArgument: thunkExtra },
-      }),
+      }).concat(api.middleware),
   })
 
   // @ts-expect-error

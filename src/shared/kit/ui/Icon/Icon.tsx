@@ -14,7 +14,7 @@ export interface IconStyles extends IPadding {
 
 interface IconProps {
   Icon: IconType
-  styles: IconStyles
+  styles?: IconStyles
 }
 
 const mcn = createClassNames(s)

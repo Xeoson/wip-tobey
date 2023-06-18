@@ -6,6 +6,7 @@ import { AdminReducer } from '../model/slice'
 import CreateDoc from './CreateDoc'
 import DocList from './DocList'
 import NavList from './NavList'
+import SearchArea from './SearchArea'
 
 const Admin = () => {
   return (
@@ -13,6 +14,7 @@ const Admin = () => {
       <Grid direction="row" columns="_1_3_">
         <NavList />
         <Flex gapY="md" px="md" direction="column">
+					<SearchArea />
           <CreateDoc />
           <DocList />
         </Flex>

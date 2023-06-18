@@ -1,56 +1,60 @@
 .main {
   position: relative;
-  height: 4rem;
-  width: 100%;
+  min-height: 3rem;
 
-	&:focus-within {
-		box-shadow: 0 0 0 2px var(--clr-secondary);
-	}
-}
+  &:focus-within {
+    box-shadow: 0 0 0 2px var(--clr-secondary);
+  }
 
-.input {
-  height: 70%;
-  margin-top: auto;
-	color: var(--clr-text);
-	font-size: var(--font-lg);
-}
+  input {
+    height: 70%;
+    margin-top: auto;
+    color: var(--clr-text);
+    font-size: var(--font-lg);
+  }
 
-.input:focus > .placeholder {
-	transform: scaleX(0.75) translateY(0);
-	transform-origin: left;
+  input:not(:placeholder-shown) + .placeholder,
+  &:focus-within .placeholder {
+    transform: scale(0.75) translateY(0) !important;
+  }
+
+  input:placeholder-shown + .placeholder {
+    transform: scale(1) translateY(45%);
+  }
 }
 
 .placeholder {
   position: absolute;
-	padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.6rem;
   left: 0;
-  top: 10%;
-  transition: transform 1s ease;
-	user-select: none;
+  top: 0;
+  user-select: none;
+	color: var(--clr-text-user);
 
-  // transform: scaleX(1) translateY(20px);
+  transition: transform 0.15s ease;
+  transform-origin: left;
 }
 
 .error {
-	display: flex;
-	align-items: center;
-	gap: 0 0.3rem;
-	font-weight: 300;
-	color: var(--clr-error);
-	animation: onShow 0.3s ease;
-	user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0 0.3rem;
+  font-weight: 300;
+  color: var(--clr-error);
+  animation: onShow 0.3s ease;
+  user-select: none;
 
-	svg {
-		font-size: 1.2em;
-	}
+  svg {
+    font-size: 1.2em;
+  }
 }
 
 @keyframes onShow {
-	0% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 0;
+  }
 
-	100% {
-		opacity: 1;
-	}
+  100% {
+    opacity: 1;
+  }
 }

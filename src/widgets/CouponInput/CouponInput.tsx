@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
+import { type ButtonStyles } from 'shared/kit/ui/Button/Button'
 import cn from 'shared/lib/helpers/classNames'
 import { type DP } from 'shared/lib/types'
-import Input from 'shared/ui/Inputs/Input'
 import s from './CouponInput.module.scss'
 
 const buttonStyles: ButtonStyles = {}
@@ -17,7 +16,7 @@ const CouponInput = ({ className, ...props }: CouponInputProps) => {
   return (
     <div className={cn(s.main, className)}>
       <span>Have a coupon code? Enter here</span>
-      <Input
+      {/* <Input
         value={value}
         onChange={(e) => {
           setValue(e.target.value)
@@ -26,7 +25,7 @@ const CouponInput = ({ className, ...props }: CouponInputProps) => {
         <Button styles={buttonStyles} onClick={handleClick}>
           Apply
         </Button>
-      </Input>
+      </Input> */}
     </div>
   )
 }

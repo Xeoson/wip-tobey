@@ -7,7 +7,7 @@ export interface TextStyles extends IFontSize {}
 
 interface TextProps extends DP<HTMLParagraphElement> {
   type?: 'p' | 'h1' | 'h2'
-  styles: TextStyles
+  styles?: TextStyles
 }
 
 const mcn = createClassNames(s)

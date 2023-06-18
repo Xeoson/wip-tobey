@@ -5,7 +5,7 @@ jest.mock('shared/api/firebase-auth')
 jest.mock('shared/api/firestore')
 
 import { type AsyncThunk, type Dispatch } from '@reduxjs/toolkit'
-import FirestoreDB from 'app/api/firestore/firestore'
+import FirestoreDB from 'app/api/firestore'
 import {
   type AppState,
   type ThunkConfig,

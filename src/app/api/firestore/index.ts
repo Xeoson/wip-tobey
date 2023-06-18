@@ -1,5 +1,5 @@
 import FirestoreCollection from 'shared/api/firestore'
-import { db } from '../firebase'
+import { db } from '../../lib/config/firebase'
 
 export default class FirestoreDB {
   collection = new FirestoreCollection(db)

@@ -6,19 +6,18 @@ import {
   type IGap,
   type IPadding,
 } from '../../lib/types'
-import s from './index.module.scss'
+import s from './Flex.module.scss'
 
-interface FlexProps
-  extends PropsWithChildren,
-    IGap,
-    IAlign,
-    IPadding,
-    IDirection {}
+export interface FlexStyles extends IGap, IAlign, IPadding, IDirection {}
+
+interface FlexProps extends FlexStyles, PropsWithChildren {
+  className?: string
+}
 
 const mcn = createClassNames(s)
 
-const Flex = ({ children, ...props }: FlexProps) => {
-  return <div className={mcn(props)}>{children}</div>
+const Flex = ({ children, className, ...props }: FlexProps) => {
+  return <div className={mcn(props, className)}>{children}</div>
 }
 
 export default Flex

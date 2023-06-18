@@ -14,6 +14,7 @@ interface ListProps<I extends Record<string, any>> {
   key?: KeyFieldsType<I>
   styles: ListStyles
   items: I[]
+	isFetching?: boolean,
   children: (props: I) => ReactNode
 }
 
@@ -22,10 +23,11 @@ const List = <I extends Record<string, any>>({
   key,
   styles,
   children,
+	isFetching
 }: ListProps<I>) => {
   const { theme } = styles
   return (
-    <ul className={mcn(styles)}>
+    <ul className={mcn(styles, isFetching && s.fetching)}>
       {items.map((el, i) => (
         <li className={mcn({ theme })} key={key ? el[key] : i}>
           {children(el)}
@@ -35,4 +37,4 @@ const List = <I extends Record<string, any>>({
   )
 }
 
-export default memo(List)
+export default List

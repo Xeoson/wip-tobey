@@ -1,5 +1,6 @@
 import { type AsyncThunkOptions } from '@reduxjs/toolkit'
-import type FirestoreDB from 'app/api/firestore/firestore'
+import { type api } from 'app/api'
+import type FirestoreDB from 'app/api/firestore'
 import { type IUserState } from 'entities/user/model/slice'
 import { type IAdminState } from 'pages/Admin/model/slice'
 import { type NavigateFunction } from 'react-router-dom'
@@ -16,6 +17,7 @@ export interface LazyAppState {
 export interface AppState extends LazyAppState {
   user: IUserState
   main: IMainState
+  api: ReturnType<typeof api.reducer>
 }
 
 export interface CreateStoreOptions {

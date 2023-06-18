@@ -99,9 +99,6 @@ const LoginForm = (props: LoginFormProps) => {
       <Button styles={signinButtonStyles}>
         {formType === 'signIn' ? 'SignIn' : 'SignUp'}
       </Button>
-      {/* <Button disabled={isLoading} type="submit" theme="secondary" size="lg">
-        {formType === 'signIn' ? 'SignIn' : 'SignUp'}
-      </Button> */}
       <div className={s.loginToggler}>
         {formType === 'signIn' ? (
           <button onClick={handleToggleFormType}>Create account</button>

@@ -1,14 +1,10 @@
 import { useAppSelector } from 'app/model/redux'
 import { memo } from 'react'
-import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
-import Form, { type FormStyles } from 'shared/kit/ui/Form/Form'
-import Input, { type InputStyles } from 'shared/kit/ui/Input/Input'
-import { useCreateDoc } from '../api/queries'
-import {
-  getFormType,
-  getSelectedCollection,
-  getSelectedCollectionData,
-} from '../model/selectors'
+import { type ButtonStyles } from 'shared/kit/ui/Button/Button'
+import { type FormStyles } from 'shared/kit/ui/Form/Form'
+import { useAddDocMutation } from '../api/queries'
+import { getSelectedCollectionData, useFormType } from '../model/selectors'
+import AdminForm from './AdminForm'
 
 const addBtnStyles: ButtonStyles = {
   theme: 'secondary',
@@ -16,7 +12,6 @@ const addBtnStyles: ButtonStyles = {
   py: 'xs',
 }
 
-const inputFormDocStyles: InputStyles = {}
 const formStyles: FormStyles = {
   gap: 'sm',
 }
@@ -24,35 +19,44 @@ const formStyles: FormStyles = {
 interface CreateDocProps {}
 
 const CreateDoc = (props: CreateDocProps) => {
-  const selectedCollection = useAppSelector(getSelectedCollection)
-  const { schema } = useAppSelector(getSelectedCollectionData)
-  const formType = useAppSelector(getFormType)
+  const collectionInfo = useAppSelector(getSelectedCollectionData)
+  const formType = useFormType()
 
-  const { mutate: createDoc } = useCreateDoc()
+  const [addDoc, { isLoading: isCreating }] = useAddDocMutation()
 
   if (formType !== 'create') return null
 
+	console.log('collectionInfo :>> ', collectionInfo);
+
   const cb = {
-    onCreate: (data: any) => {
-      createDoc({ collection: selectedCollection, data })
+    onCreate: (doc: any) => {
+      addDoc(doc)
     },
   }
 
   return (
-    <Form
-      styles={formStyles}
-      schema={schema}
+    <AdminForm
+      buttonText="Create"
+      collectionInfo={collectionInfo}
+      isLoading={isCreating}
       onSubmit={cb.onCreate}
-      returnInput={(p) => (
-        <Input
-          {...p.register(p.field)}
-          placeholder={p.field}
-          styles={inputFormDocStyles}
-        />
-      )}
-    >
-      <Button styles={addBtnStyles}>Create</Button>
-    </Form>
+    />
+    // <Form
+    //   styles={formStyles}
+    //   schema={schema}
+    //   onSubmit={cb.onCreate}
+    //   returnInput={({register}, p) => (
+    //     <FormInput
+    //       {...register(p.field)}
+    //       disabled={isCreating}
+    //       placeholder={p.field}
+    //     />
+    //   )}
+    // >
+    //   <Button disabled={isCreating} styles={addBtnStyles}>
+    //     Create
+    //   </Button>
+    // </Form>
   )
 }
 

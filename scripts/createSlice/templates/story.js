@@ -2,11 +2,12 @@
 module.exports = ({
   filename,
   layer,
+	slice
 }) => `import { type Meta, type StoryObj } from '@storybook/react'
 import ${filename} from './${filename}'
 
 const meta: Meta<typeof ${filename}> = {
-  title: '${layer}/${filename}',
+  title: '${layer}/${slice}/${filename}',
   component: ${filename},
 }
 export default meta

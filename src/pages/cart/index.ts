@@ -1,3 +1,2 @@
-
-	export Cart from 'pages/cart/ui/cart/Cart.tsx'
-export CartLazy from 'pages/cart/ui/cart/CartLazy.tsx'
+export { default as Cart } from './ui/cart/Cart'
+export { default as CartLazy } from './ui/cart/CartLazy'

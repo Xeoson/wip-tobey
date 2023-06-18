@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
-import { auth } from 'app/api/firebase'
-import { AppFirestore } from 'app/api/firestore/firestore'
+import { AppFirestore } from 'app/api/firestore'
+import { auth } from 'app/lib/config/firebase'
 import { useAppDispatch } from 'app/model/redux'
 import { UserActions } from 'entities/user/model/slice'
 import { onAuthStateChanged } from 'firebase/auth'
@@ -11,7 +11,7 @@ export default () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        AppFirestore.collection.get("user", user.uid).then((user) => {
+        AppFirestore.collection.get('user', user.uid).then((user) => {
           dispatch(UserActions.set({ user, isDataLoading: false }))
         })
       } else {

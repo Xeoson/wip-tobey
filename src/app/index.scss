@@ -1,6 +1,6 @@
-@import 'app/styles/reset';
-@import 'app/styles/vars';
-@import 'app/styles/fonts';
+@import '@/app/styles/reset';
+@import '@/app/styles/vars';
+@import '@/app/styles/fonts';
 
 html {
 	font-size: max(14px, calc(1vmax));
@@ -29,6 +29,7 @@ button:not([disabled]) {
 
 *:disabled {
 	opacity: 0.4;
+	cursor: default;
 }
 
 dialog[open] {

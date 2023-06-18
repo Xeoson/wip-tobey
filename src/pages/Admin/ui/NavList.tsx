@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { type ICollections } from 'app/api/firestore/types'
-import { useAppDispatch } from 'app/model/redux'
 import { memo, useCallback } from 'react'
 import { AiOutlineFileAdd } from 'react-icons/ai'
 import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
@@ -9,7 +8,7 @@ import Text, { type TextStyles } from 'shared/kit/ui/Text/Text'
 import ColumnButtonList from 'shared/ui/Blocks/ColumnButtonList'
 import { adminCollections } from '../lib/const'
 import { type IAdminCollection, type IAdminCollections } from '../lib/types'
-import { AdminActions } from '../model/slice'
+import { useAdminActions } from '../model/slice'
 
 const selectBtnStyles: ButtonStyles = {
   theme: 'none',
@@ -36,23 +35,20 @@ const adminCollectionsArray = Object.entries(adminCollections) as Array<
 interface NavListProps {}
 
 const NavList = (props: NavListProps) => {
-  const dispatch = useAppDispatch()
+  const { set: setAdmin } = useAdminActions()
 
   const cb = {
     onSelect: useCallback((coll: keyof ICollections) => {
-      dispatch(
-        AdminActions.set({ formType: undefined, selectedCollection: coll })
-      )
+			console.log('coll :>> ', coll);
+      setAdmin({ formType: undefined, selectedCollection: coll })
     }, []),
     onAdd: useCallback(
       (e: React.MouseEvent<HTMLButtonElement>, coll: keyof ICollections) => {
         e.stopPropagation()
-        dispatch(
-          AdminActions.set({
-            formType: 'create',
-            selectedCollection: coll,
-          })
-        )
+        setAdmin({
+          formType: 'create',
+          selectedCollection: coll,
+        })
       },
       []
     ),

@@ -21,7 +21,7 @@ const Navbar = (props: NavbarProps) => {
   return (
     <nav className={s.main}>
       <Flex gapX='md'>
-        <Button type="link" styles={logoBtnStyles} to={browserRoutes.home}>
+        <Button as="link" styles={logoBtnStyles} to={browserRoutes.home}>
           <Logo />
         </Button>
         <ThemeSwitcher />

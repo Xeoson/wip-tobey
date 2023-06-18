@@ -9,7 +9,7 @@ const blank = require('./templates/blank')
 const resolve = (...pathList) => path.resolve('src', ...pathList)
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1)
 
-const [, , layer, slice, ...options] = process.argv
+const [, , layer, slice, ...filepath] = process.argv
 
 const layers = {
   pages: {
@@ -37,6 +37,7 @@ const layers = {
     },
   },
   entities: {},
+	shared: {}
 }
 
 const exportsDeps = {}
@@ -56,7 +57,11 @@ const create = (path, tree) => {
       if (options?.export) {
         exportsDeps[`{${filename}}`] = filepath
       } else if (options?.default) {
-        exportsDeps[filename] = filepath
+        exportsDeps[`{default as ${filename}}`] = filepath
+      }
+			const dir = resolve(...path)
+			if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true })
       }
       fs.writeFileSync(
         resolve(...filepath),
@@ -69,7 +74,12 @@ const create = (path, tree) => {
   }
 }
 
-create([layer, slice], layers[layer])
+create(
+  [layer, slice, ...filepath],
+  filepath.length
+    ? createComponent({ filename: filepath.at(-1), layer })
+    : layers[layer]
+)
 fs.writeFileSync(
   resolve(layer, slice, 'index.ts'),
   indexExports({ exportsDeps })

@@ -12,10 +12,13 @@ import {
   doc,
   getDoc,
   getDocs,
+  query,
   setDoc,
   updateDoc,
   type DocumentReference,
   type Firestore,
+  type QueryConstraint,
+	deleteDoc,
 } from 'firebase/firestore'
 
 export default class FirestoreCollection {
@@ -73,7 +76,7 @@ export default class FirestoreCollection {
     collec: C,
     Doc: ICollectionsUpdate[C] & { id: string },
     options?: { returnDoc: true }
-  ): Promise<ICollections[C] | undefined>
+  ): Promise<ICollections[C]>
   async update<C extends keyof ICollections>(
     collec: C,
     Doc: ICollectionsUpdate[C] & { id: string },
@@ -85,13 +88,24 @@ export default class FirestoreCollection {
     }
   }
 
+	async delete<C extends keyof ICollections>(collec: C, id: string) {
+		await deleteDoc(doc(this.db, collec, id))
+	}
+
   async get<C extends keyof ICollections>(collec: C, id: string) {
     const snap = await getDoc(doc(this.db, collec, id))
     return { ...snap.data(), id: snap.id } as ICollections[C] | undefined
   }
 
-  async getAll<C extends keyof ICollections>(collec: C) {
-    const docsSnap = await getDocs(collection(this.db, collec))
-    return docsSnap.docs.map((el) => ({ ...el.data(), id: el.id } as ICollections[C]))
+  async getAll<C extends keyof ICollections>(
+    collec: C,
+    ...constraints: QueryConstraint[]
+  ) {
+    const docsSnap = await getDocs(
+      query(collection(this.db, collec), ...constraints)
+    )
+    return docsSnap.docs.map(
+      (el) => ({ ...el.data(), id: el.id } as ICollections[C])
+    )
   }
 }

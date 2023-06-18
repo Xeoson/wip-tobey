@@ -9,12 +9,12 @@ import {
 } from 'shared/kit/lib/types'
 import { type ThemeValues } from 'shared/kit/lib/types/const'
 import { createClassNames } from 'shared/lib/helpers/moduleClassNames'
-import { type DP } from 'shared/lib/types'
+import { type DP, type DPButton } from 'shared/lib/types'
 import s from './Button.module.scss'
 
 export type ButtonPropsType =
-  | ({ type?: 'button' } & Omit<DP<HTMLButtonElement>, 'className'>)
-  | ({ type?: 'link' } & Omit<LinkProps, 'className'>)
+  | ({ as?: 'button' } & Omit<DPButton, 'className'>)
+  | ({ as?: 'link' } & Omit<LinkProps, 'className'>)
 
 export interface ButtonStyles
   extends IAlign,
@@ -29,23 +29,23 @@ export interface ButtonStyles
 }
 
 type ButtonProps = {
-  styles: ButtonStyles
+  styles?: ButtonStyles
 } & ButtonPropsType
 
 const mcn = createClassNames(s)
 
 const Button = ({
   children,
-  type = 'button',
+  as = 'button',
   styles,
   ...props
 }: ButtonProps) => {
-  return type === 'link' ? (
+  return as === 'link' ? (
     <Link {...(props as LinkProps)} className={mcn(styles)}>
       {children}
     </Link>
   ) : (
-    <button {...(props as DP<HTMLButtonElement>)} className={mcn(styles)}>
+    <button type='button' {...(props as DP<HTMLButtonElement>)} className={mcn(styles)}>
       {children}
     </button>
   )

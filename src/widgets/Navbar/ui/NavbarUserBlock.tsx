@@ -16,11 +16,11 @@ const NavbarUserBlock = (props: NavbarUserBlockProps) => {
   return (
     <div className={s.main}>
       <Flex gapX="lg" align="center">
-        <Button type="link" styles={buttonStyles} to={browserRoutes.favorites}>
+        <Button as="link" styles={buttonStyles} to={browserRoutes.favorites}>
           <MdOutlineFavoriteBorder />
           <span>Favorites</span>
         </Button>
-        <Button type="link" styles={buttonStyles} to={browserRoutes.cart}>
+        <Button as="link" styles={buttonStyles} to={browserRoutes.cart}>
           <MdOutlineShoppingCart />
           <span>Cart</span>
         </Button>

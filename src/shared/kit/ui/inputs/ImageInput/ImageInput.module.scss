@@ -1,0 +1,44 @@
+.main {
+	height: 6rem;
+	background-color: var(--clr-primary);
+	border-radius: var(--round-md);
+}
+
+.input {
+	display: none;
+}
+
+.label {
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: 0.05rem solid var(--clr-other);
+	border-radius: var(--round-md);
+
+	& button {
+		z-index: -2;
+	}
+}
+
+.imgBlock, .label {
+	height: 100%;
+	aspect-ratio: 1/1;
+}
+
+.imgBlock {
+	position: relative;
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: contain;
+	}
+
+	button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0.3rem;
+	}
+}
