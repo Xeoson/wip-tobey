@@ -1,4 +1,4 @@
-import UserAddressList from 'widgets/UserAddressList/UserAddressList'
+import UserAddressList from '@/widgets/UserAddressList/UserAddressList'
 import PageLayout from '../../app/ui/PageLayout'
 import { memo } from 'react'
 

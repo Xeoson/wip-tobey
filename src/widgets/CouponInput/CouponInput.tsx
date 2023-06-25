@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { type ButtonStyles } from 'shared/kit/ui/Button/Button'
-import cn from 'shared/lib/helpers/classNames'
-import { type DP } from 'shared/lib/types'
+import { type ButtonStyles } from '@/shared/kit/ui/Button/Button'
+import cn from '@/shared/lib/helpers/classNames'
+import { type DP } from '@/shared/lib/types'
 import s from './CouponInput.module.scss'
 
 const buttonStyles: ButtonStyles = {}

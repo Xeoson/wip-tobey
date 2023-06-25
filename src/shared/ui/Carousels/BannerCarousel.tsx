@@ -6,8 +6,14 @@ import s from './BannerCarousel.module.scss'
 import Carousel from './Carousel'
 
 const bannerSources: ISource[] = [
-  { media: '(max-width: 767px)', transf: 'ar_2:1,w_400' },
-  { media: '(min-width: 768px)', transf: 'ar_3:1,w_1000,c_fill' },
+  {
+    media: '(max-width: 767px)',
+    transform: ['ar_2:1', 'w_400'],
+  },
+  {
+    media: '(min-width: 768px)',
+    transform: ['ar_3:1', 'w_1000', 'c_fill'],
+  },
 ]
 const publicPaths = ['banner1_chvnu2.jpg', 'banner_2_tobey_ydg0o5.webp']
 

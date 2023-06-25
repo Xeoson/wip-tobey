@@ -1,9 +1,8 @@
-import { useAppSelector } from 'app/model/redux'
-import SearchInput from 'features/search/ui/SearchInput'
+import { useAppSelector } from '@/app/model/redux'
 import { useCallback, useEffect } from 'react'
-import Button from 'shared/kit/ui/Button/Button'
-import Flex from 'shared/kit/ui/Flex/Flex'
-import debounce from 'shared/lib/helpers/debounce'
+import Button from '@/shared/kit/ui/Button/Button'
+import Flex from '@/shared/kit/ui/Flex/Flex'
+import debounce from '@/shared/lib/helpers/debounce'
 import { endpoints } from '../api/queries'
 import {
   getSelectedCollectionData,
@@ -11,6 +10,7 @@ import {
   useSelectedSearchField,
 } from '../model/selectors'
 import { useAdminActions } from '../model/slice'
+import SearchInput from '@/shared/ui/Inputs/SearchInput/SearchInput'
 
 interface SearchAreaProps {}
 

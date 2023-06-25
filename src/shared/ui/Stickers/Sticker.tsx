@@ -1,4 +1,4 @@
-import cn from 'shared/lib/helpers/classNames'
+import cn from '@/shared/lib/helpers/classNames'
 import s from './Sticker.module.scss'
 
 interface StickerProps {

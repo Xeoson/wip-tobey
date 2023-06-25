@@ -1,3 +1,3 @@
 import { lazy } from 'react'
 
-export default lazy(async () => await import('./LoginForm'))
+export default lazy(async () => await import('./LoginFormNew'))

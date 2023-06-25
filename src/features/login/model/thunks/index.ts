@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type IUser } from 'app/api/firestore/types'
-import browserRoutes from 'app/lib/browserRoutes'
-import { MainActions } from 'app/model/redux/main/slice'
-import { type ThunkConfig } from 'app/model/redux/types'
-import { UserActions } from 'entities/user/model/slice'
+import { type IUser } from '@/app/api/firestore/types'
+import browserRoutes from '@/app/lib/browserRoutes'
+import { MainActions } from '@/app/model/redux/main/slice'
+import { type ThunkConfig } from '@/app/model/redux/types'
+import { UserActions } from '@/entities/user/model/slice'
 
 export interface SignInFields {
   email: string

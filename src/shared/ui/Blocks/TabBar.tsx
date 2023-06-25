@@ -6,7 +6,7 @@ import {
 } from 'react-icons/hi'
 import { Link, useLocation } from 'react-router-dom'
 import s from './TabBar.module.scss'
-import browserRoutes from 'app/lib/browserRoutes'
+import browserRoutes from '@/app/lib/browserRoutes'
 
 interface IVariant {
   title: string

@@ -1,5 +1,5 @@
-import BannerCarousel from 'shared/ui/Carousels/BannerCarousel'
-import ProductCarousel from 'widgets/ProductCarousel/ProductCarousel'
+import BannerCarousel from '@/shared/ui/Carousels/BannerCarousel'
+import ProductCarousel from '@/widgets/ProductCarousel/ProductCarousel'
 import PageLayout from '../../app/ui/PageLayout'
 import products from '../../shared/lib/mocks/products'
 import Categories from '../../widgets/Categories/Categories'

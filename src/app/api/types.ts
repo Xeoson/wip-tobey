@@ -1,8 +1,8 @@
 import { type BaseQueryApi } from '@reduxjs/toolkit/dist/query'
 import { type QueryReturnValue } from '@reduxjs/toolkit/dist/query/baseQueryTypes'
 import { type MaybePromise } from '@reduxjs/toolkit/dist/query/tsHelpers'
-import { type DispatchType } from 'app/model/redux'
-import { type AppState, type ThunkExtraType } from 'app/model/redux/types'
+import { type DispatchType } from '@/app/model/redux'
+import { type AppState, type ThunkExtraType } from '@/app/model/redux/types'
 
 export interface AppBaseQueryApi extends BaseQueryApi {
   getState: () => AppState

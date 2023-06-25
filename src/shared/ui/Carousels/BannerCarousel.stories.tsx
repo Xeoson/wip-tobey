@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import BannerCarousel from './BannerCarousel'
-import images from 'shared/lib/mocks/images'
+import images from '@/shared/lib/mocks/images'
 
 const meta: Meta<typeof BannerCarousel> = {
   title: 'shared/BannerCarousel',

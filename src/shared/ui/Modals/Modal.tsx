@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import cn from 'shared/lib/helpers/classNames'
-import { type DP } from 'shared/lib/types'
+import cn from '@/shared/lib/helpers/classNames'
+import { type DP } from '@/shared/lib/types'
 import s from './Modal.module.scss'
 
 interface ModalProps extends DP {

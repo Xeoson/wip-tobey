@@ -1,10 +1,10 @@
 import { type IconType } from 'react-icons'
-import { type IPadding } from 'shared/kit/lib/types'
+import { type IPadding } from '@/shared/kit/lib/types'
 import {
   type DefaultSizesType,
   type ThemeValues,
-} from 'shared/kit/lib/types/const'
-import { createClassNames } from 'shared/lib/helpers/moduleClassNames'
+} from '@/shared/kit/lib/types/const'
+import { createClassNames } from '@/shared/lib/helpers/moduleClassNames'
 import s from './Icon.module.scss'
 
 export interface IconStyles extends IPadding {

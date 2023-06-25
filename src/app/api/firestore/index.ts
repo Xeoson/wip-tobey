@@ -1,4 +1,4 @@
-import FirestoreCollection from 'shared/api/firestore'
+import FirestoreCollection from '@/shared/api/firestore'
 import { db } from '../../lib/config/firebase'
 
 export default class FirestoreDB {

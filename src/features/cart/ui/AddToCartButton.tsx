@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
-import cn from 'shared/lib/helpers/classNames'
-import usePointerClick from 'shared/lib/hooks/usePointerClick'
+import Button, { type ButtonStyles } from '@/shared/kit/ui/Button/Button'
+import cn from '@/shared/lib/helpers/classNames'
+import usePointerClick from '@/shared/lib/hooks/usePointerClick'
 import { type DP } from '../../../shared/lib/types'
 import s from './AddToCartButton.module.scss'
 

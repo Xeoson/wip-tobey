@@ -34,27 +34,3 @@
   transition: transform 0.15s ease;
   transform-origin: left;
 }
-
-.error {
-  display: flex;
-  align-items: center;
-  gap: 0 0.3rem;
-  font-weight: 300;
-  color: var(--clr-error);
-  animation: onShow 0.3s ease;
-  user-select: none;
-
-  svg {
-    font-size: 1.2em;
-  }
-}
-
-@keyframes onShow {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}

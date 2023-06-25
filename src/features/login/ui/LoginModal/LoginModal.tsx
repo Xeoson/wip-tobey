@@ -1,6 +1,6 @@
 import { Suspense, memo } from 'react'
-import GridSkeletonLoader from 'shared/ui/Loaders/GridSkeletonLoader'
-import Modal from 'shared/ui/Modals/Modal'
+import GridSkeletonLoader from '@/shared/ui/Loaders/GridSkeletonLoader'
+import Modal from '@/shared/ui/Modals/Modal'
 import LoginFormLazy from '../LoginForm/LoginFormLazy'
 import s from './LoginModal.module.scss'
 

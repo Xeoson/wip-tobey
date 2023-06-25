@@ -1,7 +1,7 @@
-import { type IProduct } from 'app/api/firestore/types'
-import { useMatchHover } from 'app/lib/const'
-import ProductCard from 'entities/product-card/ui/ProductCard'
-import useTapMouseScroll from 'shared/lib/hooks/useTapMouseScroll'
+import { type IProduct } from '@/app/api/firestore/types'
+import { useMatchHover } from '@/app/lib/const'
+import ProductCard from '@/entities/product-card/ui/ProductCard'
+import useTapMouseScroll from '@/shared/lib/hooks/useTapMouseScroll'
 import s from './ProductCarousel.module.scss'
 
 interface ProductCarouselProps {

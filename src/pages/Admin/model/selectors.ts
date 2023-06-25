@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit'
-import createCollectionSchema from 'pages/Admin/lib/helpers/createCollectionSchema'
-import createSliceSelectors from 'shared/lib/helpers/createSliceSelectors'
+import createCollectionSchema from '@/pages/Admin/lib/helpers/createCollectionSchema'
+import createSliceSelectors from '@/shared/lib/helpers/createSliceSelectors'
 
 export const {
   useFormType,

@@ -12,8 +12,9 @@
 		opacity: 0.3;
 	}
 
-	&>input[type='text'] {
+	& > input {
 		flex-grow: 1;
+		min-width: 0;
 
 		&::placeholder {
 			color: var(--clr-other);

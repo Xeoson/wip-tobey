@@ -1,5 +1,5 @@
-import ProductCard from 'entities/product-card/ui/ProductCard'
-import products from 'shared/lib/mocks/products'
+import ProductCard from '@/entities/product-card/ui/ProductCard'
+import products from '@/shared/lib/mocks/products'
 import PageLayout from '../../app/ui/PageLayout'
 import { memo } from 'react'
 

@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
-import { type ICollections } from 'app/api/firestore/types'
+import { type ICollections } from '@/app/api/firestore/types'
 import { memo, useCallback } from 'react'
 import { AiOutlineFileAdd } from 'react-icons/ai'
-import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
-import Icon, { type IconStyles } from 'shared/kit/ui/Icon/Icon'
-import Text, { type TextStyles } from 'shared/kit/ui/Text/Text'
-import ColumnButtonList from 'shared/ui/Blocks/ColumnButtonList'
+import Button, { type ButtonStyles } from '@/shared/kit/ui/Button/Button'
+import Icon, { type IconStyles } from '@/shared/kit/ui/Icon/Icon'
+import Text, { type TextStyles } from '@/shared/kit/ui/Text/Text'
+import ColumnButtonList from '@/shared/ui/Blocks/ColumnButtonList'
 import { adminCollections } from '../lib/const'
 import { type IAdminCollection, type IAdminCollections } from '../lib/types'
 import { useAdminActions } from '../model/slice'
+import { useUser } from '@/entities/user/model/selectors'
 
 const selectBtnStyles: ButtonStyles = {
   theme: 'none',
@@ -36,10 +37,10 @@ interface NavListProps {}
 
 const NavList = (props: NavListProps) => {
   const { set: setAdmin } = useAdminActions()
+	const user = useUser()
 
   const cb = {
     onSelect: useCallback((coll: keyof ICollections) => {
-			console.log('coll :>> ', coll);
       setAdmin({ formType: undefined, selectedCollection: coll })
     }, []),
     onAdd: useCallback(
@@ -55,19 +56,12 @@ const NavList = (props: NavListProps) => {
   }
 
   return (
-    <ColumnButtonList
-      key="title"
-      title="collections"
-      items={adminCollectionsArray}
-    >
+    <ColumnButtonList key="title" title="collections" items={adminCollectionsArray}>
       {([coll, data]) => (
         <Button onClick={() => cb.onSelect(coll)} styles={selectBtnStyles}>
           <Text styles={textStyles}>{coll}</Text>
-          {data.adding && (
-            <Button
-              onClick={(e: any) => cb.onAdd(e, coll)}
-              styles={addBtnStyles}
-            >
+          {(data.adding === 'all' || (data.adding === 'admin' && user?.role === 'admin')) && (
+            <Button onClick={(e: any) => cb.onAdd(e, coll)} styles={addBtnStyles}>
               <Icon styles={iconStyles} Icon={AiOutlineFileAdd} />
             </Button>
           )}

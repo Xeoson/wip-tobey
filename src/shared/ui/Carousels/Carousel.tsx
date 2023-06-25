@@ -1,4 +1,4 @@
-import cn from 'shared/lib/helpers/classNames'
+import cn from '@/shared/lib/helpers/classNames'
 import { type DP } from '../../../shared/lib/types'
 import Image, { type ISource } from '../Blocks/Image'
 import s from './Carousel.module.scss'

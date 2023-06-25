@@ -1,0 +1,23 @@
+
+.main {
+	position: relative;
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+  color: var(--clr-text);
+  min-width: 0;
+  background-color: var(--clr-primary);
+  border-radius: var(--round-sm);
+	border: 0.05rem solid var(--clr-primary);
+	padding: 0.4rem 0.6rem;
+	resize: vertical;
+
+	&:focus-within {
+		box-shadow: 0 0 0 2px var(--clr-secondary);
+	}
+
+	&::placeholder {
+		color: var(--clr-text-user);
+	}
+}
+

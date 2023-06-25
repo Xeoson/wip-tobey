@@ -1,5 +1,12 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { useAppDispatch } from '@/app/model/redux'
+import {
+  bindActionCreators,
+  createSlice,
+  type PayloadAction,
+} from '@reduxjs/toolkit'
+import { useMemo } from 'react'
 import { signIn, signUp } from './thunks'
+import createSliceSelectors from '@/shared/lib/helpers/createSliceSelectors'
 
 export interface ILoginState {
   isLoading: boolean
@@ -48,3 +55,8 @@ export const { actions: LoginActions, reducer: LoginReducer } = createSlice({
       })
   },
 })
+
+export const useLoginActions = () => {
+  const dispatch = useAppDispatch()
+  return useMemo(() => bindActionCreators(LoginActions, dispatch), [])
+}

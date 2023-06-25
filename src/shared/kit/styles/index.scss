@@ -1,0 +1,30 @@
+@import './vars.module.scss';
+@import './utils.module.scss';
+
+
+@include create-class('border', 'border', $borderSizes);
+@include create-class('round', 'border-radius', $roundSizes);
+@include create-class('color', 'color', (secondary: var(--clr-secondary)));
+@include create-class('h', 'height', $widthSizes);
+@include create-class('w', 'width', $widthSizes);
+@include create-class('fontSize', 'font-size', $fontSizes);
+@include create-class('direction', 'flex-direction', (row, column));
+@include create-class('align', 'align-items', (center, start, end));
+@include create-class('justify', 'justify-content', (center, start, end));
+@include create-class-sizes('gap', 'gap');
+@include create-class-sizes('gapX', 'gap', "x");
+@include create-class-sizes('gapY', 'gap', "y");
+@include create-class-sizes('m', 'margin');
+@include create-class-sizes('ml', 'margin-left');
+@include create-class-sizes('mr', 'margin-right');
+@include create-class-sizes('mx', 'margin', 'lr');
+@include create-class-sizes('my', 'margin', 'tb');
+@include create-class-sizes('mt', 'margin-top');
+@include create-class-sizes('mb', 'margin-bottom');
+@include create-class-sizes('p', 'padding');
+@include create-class-sizes('px', 'padding', 'lr');
+@include create-class-sizes('py', 'padding', 'tb');
+@include create-class-sizes('pl', 'padding-left');
+@include create-class-sizes('pr', 'padding-right');
+@include create-class-sizes('pt', 'padding-top');
+@include create-class-sizes('pb', 'padding-bottom');

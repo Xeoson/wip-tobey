@@ -1,4 +1,4 @@
-import { AppState } from 'app/model/redux/types'
+import { AppState } from '@/app/model/redux/types'
 import { getIsDataLoading } from '.'
 import { IUserState, UserActions, UserReducer } from '../slice'
 

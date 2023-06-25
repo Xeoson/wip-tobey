@@ -1,7 +1,8 @@
-import cn from 'shared/lib/helpers/classNames'
-import { type IUser } from '../../../app/api/firestore/types'
-import { defaultAvatarUrl } from '../../../app/lib/const'
+import { type IUser } from '@/app/api/firestore/types/models'
+import cn from '@/shared/lib/helpers/classNames'
+import defaultAvatarUrl from '@/shared/lib/assets/avatar.png'
 import { type DP } from '../../lib/types'
+import Image, { type ISource } from './Image'
 import s from './User.module.scss'
 
 interface UserProps extends Pick<DP, 'children' | 'onClick'> {
@@ -9,11 +10,17 @@ interface UserProps extends Pick<DP, 'children' | 'onClick'> {
   size?: 'sm' | 'md'
 }
 
+const avatarSources: ISource[] = [{ transform: ['w_300'] }]
+
 const User = ({ user, size = 'md', children, ...props }: UserProps) => {
   return (
     <div className={cn(s.main, s[size])}>
       <div className={s.avatar}>
-        <img src={user.avatar ?? defaultAvatarUrl} />
+        {user.avatar ? (
+          <Image publicPath={user.avatar} sources={avatarSources} />
+        ) : (
+          <img src={defaultAvatarUrl} />
+        )}
       </div>
       {user.name && (
         <div className={s.details}>

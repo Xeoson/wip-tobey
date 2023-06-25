@@ -1,9 +1,9 @@
-import { type IUserOrderPopulated } from 'app/api/firestore/types'
+import { type IUserOrderPopulated } from '@/app/api/firestore/types'
 import dayjs from 'dayjs'
-import ProductCard from 'entities/product-card/ui/ProductCard'
+import ProductCard from '@/entities/product-card/ui/ProductCard'
 import { useRef } from 'react'
-import groupByDate from 'shared/lib/helpers/groupByDate'
-import { orders } from 'shared/lib/mocks/orders'
+import groupByDate from '@/shared/lib/helpers/groupByDate'
+import { orders } from '@/shared/lib/mocks/orders'
 import s from './DateGrouppedList.module.scss'
 
 interface DateGrouppedOrdersProps {}

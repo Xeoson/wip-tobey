@@ -1,12 +1,12 @@
-import browserRoutes from 'app/lib/browserRoutes'
-import AddToCartButton from 'features/cart/ui/AddToCartButton'
-import AddToFavoriteButton from 'features/favorite/ui/AddToFavoriteButton'
+import browserRoutes from '@/app/lib/browserRoutes'
+import AddToCartButton from '@/features/cart/ui/AddToCartButton'
+import AddToFavoriteButton from '@/features/favorite/ui/AddToFavoriteButton'
+import cn from '@/shared/lib/helpers/classNames'
+import usePointerClick from '@/shared/lib/hooks/usePointerClick'
+import { phonePublicPathMock } from '@/shared/lib/mocks/images'
+import Image, { type ISource } from '@/shared/ui/Blocks/Image'
 import { Suspense, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
-import cn from 'shared/lib/helpers/classNames'
-import usePointerClick from 'shared/lib/hooks/usePointerClick'
-import { phonePublicPathMock } from 'shared/lib/mocks/images'
-import Image, { type ISource } from 'shared/ui/Blocks/Image'
 import { type IProduct } from '../../../app/api/firestore/types'
 import s from './ProductCard.module.scss'
 
@@ -21,7 +21,7 @@ export interface ProductCardProps {
   withFavorite?: boolean
 }
 
-const productImageSources: ISource[] = [{ transf: 'w_300' }]
+const productImageSources: ISource[] = [{ transform: 'w_300' }]
 
 const ProductCard = ({
   size = 'md',

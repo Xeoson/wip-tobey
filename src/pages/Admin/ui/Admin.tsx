@@ -1,7 +1,7 @@
-import PageLayout from 'app/ui/PageLayout'
-import Flex from 'shared/kit/ui/Flex/Flex'
-import Grid from 'shared/kit/ui/Grid/Grid'
-import withReducerLoader from 'shared/lib/components/withReducerLoader'
+import PageLayout from '@/app/ui/PageLayout'
+import Flex from '@/shared/kit/ui/Flex/Flex'
+import Grid from '@/shared/kit/ui/Grid/Grid'
+import withReducerLoader from '@/shared/lib/components/withReducerLoader'
 import { AdminReducer } from '../model/slice'
 import CreateDoc from './CreateDoc'
 import DocList from './DocList'
@@ -10,11 +10,11 @@ import SearchArea from './SearchArea'
 
 const Admin = () => {
   return (
-    <PageLayout mobileHeaderTitle="Admin" withNavbarOn="all">
-      <Grid direction="row" columns="_1_3_">
+    <PageLayout mobileHeaderTitle="Admin" withNavbarOn="tablet">
+      <Grid direction="row" columns="1_3">
         <NavList />
         <Flex gapY="md" px="md" direction="column">
-					<SearchArea />
+          <SearchArea />
           <CreateDoc />
           <DocList />
         </Flex>

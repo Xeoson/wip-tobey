@@ -1,8 +1,8 @@
-import PageLayout from 'app/ui/PageLayout'
+import PageLayout from '@/app/ui/PageLayout'
 import { memo } from 'react'
-import CouponInput from 'widgets/CouponInput/CouponInput'
-import DeliveryAddress from 'widgets/DeliveryAddress/DeliveryAddress'
-import PaymentInfo from 'widgets/PaymentInfo/PaymentInfo'
+import CouponInput from '@/widgets/CouponInput/CouponInput'
+import DeliveryAddress from '@/widgets/DeliveryAddress/DeliveryAddress'
+import PaymentInfo from '@/widgets/PaymentInfo/PaymentInfo'
 
 interface CartProps {}
 

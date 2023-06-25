@@ -1,10 +1,10 @@
 import { type PropsWithChildren } from 'react'
-import { createClassNames } from 'shared/lib/helpers/moduleClassNames'
+import { createClassNames } from '@/shared/lib/helpers/moduleClassNames'
 import { type IDirection, type IGap } from '../../lib/types'
-import s from './index.module.scss'
+import s from './Grid.module.scss'
 
 interface GridProps extends PropsWithChildren, IDirection, IGap {
-  columns?: '_1_3_'
+  columns?: '1_3'
 }
 
 const mcn = createClassNames(s)

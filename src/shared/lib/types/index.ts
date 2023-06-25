@@ -1,7 +1,8 @@
 import {
-  ButtonHTMLAttributes,
+  type ButtonHTMLAttributes,
   type DetailedHTMLProps,
   type HTMLAttributes,
+  type ImgHTMLAttributes,
   type InputHTMLAttributes,
 } from 'react'
 
@@ -12,12 +13,15 @@ export interface DPInput
     InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {}
-{
-}
+
 export interface DPButton
   extends DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {}
-{
-}
+
+export interface DPImage
+  extends DetailedHTMLProps<
+    ImgHTMLAttributes<HTMLImageElement>,
+    HTMLImageElement
+  > {}

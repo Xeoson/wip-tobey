@@ -1,6 +1,6 @@
 import { GoSettings } from 'react-icons/go'
-import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
-import MinifyCarousel from 'shared/ui/Carousels/MinifyCarousel'
+import Button, { type ButtonStyles } from '@/shared/kit/ui/Button/Button'
+import MinifyCarousel from '@/shared/ui/Carousels/MinifyCarousel'
 import categories from '../../shared/lib/mocks/categories'
 import s from './Categories.module.scss'
 

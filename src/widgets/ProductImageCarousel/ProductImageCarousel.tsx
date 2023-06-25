@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import CarouselPagination from 'shared/ui/Blocks/CarouselPagination'
-import MinifyImageList from 'shared/ui/Blocks/MinifyImageList'
-import MouseScrollableCarousel from 'shared/ui/Carousels/MouseScrollableCarousel'
+import CarouselPagination from '@/shared/ui/Blocks/CarouselPagination'
+import MinifyImageList from '@/shared/ui/Blocks/MinifyImageList'
+import MouseScrollableCarousel from '@/shared/ui/Carousels/MouseScrollableCarousel'
 import s from './ProductImageCarousel.module.scss'
 
 interface ImageCarouselProps {

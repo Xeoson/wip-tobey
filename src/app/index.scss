@@ -1,6 +1,7 @@
 @import '@/app/styles/reset';
 @import '@/app/styles/vars';
 @import '@/app/styles/fonts';
+@import '@/shared/kit/styles/index.scss';
 
 html {
 	font-size: max(14px, calc(1vmax));
@@ -39,5 +40,6 @@ dialog[open] {
 
 #root {
 	height: 100%;
+	display: flex;
 }
 

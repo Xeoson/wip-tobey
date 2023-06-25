@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import products from 'shared/lib/mocks/products'
+import products from '@/shared/lib/mocks/products'
 import ProductCard from './ProductCard'
 
 export default {

@@ -8,10 +8,10 @@ import {
 } from 'react'
 
 import { useQuery, type UseQueryOptions } from 'react-query'
-import Text from 'shared/kit/ui/Text/Text'
+import Text from '@/shared/kit/ui/Text/Text'
 import GridSkeletonLoader, {
   type GridSkeletonLoaderProps,
-} from 'shared/ui/Loaders/GridSkeletonLoader'
+} from '@/shared/ui/Loaders/GridSkeletonLoader'
 
 export default <ReturnType, C extends { ref?: undefined }>(
   componentCallback: Parameters<typeof lazy>[0],

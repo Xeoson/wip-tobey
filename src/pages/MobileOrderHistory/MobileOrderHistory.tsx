@@ -1,4 +1,4 @@
-import DateGrouppedOrders from 'widgets/DateGrouppedOrders/DateGrouppedList'
+import DateGrouppedOrders from '@/widgets/DateGrouppedOrders/DateGrouppedList'
 import PageLayout from '../../app/ui/PageLayout'
 import { memo } from 'react'
 

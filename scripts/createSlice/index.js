@@ -80,7 +80,6 @@ create(
     ? createComponent({ filename: filepath.at(-1), layer })
     : layers[layer]
 )
-fs.writeFileSync(
-  resolve(layer, slice, 'index.ts'),
-  indexExports({ exportsDeps })
-)
+if (filepath.length === 0) {
+	fs.writeFileSync(resolve(layer, slice, 'index.ts'), indexExports({ exportsDeps }))
+}

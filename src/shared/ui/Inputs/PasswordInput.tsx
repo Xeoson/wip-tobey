@@ -1,6 +1,6 @@
 import { useState, type MutableRefObject } from 'react'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
-import { type DPInput } from 'shared/lib/types'
+import { type DPInput } from '@/shared/lib/types'
 import Button from '../Buttons/Button'
 import FormInput from './FormInput'
 

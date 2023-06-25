@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import cn from 'shared/lib/helpers/classNames'
+import cn from '@/shared/lib/helpers/classNames'
 import s from './SwitcherButton.module.scss'
 
 interface SwitcherButtonProps {

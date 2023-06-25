@@ -1,8 +1,8 @@
-import browserRoutes from 'app/lib/browserRoutes'
-import UserArea from 'features/login/ui/UserArea/UserArea'
+import browserRoutes from '@/app/lib/browserRoutes'
+import UserArea from '@/features/login/ui/UserArea/UserArea'
 import { MdOutlineFavoriteBorder, MdOutlineShoppingCart } from 'react-icons/md'
-import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
-import Flex from 'shared/kit/ui/Flex/Flex'
+import Button, { type ButtonStyles } from '@/shared/kit/ui/Button/Button'
+import Flex from '@/shared/kit/ui/Flex/Flex'
 import s from './NavbarUserBlock.module.scss'
 
 const buttonStyles: ButtonStyles = {

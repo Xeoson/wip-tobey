@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
+import TextError from '@/shared/kit/ui/TextError/TextError'
+import Input, { type InputProps } from '@/shared/kit/ui/inputs/Input/Input'
 import { forwardRef, type ForwardedRef } from 'react'
-import { AiOutlineInfoCircle } from 'react-icons/ai'
-import Input, { type InputProps } from 'shared/kit/ui/inputs/Input/Input'
 import s from './FormInput.module.scss'
 
 interface FormInputProps extends InputProps {
@@ -16,12 +16,8 @@ const FormInput = forwardRef(
     return (
       <Input {...props} placeholder=" " ref={ref} className={s.main}>
         <span className={s.placeholder}>{placeholder}</span>
-
         {errorMessage && (
-          <span className={s.error}>
-            <AiOutlineInfoCircle />
-            {errorMessage}
-          </span>
+          <TextError message={errorMessage} />
         )}
         {children}
       </Input>

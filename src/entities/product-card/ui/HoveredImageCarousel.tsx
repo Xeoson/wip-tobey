@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import cn from 'shared/lib/helpers/classNames'
-import { type DP } from 'shared/lib/types'
-import CarouselPagination from 'shared/ui/Blocks/CarouselPagination'
-import { type ISource } from 'shared/ui/Blocks/Image'
-import Carousel from 'shared/ui/Carousels/Carousel'
+import cn from '@/shared/lib/helpers/classNames'
+import { type DP } from '@/shared/lib/types'
+import CarouselPagination from '@/shared/ui/Blocks/CarouselPagination'
+import { type ISource } from '@/shared/ui/Blocks/Image'
+import Carousel from '@/shared/ui/Carousels/Carousel'
 import s from './HoveredImageCarousel.module.scss'
 
 interface HoveredImageCarouselProps extends Pick<DP, 'className'> {

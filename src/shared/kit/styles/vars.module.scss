@@ -1,3 +1,6 @@
 $defaultSizes: (xs: 0.3rem, sm: 0.5rem, md: 1rem, lg: 1.3rem, auto: auto);
-$defaultFontSizes: (xs: 0.5rem, sm: 0.7rem, md: 1rem, lg: 1.3rem);
-$widthSizes: (full: 100%)
+
+$borderSizes: (solid: 0.1rem solid var(--clr-primary));
+$fontSizes: (xs: 0.5rem, sm: 0.7rem, md: 1rem, lg: 1.3rem);
+$roundSizes: (sm: 0.3rem, md: 0.6rem, full: 50%);
+$widthSizes: (full: 100%, '2_3': 66%)

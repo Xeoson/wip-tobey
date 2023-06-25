@@ -1,3 +1,5 @@
+import { type IUserRole } from './other'
+
 export interface IVariant {
   type: 'color' | 'spec'
   variants: string[]
@@ -8,6 +10,7 @@ export interface IProduct {
   title: string
   description: string
   price: number
+  categoryId: string // +
   rating: number
   images: string[]
 }
@@ -17,6 +20,7 @@ export interface ICategory {
   title: string
   preview: string
   slug: string
+  parentId?: string // +
 }
 
 export interface IUser {
@@ -28,6 +32,7 @@ export interface IUser {
   phone?: string
   createdAt: number
   updatedAt: number
+  role?: IUserRole
 }
 
 export interface IUserOrder {

@@ -1,6 +1,6 @@
-import { getOpenedModal } from 'app/model/redux/main/selectors'
-import { MainActions } from 'app/model/redux/main/slice'
-import LoginModal from 'features/login/ui/LoginModal/LoginModal'
+import { getOpenedModal } from '@/app/model/redux/main/selectors'
+import { MainActions } from '@/app/model/redux/main/slice'
+import LoginModal from '@/features/login/ui/LoginModal/LoginModal'
 import { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 

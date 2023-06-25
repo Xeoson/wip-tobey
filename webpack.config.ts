@@ -8,9 +8,8 @@ interface IEnv {
   isDev: boolean
 }
 
-export default ({isDev}: IEnv): Configuration => {
-
-	const config: Configuration = {
+export default ({ isDev }: IEnv): Configuration => {
+  const config: Configuration = {
     mode: isDev ? 'development' : 'production',
     entry: [path.resolve(__dirname, 'src', 'main.tsx')],
     output: {
@@ -20,8 +19,11 @@ export default ({isDev}: IEnv): Configuration => {
       assetModuleFilename: 'images/[name].[hash][ext]',
     },
     resolve: {
+			alias: {
+				'@': path.resolve(__dirname, 'src'),
+				'app': path.resolve(__dirname, 'src', 'app'),
+			},
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
-      modules: ['node_modules', path.resolve(__dirname, 'src')],
     },
     plugins: buildPlugins(isDev),
     module: {
@@ -29,10 +31,10 @@ export default ({isDev}: IEnv): Configuration => {
     },
   }
 
-	if (isDev) {
-		config.devtool = 'inline-source-map'
-		config.devServer = buildDevServer()
-	}
+  if (isDev) {
+    config.devtool = 'inline-source-map'
+    config.devServer = buildDevServer()
+  }
 
-	return config
+  return config
 }

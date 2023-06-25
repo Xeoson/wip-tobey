@@ -1,14 +1,14 @@
-@import '../../styles/index.module.scss';
-
 .main {
-	display: grid;
+  display: grid;
 }
 
-.direction {
-	&.row {
-		grid-auto-flow: column;
-	}
-	&.column {
-		grid-auto-flow: row;
-	}
+.direction_row {
+  grid-auto-flow: column;
+}
+.direction_column {
+  grid-auto-flow: row;
+}
+
+.fetching {
+	opacity: var(--disabled-opacity);
 }

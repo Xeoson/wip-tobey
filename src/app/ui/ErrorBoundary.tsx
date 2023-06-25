@@ -1,4 +1,4 @@
-import Error from 'pages/Error/Error'
+import Error from '@/pages/Error/Error'
 import React, { type ErrorInfo, type ReactNode } from 'react'
 
 interface IProps {

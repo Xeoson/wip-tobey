@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
-import { AppFirestore } from 'app/api/firestore'
-import { auth } from 'app/lib/config/firebase'
-import { useAppDispatch } from 'app/model/redux'
-import { UserActions } from 'entities/user/model/slice'
+import { AppFirestore } from '@/app/api/firestore'
+import { auth } from '@/app/lib/config/firebase'
+import { useAppDispatch } from '@/app/model/redux'
+import { UserActions } from '@/entities/user/model/slice'
 import { onAuthStateChanged } from 'firebase/auth'
 import { useEffect } from 'react'
 

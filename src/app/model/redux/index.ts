@@ -4,10 +4,10 @@ import {
   type Reducer,
   type ReducersMapObject,
 } from '@reduxjs/toolkit'
-import { api } from 'app/api'
-import { AppFirestore } from 'app/api/firestore'
-import { UserReducer } from 'entities/user/model/slice'
-import { AppAuth } from 'features/login/api/auth'
+import { api } from '@/app/api'
+import { AppFirestore } from '@/app/api/firestore'
+import { UserReducer } from '@/entities/user/model/slice'
+import { AppAuth } from '@/features/login/api/auth'
 import {
   useDispatch,
   useSelector,

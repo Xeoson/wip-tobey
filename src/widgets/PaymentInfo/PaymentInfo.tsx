@@ -1,4 +1,4 @@
-import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
+import Button, { type ButtonStyles } from '@/shared/kit/ui/Button/Button'
 import s from './PaymentInfo.module.scss'
 
 const continueButtonStyles: ButtonStyles = {

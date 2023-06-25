@@ -1,10 +1,10 @@
-import { IUser } from 'app/api/firestore/types'
-import { MainActions } from 'app/model/redux/main/slice'
-import { UserActions } from 'entities/user/model/slice'
-import { TestThunk } from 'shared/lib/jest/testThunk'
+import { IUser } from '@/app/api/firestore/types'
+import { MainActions } from '@/app/model/redux/main/slice'
+import { UserActions } from '@/entities/user/model/slice'
+import { TestThunk } from '@/shared/lib/jest/testThunk'
 import { SignUpFields, signIn, signOut, signUp } from '.'
 import { ILoginState, LoginReducer } from '../slice'
-import browserRoutes from 'app/lib/browserRoutes'
+import browserRoutes from '@/app/lib/browserRoutes'
 
 describe('main', () => {
   test('signUp seccess', async () => {

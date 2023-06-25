@@ -1,5 +1,5 @@
-import { useAppSelector } from 'app/model/redux'
-import { type AppState } from 'app/model/redux/types'
+import { useAppSelector } from '@/app/model/redux'
+import { type AppState } from '@/app/model/redux/types'
 import capitalize from './capitalize'
 
 export type AppStateNotNull = Required<AppState>

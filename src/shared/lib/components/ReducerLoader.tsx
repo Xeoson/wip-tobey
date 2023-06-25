@@ -1,6 +1,6 @@
 import { type Reducer } from '@reduxjs/toolkit'
-import { type StoreWithReducerManager } from 'app/model/redux/reducerManager'
-import { type LazyAppState } from 'app/model/redux/types'
+import { type StoreWithReducerManager } from '@/app/model/redux/reducerManager'
+import { type LazyAppState } from '@/app/model/redux/types'
 import { useEffect, useMemo, type PropsWithChildren } from 'react'
 import { useDispatch, useStore } from 'react-redux'
 

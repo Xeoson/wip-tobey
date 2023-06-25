@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { type DPof } from 'shared/lib/types'
+import { type DPof } from '@/shared/lib/types'
 import s from './MobileScrollableCarousel.module.scss'
 
 export interface MobileScrollableCarouselProps extends DPof<HTMLUListElement> {

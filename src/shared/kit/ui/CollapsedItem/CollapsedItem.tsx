@@ -1,21 +1,9 @@
-import {
-  useCallback,
-  useState,
-  type MutableRefObject,
-  type ReactElement,
-} from 'react'
-import {
-  type IMargin,
-  type IPadding,
-  type ThemeValues,
-} from 'shared/kit/lib/types'
-import cn from 'shared/lib/helpers/classNames'
-import { createClassNames } from 'shared/lib/helpers/moduleClassNames'
+import { type IBorder, type IMargin, type IPadding, type IRound } from '@/shared/kit/lib/types'
+import { createClassNames } from '@/shared/lib/helpers/moduleClassNames'
+import { useCallback, useState, type MutableRefObject, type ReactElement } from 'react'
 import s from './CollapsedItem.module.scss'
 
-export interface CollapsedItemStyles extends IMargin, IPadding {
-  theme?: ThemeValues
-}
+export interface CollapsedItemStyles extends IMargin, IPadding, IRound, IBorder {}
 
 interface CollapsedItemProps {
   styles: CollapsedItemStyles
@@ -59,15 +47,11 @@ const CollapsedItem = ({
   }
 
   return (
-    <div className={mcn(styles, cn(isOpen && !closing && s.open))}>
+    <div className={mcn(styles, isOpen && !closing && s.open)}>
       <div onClick={cb.onToggle} className={s.item}>
         {content}
       </div>
-      {isOpen && (
-        <div className={cn(s.content, isOpen && s.open)}>
-          {collapsedContent}
-        </div>
-      )}
+      {isOpen && collapsedContent}
     </div>
   )
 }

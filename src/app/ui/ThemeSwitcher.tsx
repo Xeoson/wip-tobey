@@ -1,9 +1,9 @@
-import { useAppDispatch } from 'app/model/redux'
-import { getIsDarkTheme } from 'app/model/redux/main/selectors'
-import { MainActions } from 'app/model/redux/main/slice'
+import { useAppDispatch } from '@/app/model/redux'
+import { getIsDarkTheme } from '@/app/model/redux/main/selectors'
+import { MainActions } from '@/app/model/redux/main/slice'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import SwitcherButton from 'shared/ui/Buttons/SwitcherButton'
+import SwitcherButton from '@/shared/ui/Buttons/SwitcherButton'
 import s from '../styles/theme.module.scss'
 
 interface ThemeSwitcherProps {}

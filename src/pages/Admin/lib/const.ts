@@ -3,26 +3,36 @@ import { type IAdminCollections } from './types'
 export const adminCollections: IAdminCollections = {
   category: {
     titleField: 'title',
-    formFields: { preview: 'img', title: 'text' },
+    fieldsInfo: [
+      { title: 'preview', type: 'img', required: true },
+      { title: 'title', type: 'text', required: true },
+      { title: 'parentId', type: 'category' },
+    ],
     searchFields: ['id', 'title', 'slug'],
-    adding: true,
-    deleting: true,
+    adding: 'admin',
+    deleting: 'admin',
   },
   user: {
     titleField: 'name',
-    formFields: { avatar: 'img', name: 'text', surname: 'text', phone: 'text' },
+    fieldsInfo: [
+      { title: 'avatar', type: 'img' },
+      { title: 'name', type: 'text', required: true },
+      { title: 'surname', type: 'text' },
+      { title: 'phone', type: 'number' },
+    ],
     searchFields: ['id', 'email', 'name', 'phone', 'surname'],
   },
   product: {
     titleField: 'title',
-    formFields: {
-      description: 'text',
-      images: 'img_multiple',
-      price: 'text',
-      title: 'text',
-    },
+    fieldsInfo: [
+      { title: 'images', type: 'img_multiple', required: true },
+      { title: 'description', type: 'textarea' },
+      { title: 'price', type: 'number', required: true },
+      { title: 'title', type: 'text', required: true },
+      { title: 'categoryId', type: 'category', required: true },
+    ],
     searchFields: ['id', 'description', 'price', 'rating', 'title'],
-    adding: true,
-    deleting: true,
+    adding: 'all',
+    deleting: 'all',
   },
 }

@@ -15,4 +15,14 @@ export type IMargin = DefineTypes<MarginTypes, DefaultSizesTypeWithAuto>
 type PaddingTypes = 'p' | 'px' | 'py' | 'pl' | 'pr' | 'pt' | 'pb'
 export type IPadding = DefineTypes<PaddingTypes, DefaultSizesTypeWithAuto>
 
-export type IWidth = DefineTypes<'w', 'full'>
+type WidthHeightValues = 'full' | '2_3'
+export type IWidth = DefineTypes<'w', WidthHeightValues>
+export type IHeight = DefineTypes<'h', WidthHeightValues>
+
+export type IColor = DefineTypes<'color', "secondary">
+
+type RoundValues = 'sm' | "md" | 'full'
+export type IRound = DefineTypes<'round', RoundValues>
+
+type BorderValues = "solid"
+export type IBorder = DefineTypes<'border', BorderValues>

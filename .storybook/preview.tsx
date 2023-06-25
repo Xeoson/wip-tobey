@@ -1,5 +1,10 @@
 import type { Preview } from '@storybook/react'
-import 'app/index.scss'
+import '../src/app/index.scss'
+import '../src/app/styles/fonts.scss'
+import '../src/app/styles/reset.scss'
+import '../src/app/styles/theme.module.scss'
+import '../src/app/styles/utils.scss'
+import '../src/app/styles/vars.scss'
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 

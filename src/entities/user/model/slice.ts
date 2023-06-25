@@ -1,5 +1,5 @@
+import { type IUser } from '@/app/api/firestore/types/models'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { type IUser } from 'app/api/firestore/types'
 
 export interface IUserState {
   user?: IUser

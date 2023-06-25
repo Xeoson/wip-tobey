@@ -1,5 +1,5 @@
-import ProductDetailsInfo from 'widgets/ProductDetailsInfo/ProductDetailsInfo'
-import ImageCarousel from 'widgets/ProductImageCarousel/ProductImageCarousel'
+import ProductDetailsInfo from '@/widgets/ProductDetailsInfo/ProductDetailsInfo'
+import ImageCarousel from '@/widgets/ProductImageCarousel/ProductImageCarousel'
 import PageLayout from '../../app/ui/PageLayout'
 
 import products from '../../shared/lib/mocks/products'

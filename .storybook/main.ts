@@ -12,7 +12,6 @@ const config: StorybookConfig = {
       options: {
         cssModules: true,
         sass: {
-          // Require your preprocessor
           implementation: require('sass'),
         },
       },
@@ -26,7 +25,12 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   webpackFinal: (config) => {
-    config.resolve?.modules?.push(path.resolve(__dirname, '../src'))
+		config.resolve = config.resolve || {}
+    config.resolve.modules?.push(path.resolve(__dirname, '..', 'src'))
+		config.resolve.alias = {
+      '@': path.resolve(__dirname, '..', 'src'),
+      app: path.resolve(__dirname, '..', 'src', 'app'),
+    }
     return config
   },
 }

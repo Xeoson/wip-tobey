@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import cn from 'shared/lib/helpers/classNames'
+import cn from '@/shared/lib/helpers/classNames'
 import { type MobileScrollableCarouselProps } from './MobileScrollableCarousel'
 import s from './MouseScrollableCarousel.module.scss'
 

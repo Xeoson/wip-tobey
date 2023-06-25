@@ -1,0 +1,14 @@
+.main {
+  display: grid;
+}
+
+.direction_row {
+  grid-auto-flow: column;
+}
+.direction_column {
+  grid-auto-flow: row;
+}
+
+.columns_1_3 {
+  grid-template-columns: 1fr 3fr;
+}

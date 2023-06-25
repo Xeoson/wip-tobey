@@ -1,4 +1,4 @@
-import browserRoutes from 'app/lib/browserRoutes'
+import browserRoutes from '@/app/lib/browserRoutes'
 import { BsBoxSeam } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
 import { MdOutlineFavoriteBorder } from 'react-icons/md'

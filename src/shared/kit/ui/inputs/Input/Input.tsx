@@ -1,12 +1,12 @@
 import { forwardRef, type ForwardedRef } from 'react'
-import { type IMargin } from 'shared/kit/lib/types'
-import { createClassNames } from 'shared/lib/helpers/moduleClassNames'
-import { type DPInput } from 'shared/lib/types'
+import { type IMargin } from '@/shared/kit/lib/types'
+import { createClassNames } from '@/shared/lib/helpers/moduleClassNames'
+import { type DPInput } from '@/shared/lib/types'
 import s from './Input.module.scss'
 
 export interface InputStyles extends IMargin {}
 
-export interface InputProps extends Omit<DPInput, 'type'> {
+export interface InputProps extends DPInput {
   styles?: InputStyles
 }
 

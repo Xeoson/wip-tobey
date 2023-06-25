@@ -2,7 +2,7 @@ import { useRef, useState, type FC } from 'react'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { MdOutlineEdit } from 'react-icons/md'
 import s from './UserAddressList.module.scss'
-import addresses from 'shared/lib/mocks/addresses'
+import addresses from '@/shared/lib/mocks/addresses'
 
 interface UserAddressListProps {}
 

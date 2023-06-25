@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-confusing-void-expression */
 
-import { type ICollections } from 'app/api/firestore/types/index'
+import { type ICollections } from '@/app/api/firestore/types/index'
 import {
   type ICollectionsAdd,
   type ICollectionsSet,
   type ICollectionsUpdate,
-} from 'app/api/firestore/types/query'
+} from '@/app/api/firestore/types/query'
 import {
   addDoc,
   collection,

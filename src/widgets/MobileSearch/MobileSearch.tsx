@@ -1,11 +1,12 @@
-import SearchInput from 'features/search/ui/SearchInput'
+
 import { useMemo, useState } from 'react'
 import { BsArrowLeftShort } from 'react-icons/bs'
 import { CiSearch } from 'react-icons/ci'
-import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
-import products from 'shared/lib/mocks/products'
-import Modal from 'shared/ui/Modals/Modal'
+import Button, { type ButtonStyles } from '@/shared/kit/ui/Button/Button'
+import products from '@/shared/lib/mocks/products'
+import Modal from '@/shared/ui/Modals/Modal'
 import s from './MobileSearch.module.scss'
+import SearchInput from '@/shared/ui/Inputs/SearchInput/SearchInput'
 
 const searchButtonStyles: ButtonStyles = {
   shape: 'square',

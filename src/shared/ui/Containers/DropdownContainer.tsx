@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from 'react'
-import cn from 'shared/lib/helpers/classNames'
+import cn from '@/shared/lib/helpers/classNames'
 import { type DP } from '../../../shared/lib/types'
 import s from './DropdownContainer.module.scss'
 

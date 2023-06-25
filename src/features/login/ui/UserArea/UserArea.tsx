@@ -1,14 +1,14 @@
-import browserRoutes from 'app/lib/browserRoutes'
-import { useAppDispatch } from 'app/model/redux'
-import { MainActions } from 'app/model/redux/main/slice'
-import { getIsDataLoading, getUser } from 'entities/user/model/selectors'
-import { signOut } from 'features/login/model/thunks'
+import browserRoutes from '@/app/lib/browserRoutes'
+import { useAppDispatch } from '@/app/model/redux'
+import { MainActions } from '@/app/model/redux/main/slice'
+import { getIsDataLoading, getUser } from '@/entities/user/model/selectors'
+import { signOut } from '@/features/login/model/thunks'
 import { FiLogIn, FiLogOut } from 'react-icons/fi'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Button, { type ButtonStyles } from 'shared/kit/ui/Button/Button'
-import User from 'shared/ui/Blocks/User'
-import GridSkeletonLoader from 'shared/ui/Loaders/GridSkeletonLoader'
+import Button, { type ButtonStyles } from '@/shared/kit/ui/Button/Button'
+import User from '@/shared/ui/Blocks/User'
+import GridSkeletonLoader from '@/shared/ui/Loaders/GridSkeletonLoader'
 
 const logoutBtnStyles: ButtonStyles = {
   theme: 'primary',
@@ -19,6 +19,7 @@ const logoutBtnStyles: ButtonStyles = {
 const loginBtnStyles: ButtonStyles = {
   theme: 'secondary',
   size: 'md',
+	gap: 'xs'
 }
 
 interface UserAreaProps {
